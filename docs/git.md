@@ -41,6 +41,29 @@ $ git log # 查看是否多个commit已经合并
 >
 > 若操作中有失误，可以使用`git rebase --abort`进行**变基**撤销，会回到没有开始操作前的状态。
 
+### 存取操作出错
+
+报错如下：
+
+``` bash
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for 'http://********
+```
+
+原因：**重置了密码导致git远程操作失败 **
+
+解决方法：
+
+``` bash
+$ git config --system --unset credential.helper
+```
+
+之后进行Git操作，重新输入账号密码即可。
+
+
+
+
+
 
 
 
