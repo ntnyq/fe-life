@@ -27,3 +27,5 @@
   - [新兴技术](articles/tech.md)
 
   - [Vue框架](articles/vue.md)
+
+  - [解决方案](articls/solution.md)
