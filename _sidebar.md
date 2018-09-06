@@ -28,4 +28,4 @@
 
   - [Vue框架](articles/vue.md)
 
-  - [解决方案](articls/solution.md)
+  - [解决方案](articles/solution.md)

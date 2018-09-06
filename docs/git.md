@@ -60,6 +60,16 @@ $ git config --system --unset credential.helper
 
 之后进行Git操作，重新输入账号密码即可。
 
+### 修改上次提交信息
+
+有时候我们在进行**commit**的时候，提交错了信息，这时候强迫症的我们当然受不了了，可以执行下面的命令进行修改：
+
+``` bash
+$ git commit --amend
+```
+
+执行命令后，会进入编辑界面，重新编辑保存即可。
+
 
 
 
