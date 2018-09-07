@@ -70,6 +70,36 @@ $ git commit --amend
 
 执行命令后，会进入编辑界面，重新编辑保存即可。
 
+### 给分支打标签
+
+打标签通常用于建立一个项目的**里程碑**。表示这是一次与普通`commit`不同的一次提交。方便后续查找和更改。
+
+> 表示项目版本的标签通常格式为`v1.1.1`，详细见[ 语义化版本 ](https://semver.org/lang/zh-CN/)
+
+``` bash
+# 查看当前分支已有的标签
+$ git tag
+
+# 给当前分支打标签 通常使用v表示版本
+$ git tag tag_name
+
+# 给当前标签备注信息
+$ git tag -a tag_name -m "tag message"
+
+# 补打标签 先前的commit
+$ git tag -a tag_name commit_hash
+
+# 删除标签
+$ git tag -d tag_name
+
+# 将标签推送至远程仓库
+$ git push origin tag_name
+
+$ git push origin -tags
+```
+
+
+
 
 
 
