@@ -4,6 +4,19 @@
 
 ### path模块
 
+#### path.dirname
+
+`path.dirname(path)`方法返回一个`path`的目录名，最后不带`\`。
+
+例子：
+
+``` js
+path.dirname('/foo/bar/baz/asdf/quux');
+// 返回: '/foo/bar/baz/asdf'
+```
+
+
+
 #### path.basename
 
 `path.basename(path[, ext])`方法返回一个`path`的最后部分。

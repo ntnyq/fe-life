@@ -60,6 +60,18 @@ $ git config --system --unset credential.helper
 
 之后进行Git操作，重新输入账号密码即可。
 
+### Push需要输入密码
+
+可以通过配置**ssh-key**的方式，
+
+也可以通过以下代码来实现：
+
+``` bash
+$ git config --global credential.helper store
+```
+
+上面的操作会在**用户根目录**生成`.git-credentials`文件，里面保存着各个git服务器端的账号和密码。格式为`https://git_username:git_password@git_server_name`
+
 ### 修改上次提交信息
 
 有时候我们在进行**commit**的时候，提交错了信息，这时候强迫症的我们当然受不了了，可以执行下面的命令进行修改：
@@ -96,6 +108,14 @@ $ git tag -d tag_name
 $ git push origin tag_name
 
 $ git push origin -tags
+```
+
+### 回退到上个版本
+
+使用下面的命令即可使仓库回到上个版本：
+
+``` bash
+$ git reset HEAD~1
 ```
 
 
