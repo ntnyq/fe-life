@@ -2,6 +2,7 @@
 
   - [HTML](docs/html.md)
   - [CSS](docs/css.md)
+  - [SCSS](./docs/scss.md)
   - [JavaScript](docs/javascript.md)
   - [Vuejs](docs/vue.md)
   - [Node](docs/node.md)
@@ -11,6 +12,8 @@
   - [MongoDB](docs/mongodb.md)
   - [Git](docs/git.md)
   - [Gulp](docs/gulp.md)
+  - [Bash](docs/bash.md)
+  - [NPM](./docs/npm.md)
 
 - **好文收藏**
 
