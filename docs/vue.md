@@ -4,7 +4,58 @@
 
 ## Vue
 
+### Vue2.x使用Filter过滤器
+
+通过`Vue.filter`指令可注册全局的过滤器。
+
+在项目中，以如下的格式使用：
+
+``` js
+// utils/filter.js
+
+export function toThousand (num) {
+  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
+}
+```
+
+``` js
+// main.js
+
+import * as filters from '@/utils/filter';
+
+Object,keys(filters).forEach(k => {
+  Vue.filter(k, filter[k]);
+});
+```
+
 ## VueRouter
+
+### 路由懒加载
+
+> 环境： webpack4且安装`@babel/plugin-syntax-dynamic-import`依赖.
+
+``` js
+// routes.js
+
+import Index = () => import(/* webpackChunkName: "index" */ '@/views/Index');
+import About = () => import(/* webpackChunkName: "about" */ '@/views/About');
+
+const routes = [
+  {
+  	path: '/index',
+  	name: 'index',
+  	component: Index
+  },
+  
+  {
+  	path: '/about',
+  	name: 'about',
+  	component: About
+  }
+];
+
+export default routes;
+```
 
 ## Vuex
 
@@ -13,6 +64,38 @@
 > 当前Vue-cli的版本为`v3.0.3`。
 
 [Vue-cli官方文档](https://cli.vuejs.org/)
+
+### 个人配置
+
+> 个人用的`vue.config.js`配置，可参考
+
+``` js
+// vue.config.js
+
+module.exports = {
+
+  baseUrl: './', // 资源等使用相对路径
+
+  css: {
+    loaderOptions: {
+      sass: {
+        data: '@import "@/scss/core/style";' // 全局注入SCSS变量，Mixins等
+      }
+    }
+  },
+
+  devServer: {
+    open: true // 开发环境自动打开浏览器
+  },
+
+  chainWebpack: config => {
+
+    config.resolve.extensions // 添加Webpack resolve文件类型
+      .store.add('.scss');
+  }
+};
+
+```
 
 ### Vue-cli3.0中使用环境变量
 
@@ -48,6 +131,38 @@ VUE_APP_NAME=ntnyq
 
 ``` js
 console.log(process.env.VUE_APP_NAME); // ntnyq
+```
+### Vue-cli2.0全局SCSS变量等
+
+此需求可以通过`sass-resources-loader`来实现。
+
+#### 安装
+
+``` bash
+$ yarn add sasss-resources-loader -D
+```
+
+#### 配置
+
+修改`build/utils.js`中的`exports.cssLoaders`如下字段
+
+``` js
+  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
+  
+  return {
+    css: generateLoaders(),
+    postcss: generateLoaders(),
+    less: generateLoaders('less'),
+    sass: generateLoaders('sass', { indentedSyntax: true }),
+    scss: generateLoaders('sass').concat({
+      loader: 'sass-resources-loader',
+      options: {
+        resources: path.resolve(__dirname, './../src/scss/core/syle.scss')
+      }
+    }),
+    stylus: generateLoaders('stylus'),
+    styl: generateLoaders('stylus')
+  }
 ```
 
 
