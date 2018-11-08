@@ -59,6 +59,8 @@ export default routes;
 
 ## Vuex
 
+> **注意：**只有那些需要**全局**进行共享的数据才有存入vuex中的必要。
+
 ## Vue-CLI
 
 > 当前Vue-cli的版本为`v3.0.3`。
