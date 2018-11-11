@@ -186,7 +186,19 @@ $ yarn add sasss-resources-loader -D
   }
 ```
 
+## ElementUI
 
+> ElememtUI库踩坑记录。
+
+### 组件绑定原生事件使用 native 修饰符失效
+
+在 ElementUI 的 [FAQ](https://github.com/ElemeFE/element/blob/dev/FAQ.md) 中，要求在为 **自定义组件** 绑定 **原生事件** 的时候，要加上 `.native` 修饰符。
+
+同样也可以在 Vue 的官方文档中看到。
+
+但是最近的项目中，却发生了 `el-switch` 组件和 `el-select` 组件绑定 `change` 事件时候加上 `.native` 修饰符却无法触发方法的情况。
+
+刚才又在官方文档里看到 这种 [特定的例子](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6)，暂时还不完全理解原理，但总算是找到了参考资料。具体原理可能需要阅读源码去了解。
 
 
 

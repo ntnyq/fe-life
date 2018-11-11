@@ -1,7 +1,6 @@
 # JavaScript
 
 
-
 ## 移动端
 
 移动端页面开发时候遇到的坑点。
@@ -20,3 +19,12 @@ body.addEventListener('touchmove', evt => {
 ```
 
 [参考资料](https://segmentfault.com/a/1190000014134234)
+
+## ES6
+
+### 懒加载模块并使用
+
+``` js
+import(‘idcard’).then(IDCard => {
+    // doSomething with module idcard
+})
