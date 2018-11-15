@@ -118,10 +118,26 @@ $ git push origin -tags
 
 ### 回退到上个版本
 
+> 当前工作区的内容会丢失。
+
 使用下面的命令即可使仓库回到上个版本：
 
 ``` bash
 $ git reset HEAD~1
+```
+
+### 回退加入缓冲区的文件
+
+假设执行了 `git add .`，又发现添加错了文件，可以使用如下命令来进行回退：
+
+``` bash
+git reset HEAD
+```
+
+若只需要回退指令文件，则执行：
+
+``` bash
+git reset file_name
 ```
 
 

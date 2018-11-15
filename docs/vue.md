@@ -65,7 +65,7 @@ const routes = [
   	name: 'index',
   	component: Index
   },
-  
+
   {
   	path: '/about',
   	name: 'about',
@@ -169,7 +169,7 @@ $ yarn add sasss-resources-loader -D
 
 ``` js
   // https://vue-loader.vuejs.org/en/configurations/extract-css.html
-  
+
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
