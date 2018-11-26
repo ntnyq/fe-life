@@ -18,7 +18,8 @@
 
 ## 性能优化
 
-- [前端性能优化\-\-从10多秒到1.05秒
+- [前端性能优化\-\-从10多秒到1.05秒](https://segmentfault.com/a/1190000015052545)
+- [Web性能优化](https://3perf.com/talks/web-perf-101/#contents)
 
 ## 静态资源部署
 

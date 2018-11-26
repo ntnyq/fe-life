@@ -14,6 +14,7 @@
   - [Gulp](docs/gulp.md)
   - [Bash](docs/bash.md)
   - [NPM](docs/npm.md)
+  - [Editor](docs/editor.md)
 
 - **好文收藏**
 
