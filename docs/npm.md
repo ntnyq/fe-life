@@ -21,3 +21,14 @@ $ npx create-react-app my-app
 ### 参考资料
 
 [npx命令介绍](https://segmentfault.com/a/1190000012974903)
+
+
+
+## weixin-js-sdk报错
+
+项目需要做微信分享，使用了 **weixin-js-sdk**，构建后页面报错 `Cannot read property 'title' of undefined`，查询资料后发现是 **weixin-js-sdk** 的源码问题。
+
+解决办法：修改源码，将 **weixin-js-sdk** 中第一个 `this` 改为 `window`。
+
+[参考资料-jsweixin引入时报错Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
+
