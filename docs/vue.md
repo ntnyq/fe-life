@@ -20,7 +20,7 @@
 - stop 停止事件向上冒泡
 - capture 使用事件捕获进行事件监听
 - native 给自定义组件绑定原生事件需要加上此修饰符
-- self 事件只能由绑定事件的元素上触发
+- self 事件只能由绑定事件的元素上被触发
 - once 事件只能被触发一次
 
 ### Vue2.x使用Filter过滤器
@@ -199,6 +199,42 @@ $ yarn add sasss-resources-loader -D
 但是最近的项目中，却发生了 `el-switch` 组件和 `el-select` 组件绑定 `change` 事件时候加上 `.native` 修饰符却无法触发方法的情况。
 
 刚才又在官方文档里看到 这种 [特定的例子](https://cn.vuejs.org/v2/guide/components-custom-events.html#%E5%B0%86%E5%8E%9F%E7%94%9F%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0%E7%BB%84%E4%BB%B6)，暂时还不完全理解原理，但总算是找到了参考资料。具体原理可能需要阅读源码去了解。
+
+## MintUI
+
+> MintUI踩坑记录。
+
+### 按需导入
+
+针对组件库的按需导入，[官方文档](https://mint-ui.github.io/docs/#/zh-cn2/quickstart) 中是包含的，但在实际使用中，会出现报错，无法实现按需导入。
+
+经过一番查资料和折腾后，总结方案如下：
+
+```js
+// main.js
+import Vue from 'vue'
+import {
+  Button
+} from 'mint-ui'
+
+Vue.component(Button.name, Button)
+
+// babel.config.js
+module.exports = {
+  presets: [ '@vue/app' ],
+  plugins: [
+    [
+      'component',
+      {
+        libraryName: 'mint-ui',
+        style: true
+      }
+    ]
+  ]
+}
+```
+
+
 
 
 
