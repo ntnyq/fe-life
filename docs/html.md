@@ -1,7 +1,6 @@
 # HTML
 
 
-
 ## 禁止视频全屏播放
 
 > IOS、QQ和微信浏览器。
@@ -13,4 +12,21 @@
 解决方案： 在video标签上加如上3个属性。
 
 [IOS webview解决方案](https://www.jianshu.com/p/37404ccfabe8)
+
+## 隐藏Input当type=number时的上下箭头
+
+``` scss
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  -moz-appearance: textfield;
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+```
 

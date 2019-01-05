@@ -43,3 +43,42 @@ $ ssh root@yuer_server_ip
 
 
 
+## Tree命令
+
+> 列出项目文件目录。
+
+### Mac os安装 Tree 命令
+
+```  bash
+# 使用 homebrew 安装
+$ brew install tree
+```
+
+### 命令语法
+
+``` bash
+tree <options>
+```
+
+### 常用参数
+
+- -d 只列出文件夹
+- -L 指定遍历层级
+- -I 用于过滤不需要显示的文件或者文件夹
+
+### 输出至文件
+
+``` bash
+# 输出至当前目录下的 DIRECTORY.md
+$ tree -L 2 > DIRECTORY.md
+```
+
+### 举例
+
+``` bash
+# 遍历当前目录下层级为2的所有目录 忽略node_modules目录 将文件树输入至 directory.md 文件中。
+tree -L 2 -d  -I "node_modules" > directory.md
+```
+
+
+
