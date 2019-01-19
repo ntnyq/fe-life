@@ -16,6 +16,23 @@
 
 兼容性：[Can I Use ](https://caniuse.com/#search=pointer-events) IE11+ 移动端基本无兼容问题。
 
+### fixed定位的参照物问题
+
+在父元素设置了`transform`属性的情况下，`position: fixed;`定位的元素不再以浏览器视口为参照，即使`transform`并未对元素的位置产生影响。如:
+
+``` css
+.foo {
+  tranform: translate(0);
+}
+
+.bar {
+  transform: scale(0);
+}
+```
+[参考资料](https://segmentfault.com/a/1190000017939779)
+
+[示例Demo](https://ntnyq.github.io/demos/html/fixed-test.html)
+
 ## PC端坑点
 
 

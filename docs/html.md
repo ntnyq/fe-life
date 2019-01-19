@@ -30,3 +30,19 @@ input[type="number"] {
 }
 ```
 
+## meta标签页面重定向兼容问题
+
+``` html
+<meta http-equiv="refresh" content="3; url=http://www.baidu.com" />
+```
+
+`content` 内的3代表3秒后页面跳转，url指向目标跳转地址。
+
+兼容性差异：
+
+| 浏览器            | 支持性                                     |
+| ----------------- | ------------------------------------------ |
+| IE6 IE7 IE8 Opera | 支持 "分号" 和 "空格" 做分隔符             |
+| Firefox           | 支持 "分号" 、 "逗号" 和 "空格" 做分隔符。 |
+| Chrome Safari     | 支持 "分号" 和 "逗号" 做分隔符。           |
+
