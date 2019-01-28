@@ -15,14 +15,14 @@
   - [Bash](docs/bash.md)
   - [NPM](docs/npm.md)
   - [Editor](docs/editor.md)
-
 - **好文收藏**
 
   - [深入研究](articles/study.md)
   - [新兴技术](articles/tech.md)
   - [Vue框架](articles/vue.md)
   - [解决方案](articles/solution.md)
-
+- **插件用法**
+  - [Videojs](plugins/videojs.md)
 - **关于我**
-  
+
   - [日常工具](about/tool.md)

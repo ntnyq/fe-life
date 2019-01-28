@@ -33,6 +33,14 @@
 
 [示例Demo](https://ntnyq.github.io/demos/html/fixed-test.html)
 
+### input[type=“number”]光标上移异常
+
+当我们设置了input元素的 `height` 和 `line-height` 相等时，中文输入法下，在 `input[type="number"]` 输入框下输入中文字符，会引起光标上移。
+
+解决方法：不要设置 `line-height` 属性，或者设置`line-height: normal` 默认值，或者给 input 元素设置`padding` 值，即可解决此问题。
+
+[参考资料](https://blog.csdn.net/haihiaandtongtong/article/details/50345065)
+
 ## PC端坑点
 
 

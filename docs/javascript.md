@@ -20,6 +20,10 @@ body.addEventListener('touchmove', evt => {
 
 [参考资料](https://segmentfault.com/a/1190000014134234)
 
+### 移动端使用时间格式化问题
+
+在移动端，使用时间格式化函数处理 `yyyy-MM-dd hh:mm:ss` 这个格式的时间，在PC预览时格式化正常，但是在手机上，发现数字成了 `NaN`。
+
 ## ES6
 
 ### 兼容性
