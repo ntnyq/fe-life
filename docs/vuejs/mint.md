@@ -1,6 +1,8 @@
-# MintUI踩坑记录
+# MintUI
 
-!> 已弃用MintUI做为移动端组件库，因为该项目已长时间不再维护，建议使用[VantUI](https://youzan.github.io/vant)
+::: danger
+已弃用MintUI做为移动端组件库，因为该项目已长时间不再维护，建议使用[VantUI](https://youzan.github.io/vant)
+:::
 
 ## 按需导入
 

@@ -1,6 +1,5 @@
 # HTML
 
-
 ## 禁止视频全屏播放
 
 > IOS、QQ和微信浏览器。
@@ -13,7 +12,7 @@
 
 [IOS webview解决方案](https://www.jianshu.com/p/37404ccfabe8)
 
-## 隐藏Input当type=number时的上下箭头
+## 隐藏Input["type=number"]上下箭头
 
 ``` scss
 input[type="number"] {

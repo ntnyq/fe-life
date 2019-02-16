@@ -1,4 +1,4 @@
-# Videojs常用需求解决方案
+# Videojs
 
 > 当前 [videojs](https://github.com/videojs/video.js) 版本为 `v7.4.2`。
 
@@ -28,7 +28,7 @@
 ``` js
 videojs('example_video', {}, function () {
   console.log('>>> videojs initialized successful!');
-  
+
   this.load(); // 重新加载
   this.src = 'path_to_your/video2.mp4'; // 切换地址
   this.play(); // 播放
@@ -44,7 +44,7 @@ videojs('example_video', {}, function () {
 
 ``` js
 poster: 'path_to_your/img.ext', // 海报图
-preload: 'auto', // 预加载 'none' | metadata | auto 
+preload: 'auto', // 预加载 'none' | metadata | auto
 fluid: true,  // 是否自适应尺寸
 controls: true, // 是否显示播放控件
 autoplay: true, // 是否自动播放
@@ -69,8 +69,8 @@ height: 360 // 视频高度
 ### 播放按钮居中
 
 ``` css
-.vjs-big-play-centered .vjs-big-play-button { 
-  margin-top: -1.5em; 
+.vjs-big-play-centered .vjs-big-play-button {
+  margin-top: -1.5em;
 }
 ```
 
@@ -91,10 +91,10 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 ### 修改播放按钮为圆形
 
 ``` css
-.video-js .vjs-icon-placeholder:before { 
-  height: 3em !important; 
-  line-height: 1.5em; 
-  font-size: 2em; 
+.video-js .vjs-icon-placeholder:before {
+  height: 3em !important;
+  line-height: 1.5em;
+  font-size: 2em;
 }
 ```
 
@@ -185,7 +185,7 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 
 Videojs 支持以下事件监听。
 
-``` 
+```
 durationchange
 ended
 firstplay

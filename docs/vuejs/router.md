@@ -1,4 +1,4 @@
-# 前端路由
+# VueRouter
 
 ## 懒加载
 
@@ -33,7 +33,7 @@ export default routes;
 
 假设有如下面包屑导航组件
 
-``` vue
+``` js
 // Breadcrum.vue
 export default {
   data () {

@@ -1,0 +1,18 @@
+{
+  "name": "fe-life",
+  "version": "1.0.0",
+  "description": "Ntnyq's fe life records.",
+  "main": "index.js",
+  "scripts": {
+    "fmt": "prettier --write './**/*.{js,ts,vue,json}'",
+    "dev": "npm run fmt && vuepress dev docs",
+    "build": "npm run fmt && vuepress build docs"
+  },
+  "repository": "https://github.com/ntnyq/fe-life",
+  "author": "ntnyq",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.16.4",
+    "vuepress": "^0.14.8"
+  }
+}
