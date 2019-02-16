@@ -1,8 +1,8 @@
 # Ntnyq的前端人生
 
-![](images/fe-life-20190217013116944.svg)
-![](images/powered--by-vuepress-green.svg)
-![](images/fe-life.svg)
+![](https://travis-ci.org/ntnyq/fe-life.svg?branch=master)
+![](https://img.shields.io/badge/powered--by-vuepress-green.svg)
+![](https://img.shields.io/github/last-commit/ntnyq/fe-life.svg)
 
 作为一个<del>前端</del>小白，在开发过程中难免遇到各种**\***蛋的问题，心中难免要说一声`fuck`🐶。
 
