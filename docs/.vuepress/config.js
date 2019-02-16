@@ -1,11 +1,11 @@
 module.exports = {
   title: 'Ntnyq的前端人生',
   head: [
-    ['meta', { 'http-equiv': 'cache-control', content: 'no-cache' }],
-    ['meta', { 'http-equiv': 'pragma', content: 'no-cache' }],
-    ['meta', { 'http-equiv': 'expires', content: '0' }]
+    [ 'meta', { 'http-equiv': 'cache-control', content: 'no-cache' } ],
+    [ 'meta', { 'http-equiv': 'pragma', content: 'no-cache' } ],
+    [ 'meta', { 'http-equiv': 'expires', content: '0' } ]
   ],
-  base: '/fe-life/',
+  base: '/',
   dest: 'site',
   themeConfig: {
     sidebarDepth: 0,
@@ -19,9 +19,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       {
         text: 'templates',
-        items: [
-          { text: 'element-boilerplate', link: 'https://github.com/ntnyq/element-boilerplate' }
-        ]
+        items: [ { text: 'element-boilerplate', link: 'https://github.com/ntnyq/element-boilerplate' } ]
       }
     ],
     sidebar: [
@@ -65,19 +63,19 @@ module.exports = {
         key: 'articles',
         title: '优秀博文',
         collapsable: true,
-        children: ['articles/solution', 'articles/study', 'articles/tech']
+        children: [ 'articles/solution', 'articles/study', 'articles/tech' ]
       },
       {
         key: 'plugins',
         title: '常用插件',
         collapsable: true,
-        children: ['plugins/videojs']
+        children: [ 'plugins/videojs' ]
       },
       {
         key: 'tools',
         title: '关于我的',
         collapsable: true,
-        children: ['about/tool']
+        children: [ 'about/tool' ]
       }
     ],
     lastUpdated: '最后更新时间'
