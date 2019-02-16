@@ -2,13 +2,13 @@
 
 ## PC端解决方案
 
-- **各种弹窗** 
+- **各种弹窗**
 
   - [layer](http://layer.layui.com/)
 - **日期时间选择**
 
   - [laydate](https://www.layui.com/laydate/)
-- **滚动视察图片**
+- **滚动视差图片**
 
   - [Parallax.js](https://github.com/pixelcog/parallax.js)
 - **Tooltip提示**
@@ -18,6 +18,7 @@
 
   - [cropper](https://github.com/fengyuanchen/cropper)
 - **图片弹出预览**
+
   - [fancybox](https://github.com/fancyapps/fancybox)
 
 ## 移动端解决方案

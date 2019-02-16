@@ -47,6 +47,12 @@ $ git log # 查看是否多个commit已经合并
 >
 > 若操作中有失误，可以使用`git rebase --abort`进行**变基**撤销，会回到没有开始操作前的状态。
 
+### 放弃Rebase
+
+``` bash
+$ git rebase --abort
+```
+
 ### 存取操作出错
 
 报错如下：

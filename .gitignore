@@ -1,3 +1,4 @@
 .DS_Store
 .idea
-release.sh
+node_modules
+
