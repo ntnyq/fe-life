@@ -7,6 +7,7 @@ actionLink: docs/html
 footer: MIT Licensed | Copyright © 2018-present ntnyq
 ---
 
+![](images/fe-life-20190217013116944.svg)
 ![](https://img.shields.io/badge/powered--by-vuepress-green.svg)
 ![](https://img.shields.io/github/last-commit/ntnyq/fe-life.svg)
 
