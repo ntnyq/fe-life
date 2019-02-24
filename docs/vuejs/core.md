@@ -51,3 +51,39 @@ Object,keys(filters).forEach(k => {
 });
 ```
 
+## 实例方法
+
+### vm.$nextTick
+
+将传入的回调函数，延迟到下次 **Dom** 更新循环之后执行。在修改数据之后立即调用它，然后等待 **Dom** 更新。
+
+``` js
+export default {
+  methods: {
+    update () {
+      this.msg = 'Hello world'
+      this.$nextTick(() => {
+        // this绑定当前组件实例
+      })
+    }
+  }
+}
+```
+
+作用：当我们更新了数据，要对 **Dom** 做操作时，保证操作的是更新后的 **Dom**。
+
+[官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
+
+## 函数式组件
+
+``` js
+export default {
+  functional: true,
+  render (h, { props, slots }) {
+    render h('span', {
+      class: ['class-name', props.attr1, props.att2]
+    }, props.text || slots().default)
+  } 
+}
+```
+

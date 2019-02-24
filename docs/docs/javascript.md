@@ -31,7 +31,11 @@ body.addEventListener('touchmove', evt => {
 在小程序嵌入 Krpano 的 WebView Demo中使用了 ES6 的**箭头函数**，在 iPhone6sp 上出现问题，页面不可用。
 查询 CanIUse 后得知，箭头函数的兼容性是 ios9.3 及以上。
 
-!> 目前ES6的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做**转译**。
+::: tip
+
+目前ES6的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做**转译**。
+
+::: 
 
 ### 懒加载模块并使用
 
@@ -42,3 +46,28 @@ import(‘idcard’).then(IDCard => {
     // doSomething with module idcard
 })
 ```
+
+### 对象key排序
+
+::: tip
+
+将代码粘贴至Chrome控制台运行查看结果
+
+:::
+
+``` js
+const obj = {
+  f: 'f',
+  a: 'a',
+  e: 'e',
+  b: 'b'
+}
+let result = {}
+
+Object.keys(obj).sort().forEach(k => {
+  result[k] = obj[k]
+})
+
+console.log(result)
+```
+

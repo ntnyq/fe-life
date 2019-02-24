@@ -132,6 +132,12 @@ $ git push origin -tags
 $ git reset HEAD~1
 ```
 
+## 回退head指向
+
+``` bash
+$ git reset --hard commit_hash
+```
+
 ### 回退加入缓冲区的文件
 
 假设执行了 `git add .`，又发现添加错了文件，可以使用如下命令来进行回退：
