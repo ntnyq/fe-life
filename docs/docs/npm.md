@@ -1,6 +1,6 @@
 # NPM
 
-
+> 选择包管理器，而不是每次都去找源码。
 
 ## npx命令
 
@@ -22,8 +22,6 @@ $ npx create-react-app my-app
 
 [npx命令介绍](https://segmentfault.com/a/1190000012974903)
 
-
-
 ## weixin-js-sdk报错
 
 项目需要做微信分享，使用了 **weixin-js-sdk**，构建后页面报错 `Cannot read property 'title' of undefined`，查询资料后发现是 **weixin-js-sdk** 的源码问题。
@@ -32,3 +30,18 @@ $ npx create-react-app my-app
 
 [参考资料-jsweixin引入时报错Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
 
+## npm发表带@前缀的依赖
+
+1. 首先需要创建一个组织，可以选择创建免费组织。(免费组织发表的包只能是公共访问的)
+
+2. 创建一个npm包，带 `package.json` 文件，包的名字格式为 `@组织名/包名`，注意需要设置其中的 `publishConfig` 字段，如下：
+
+   ``` json
+   {
+     "publishConfig": {
+       "access": "public"
+     }
+   }
+   ```
+
+3. `npm publish`发布这个依赖。
