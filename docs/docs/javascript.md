@@ -13,7 +13,6 @@
 const body = document.body
 
 body.addEventListener('touchmove', evt => {
-
   evt.preventDefault() // 阻止下拉滑动效果
 }, { passive: false }) // 兼容 IOS 和安卓 使用 passive:true 提高滚动性能并减少崩溃
 ```
@@ -33,7 +32,7 @@ body.addEventListener('touchmove', evt => {
 
 ::: tip
 
-目前ES6的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做**转译**。
+目前ES6的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做 **转译**。
 
 ::: 
 
@@ -69,5 +68,23 @@ Object.keys(obj).sort().forEach(k => {
 })
 
 console.log(result)
+```
+
+## 页面平滑滚动
+
+``` js
+window.scrollTo({ top: 0, behavior: 'smooth' }) // Alternative instanll as default
+```
+
+[兼容性](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)： 除 IE Edge 浏览器外，Safari 支持不佳，不支持 **scrollOptions** 参数。
+
+参考资料：[Window-ScrollTo - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
+
+### 页面刷新事件监听
+
+``` js
+window.onbeforeunload = function (evt) {
+  // do something
+}
 ```
 
