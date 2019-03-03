@@ -67,15 +67,15 @@ module.exports = {
       .test(/\.svg$/)
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
-      .options({
-      	symbolId: 'icon-[name]'
-    	})
+      .options({ symbolId: 'icon-[name]' })
 
     // images
     const imagesRule = config.module.rule('images')
 
     imagesRule.exclude.add(`${__dirname}/src/icons`)
-    config.module.rule('images').test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    config.module
+      .rule('images')
+      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
   }
 };
 ```

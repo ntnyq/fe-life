@@ -15,7 +15,7 @@ after_script:
   - git config user.email "ntnyq13@gmail.com"
   - git add .
   - git commit -m ":rocket:Update"
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "${GH_TOKEN}@${GH_REF}" master:gh-pages
 
 branches:
   only:
@@ -23,4 +23,4 @@ branches:
 
 env:
  global:
-   - GH_REF: github.com/ntnyq/fe-life.git
+   - GH_REF: https://github.com/ntnyq/fe-life.git

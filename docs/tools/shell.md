@@ -38,8 +38,6 @@ $ cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys # 需要使用2个>>�
 $ ssh root@yuer_server_ip
 ```
 
-
-
 ## Tree命令
 
 > 列出项目文件目录。

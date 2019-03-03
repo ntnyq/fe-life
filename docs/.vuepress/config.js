@@ -1,10 +1,6 @@
 module.exports = {
   title: 'Ntnyq的前端人生',
-  head: [
-    ['meta', { 'http-equiv': 'cache-control', content: 'no-cache' }],
-    ['meta', { 'http-equiv': 'pragma', content: 'no-cache' }],
-    ['meta', { 'http-equiv': 'expires', content: '0' }]
-  ],
+  description: 'Ntnyq的前端人生踩坑记录。',
   base: '/',
   dest: 'site',
   themeConfig: {
@@ -16,70 +12,30 @@ module.exports = {
     editLinks: true,
     editLinkText: '帮助我改进页面内容！',
     nav: [
-      { text: 'Home', link: '/' },
+      { text: '首页', link: '/' },
+      { text: '前端篇', link: '/fe/html' },
+      { text: 'Vue篇', link: '/vue/core' },
+      { text: 'Node篇', link: '/node/base' },
+      { text: '工具篇', link: '/tools/git' },
+      { text: '插件篇', link: '/plugins/videojs' },
       {
-        text: 'templates',
+        text: '我的项目',
         items: [
-          { text: 'element-boilerplate', link: 'https://github.com/ntnyq/element-boilerplate' }
-        ]
-      }
+          {
+            text: 'vuepress-plugin-svg-icons',
+            link: 'https://github.com/ntnyq/vuepress-plugin-svg-icons',
+          },
+          { text: 'element-boilerplate', link: 'https://github.com/ntnyq/element-boilerplate' },
+        ],
+      },
     ],
-    sidebar: [
-      {
-        key: 'troubles',
-        title: '踩坑记录',
-        collapsable: true,
-        children: [
-          'docs/html',
-          'docs/css',
-          'docs/scss',
-          'docs/javascript',
-          'docs/git',
-          'docs/gulp',
-          'docs/webpack',
-          'docs/wechat',
-          'docs/yarn',
-          'docs/bash',
-          'docs/editor',
-          'docs/mongodb',
-          'docs/npm',
-          'docs/node'
-        ]
-      },
-      {
-        key: 'vueJs',
-        title: 'Vue学习',
-        collapsable: true,
-        children: [
-          'vuejs/core',
-          'vuejs/router',
-          'vuejs/vuex',
-          'vuejs/cli',
-          'vuejs/element',
-          'vuejs/mint',
-          'vuejs/vant',
-          'vuejs/faq'
-        ]
-      },
-      {
-        key: 'articles',
-        title: '优秀博文',
-        collapsable: true,
-        children: ['articles/solution', 'articles/study', 'articles/tech']
-      },
-      {
-        key: 'plugins',
-        title: '常用插件',
-        collapsable: true,
-        children: ['plugins/videojs']
-      },
-      {
-        key: 'tools',
-        title: '关于我的',
-        collapsable: true,
-        children: ['about/tool', 'about/editor']
-      }
-    ],
-    lastUpdated: '最后更新时间'
-  }
+    sidebar: {
+      '/fe/': ['html', 'css', 'scss', 'javascript', 'npm', 'yarn', 'gulp', 'webpack', 'wechat'],
+      '/vue/': ['core', 'router', 'vuex', 'cli', 'faq', 'element', 'mint', 'vant'],
+      '/node/': ['base', 'api', 'path', 'trick', 'modules'],
+      '/tools/': ['git', 'shell', 'editor', 'mongo'],
+      '/plugins/': ['videojs'],
+    },
+    lastUpdated: '最后更新时间',
+  },
 }
