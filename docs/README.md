@@ -3,7 +3,7 @@ home: true
 description: 我，一无所知。🕶
 heroImage:  hero.png
 actionText: 了解一下 →
-actionLink: fe
+actionLink: fe/html
 footer: MIT Licensed | Copyright © 2018-present ntnyq
 ---
 
