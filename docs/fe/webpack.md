@@ -13,3 +13,16 @@
 **webpack-dev-server** 指定配置文件需要使用 `--config` 参数。
 
 :::
+
+
+
+## 常用插件
+
+### 内置插件
+
+* hot-module-replacement
+* bannerPlugin
+
+### 官方插件
+
+* [@babel/plugin-syntax-dynamic-import](https://babeljs.io/docs/en/next/babel-plugin-syntax-dynamic-import.html) 动态按需加载模块

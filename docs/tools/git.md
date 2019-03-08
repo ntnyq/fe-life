@@ -1,9 +1,5 @@
 # Git
 
-我们都在用Git。
-
-> 你们啊，Naive。
-
 ## Git常用操作
 
 ### Git拉取远程仓库某个分支
@@ -143,16 +139,28 @@ $ git reset --hard commit_hash
 假设执行了 `git add .`，又发现添加错了文件，可以使用如下命令来进行回退：
 
 ``` bash
-git reset HEAD
+$ git reset HEAD
 ```
 
 若只需要回退指令文件，则执行：
 
 ``` bash
-git reset file_name
+$ git reset file_name
 ```
 
+### 版本回滚
 
+可以先通过 `git log` 查看日志，决定要回归到的版本，并复制它的 id 值。
+
+``` bash
+$ git reset --hard commit_id
+```
+
+## 强制更新远程仓库
+
+``` bash
+$ git push --force origin local_branch:remote_branch
+```
 
 
 

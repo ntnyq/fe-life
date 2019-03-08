@@ -52,3 +52,7 @@
 ```
 
 [参考文档](https://github.com/ElemeFE/element/issues/13453#issuecomment-441138145)
+
+## 表单验证validate函数不执行
+
+自定义表单验证规则无论成功与否，必须最后调用 `callback` 函数。

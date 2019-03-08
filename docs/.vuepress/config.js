@@ -34,7 +34,7 @@ module.exports = {
       '/vue/': ['core', 'router', 'vuex', 'cli', 'faq', 'element', 'mint', 'vant'],
       '/node/': ['base', 'api', 'path', 'trick', 'modules'],
       '/tools/': ['git', 'shell', 'editor', 'mongo'],
-      '/plugins/': ['videojs'],
+      '/plugins/': ['echarts', 'videojs'],
     },
     lastUpdated: '最后更新时间',
   },
