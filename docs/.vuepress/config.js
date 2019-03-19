@@ -13,7 +13,7 @@ module.exports = {
     editLinkText: '帮助我改进页面内容！',
     nav: [
       { text: '首页', link: '/' },
-      { text: '前端篇', link: '/fe/html' },
+      { text: '基础篇', link: '/fe/html' },
       { text: 'Vue篇', link: '/vue/core' },
       { text: 'Node篇', link: '/node/base' },
       { text: '工具篇', link: '/tools/git' },
@@ -31,7 +31,7 @@ module.exports = {
     ],
     sidebar: {
       '/fe/': ['html', 'css', 'scss', 'javascript', 'npm', 'yarn', 'gulp', 'webpack', 'wechat'],
-      '/vue/': ['core', 'router', 'vuex', 'cli', 'faq', 'element', 'mint', 'vant'],
+      '/vue/': ['core', 'router', 'vuex', 'cli', 'trick', 'faq', 'element', 'mint', 'vant'],
       '/node/': ['base', 'api', 'path', 'trick', 'modules'],
       '/tools/': ['git', 'shell', 'editor', 'mongo'],
       '/plugins/': ['echarts', 'videojs'],

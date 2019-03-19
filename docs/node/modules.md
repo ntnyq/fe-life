@@ -9,7 +9,7 @@ class Teacher {}
 // right
 export default Student
 export {
-	Student,
+  Student,
   Teacher
 }
 
