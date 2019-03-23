@@ -4,6 +4,30 @@
 
 真的比**npm**好用，了解一下。
 
+## Yarn升级项目依赖版本
+
+::: tip
+
+推荐使用 `yarn upgradeInteractive` 来进行项目依赖版本升级工作。
+
+:::
+
+``` bash
+# 查看可版本升级依赖
+$ yarn outdated
+
+# 在 package.json 允许的范围内升级版本
+$ yarn upgrade pkg_name
+
+# 升级依赖至最新版本 无视 package.json 配置
+$ yarn upgrade pkg_name --latest
+
+# 以命令行交互的形式升级项目依赖版本
+$ yarn upgradeInteractive
+```
+
+
+
 ## 坑点记录
 
 ### 下载node-sass包出错
