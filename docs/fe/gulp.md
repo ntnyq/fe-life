@@ -26,7 +26,6 @@ Error: File to import not found or unreadable: ./_utils/_style.
 [Github Issue](https://github.com/olefredrik/FoundationPress/issues/731)
 
 
-
 ## 常用插件列表
 
 [Gulp](https://gulpjs.com/) **框架本体**
@@ -79,6 +78,7 @@ Error: File to import not found or unreadable: ./_utils/_style.
 - [gulp-sequence](https://www.npmjs.com/package/gulp-sequence) **同步顺序执行Gulp Task**
 - [gulp-wait](https://www.npmjs.com/package/gulp-wait) **在Gulp的管道流中加入延迟事件，阻塞任务**
 - [gulp-header](https://www.npmjs.com/package/gulp-header) **文件元信息添加，如版本、作者、说明文档、开源协议等**
+- [gulp-if](https://www.npmjs.com/package/gulp-if) **流程控制**
 
 ### NPM插件
 

@@ -9,12 +9,12 @@
 ``` scss
 // 直接使用
 .icon {
-  backgroud-image: url("~@/assets/images/icon.png");
+  background-image: url("~@/assets/images/icon.png");
 }
 
 // 通过 mixin
 @mixin bg ($name, $ext: "png") {
-  backgroud-image: url("~@/assets/images/#{$name}.#{$ext}");
+  background-image: url("~@/assets/images/#{$name}.#{$ext}");
 }
 
 .icon {

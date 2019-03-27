@@ -1,7 +1,5 @@
 # 小技巧
 
-
-
 ## Require.resolve
 
 通过使用 `require.resolve` API 可以判断是否存在此依赖。
