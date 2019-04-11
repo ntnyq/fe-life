@@ -32,7 +32,7 @@ module.exports = {
     sidebar: {
       '/fe/': ['html', 'css', 'scss', 'javascript', 'npm', 'yarn', 'gulp', 'webpack', 'wechat'],
       '/vue/': ['core', 'router', 'vuex', 'cli', 'trick', 'faq', 'element', 'mint', 'vant'],
-      '/node/': ['base', 'api', 'path', 'trick', 'modules'],
+      '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron'],
       '/tools/': ['git', 'shell', 'editor', 'mongo'],
       '/plugins/': ['echarts', 'videojs'],
     },

@@ -56,3 +56,22 @@
 ## 表单验证validate函数不执行
 
 自定义表单验证规则无论成功与否，必须最后调用 `callback` 函数。
+
+## 修改主题颜色不起作用。
+
+以如下的形式修改了主题颜色。
+
+``` scss
+$--color-primary: darkblue
+$--font-path: "~element-ui/lib/theme-chalk/fonts"
+@import "~element-ui/packages/theme-chalk/src/index"
+```
+
+::: tip
+在自定义修改样式的时候，注意需要将对样式的引入，放在对UI库组件引入的下面。
+:::
+
+``` js
+import './plugins/element'
+import './styles/element-reset'
+```
