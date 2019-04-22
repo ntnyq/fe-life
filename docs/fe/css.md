@@ -52,6 +52,7 @@
 
 #### 描述
 `<br />`标签在部分机器上会占据一行的行高，导致原来的行高更高，不同机型之间的文字间隔高度差异过大。
+
 #### 场景
 `UeEditor`(百度富文本编辑器)编辑后，得到如下内容：
 
@@ -65,6 +66,7 @@
 而在`iPhone 8plus`和电脑端模拟器等显示行高符合预期。
 
 且`p`标签不存在`margin-top, margin-bottom, padding-top, padding-bottom`等样式。
+
 #### 解决
 在`Debug`的过程中，我观察到`br`标签的样式继承了`line-height`属性和`font-size`属性，觉得可能是因为`br`标签占据了一行行高导致的。于是把`br`标签的`font-size`设置为`0`，问题完美解决❤️。
 
@@ -79,3 +81,9 @@
 ```
 
 [兼容性 - Can I Use](https://caniuse.com/#search=sticky)
+
+### 导入NPM安装的样式库。
+
+``` css
+import "~normalize.css";
+```

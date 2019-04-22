@@ -75,3 +75,88 @@ $--font-path: "~element-ui/lib/theme-chalk/fonts"
 import './plugins/element'
 import './styles/element-reset'
 ```
+
+## Table内嵌套Popover无法弹出
+
+``` vue
+<template>
+  <div class="element-demo">
+    <el-table :data="data">
+      <el-table-column
+        type="index"
+        label="序号"
+      ></el-table-column>
+
+      <el-table-column
+        prop="lang"
+        label="框架"
+        width="180"
+      ></el-table-column>
+
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-popover
+            placement="top"
+            width="200"
+            trigger="manual"
+            :ref="`popover${scope.$index}`"
+          >
+            <p>Lorem ipsum, dolor sit amet consectetur</p>
+            <el-button
+              slot="reference"
+              @click.stop="showPopover(scope.$index)"
+              type="primary"
+            >Popover</el-button>
+          </el-popover>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ElementDemo',
+
+  data () {
+    return {
+      data: [
+        { lang: "Vue", ui: "Element" },
+        { lang: "React", ui: "Antd" },
+        { lang: "Angular", ui: "NG-ZORRO" }
+      ],
+      activePopIndex: undefined
+    }
+  },
+
+  methods: {
+    showPopover (idx) {
+      const index = this.activePopIndex
+
+      if (index && this.$refs[`popover${idx}`]) {
+        this.$refs[`popover${index}`].doClose()
+        this.activePopIndex = undefined
+      }
+      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow();
+    },
+
+    hidePopover () {
+      const idx = this.activePopIndex
+
+      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose();
+      this.activePopIndex = undefined
+    }
+  }
+}
+</script>
+```
+
+通过调用 __el-popover__ 组件自身的 `doShow` 和 `doClose` 两个 methods 来实现。
+
+[在线Demo](https://codesandbox.io/s/zqm1w7wvxm)
+
+## 日历面板
+
+``` vue
+
+```
