@@ -155,7 +155,39 @@ export default {
 
 [在线Demo](https://codesandbox.io/s/zqm1w7wvxm)
 
-## 日历面板
+## Table 显示列切换时乱序
+
+``` vue
+<template>
+  <el-table>
+    <el-table-column
+      v-if="type === 'foo'"
+      prop="type"
+      label="类型"
+    />
+
+    <el-table-column
+      v-if="type === 'bar'"
+      prop="title"
+      label="标题"
+    />
+    <el-table-column
+      v-if="type === 'baz'"
+      prop="date"
+      label="时间"
+    />
+    
+    ...
+  </el-table>
+<template/>
+```
+
+解决方案：
+
+1. 给 `el-table-column` 添加 `:key="Math.random()"`
+2. 使用 `v-if` 条件在切换时重新渲染表格组件。
+
+## 无需弹出的日历面板
 
 ``` vue
 
