@@ -68,6 +68,7 @@
 且`p`标签不存在`margin-top, margin-bottom, padding-top, padding-bottom`等样式。
 
 #### 解决
+
 在`Debug`的过程中，我观察到`br`标签的样式继承了`line-height`属性和`font-size`属性，觉得可能是因为`br`标签占据了一行行高导致的。于是把`br`标签的`font-size`设置为`0`，问题完美解决❤️。
 
 ### Stick定位

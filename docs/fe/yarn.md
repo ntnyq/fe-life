@@ -4,11 +4,13 @@
 
 真的比**npm**好用，了解一下。
 
-## Yarn升级项目依赖版本
+## 升级依赖
 
-::: tip
+::: warning
 
-推荐使用 `yarn upgradeInteractive` 来进行项目依赖版本升级工作。
+推荐使用 `yarn upgradeInteractive --latest` 来进行项目依赖版本升级工作。
+
+但需注意在 Git 检出新分支后再进行依赖升级工作，通过测试后再合入 master 分支。
 
 :::
 
@@ -25,8 +27,6 @@ $ yarn upgrade pkg_name --latest
 # 以命令行交互的形式升级项目依赖版本
 $ yarn upgradeInteractive
 ```
-
-
 
 ## 坑点记录
 

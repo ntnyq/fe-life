@@ -2,7 +2,7 @@
 
 > 当前 [videojs](https://github.com/videojs/video.js) 版本为 `v7.4.2`。
 
-## 初始化播放器
+## 初始化
 
 > 可以提供多个 `source` 标签，无法播放时候会自动播放下一个视频。
 
@@ -38,7 +38,7 @@ videojs('example_video', {}, function () {
 
 第二个参数为配置对象，第三个参数为成功初始化的回调函数。
 
-## 配置对象
+## 配置
 
 [**详细配置信息**](https://docs.videojs.com/tutorial-options.html)
 
@@ -54,7 +54,7 @@ width: 640 // 视频宽度
 height: 360 // 视频高度
 ```
 
-## 常见需求
+## 解决方案
 
 ### 播放按钮居中
 
