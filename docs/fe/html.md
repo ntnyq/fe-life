@@ -12,7 +12,7 @@
 
 [IOS webview解决方案](https://www.jianshu.com/p/37404ccfabe8)
 
-## 隐藏Input["type=number"]上下箭头
+## Input["type=number"]上下箭头
 
 ``` scss
 input[type="number"] {
@@ -29,13 +29,13 @@ input[type="number"] {
 }
 ```
 
-## meta标签页面重定向兼容问题
+## meta标签页面重定向兼容
 
 ``` html
 <meta http-equiv="refresh" content="3; url=http://www.baidu.com" />
 ```
 
-`content` 内的3代表3秒后页面跳转，url指向目标跳转地址。
+__content__ 内的3代表3秒后页面跳转，__url__ 指向目标跳转地址。
 
 兼容性差异：
 

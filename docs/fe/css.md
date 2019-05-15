@@ -14,7 +14,7 @@
 
 解决方案：在伪元素上面加`pointer-events: none;`属性，来阻止伪元素响应点击事件。
 
-兼容性：[Can I Use ](https://caniuse.com/#search=pointer-events) IE11+ 移动端基本无兼容问题。
+兼容性：[Can-I-Use](https://caniuse.com/#search=pointer-events) IE11+ 移动端基本无兼容问题。
 
 ### fixed定位的参照物问题
 
@@ -29,6 +29,7 @@
   transform: scale(0);
 }
 ```
+
 [参考资料](https://segmentfault.com/a/1190000017939779)
 
 [示例Demo](https://ntnyq.github.io/demos/html/fixed-test.html)
@@ -41,8 +42,29 @@
 
 [参考资料](https://blog.csdn.net/haihiaandtongtong/article/details/50345065)
 
-## PC端坑点
+### translate3d引起字体模糊
 
+在translate3d函数内参数出现小数的时候，变幻元素内部的字体会出现发虚模糊的现象。如下：
+
+``` scss
+.foo {
+  transform: translate3d(100.5px, 100.4px, 0);
+}
+```
+
+小数值越接近0.5，模糊现象越严重。同时字体发虚的程度与硬件和分辨率存在关联。
+
+解决方案：
+
+1. 放弃使用translate3d方法
+2. 使用zoom属性，添加样式 `zoom: 99%;`
+3. 调整元素尺寸，让translate的值为整数
+
+参考资料：
+- [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
+- []
+
+## PC端坑点
 
 ## 移动端坑点
 
@@ -51,9 +73,11 @@
 ### br标签行高问题
 
 #### 描述
+
 `<br />`标签在部分机器上会占据一行的行高，导致原来的行高更高，不同机型之间的文字间隔高度差异过大。
 
 #### 场景
+
 `UeEditor`(百度富文本编辑器)编辑后，得到如下内容：
 
 ``` html
@@ -61,6 +85,7 @@
 <p><br></p>
 <p>文字文字文字文字文字</p>
 ```
+
 在部分环境下，如`魅蓝手机`，`QQ浏览器`下文字之间间隔过高。
 
 而在`iPhone 8plus`和电脑端模拟器等显示行高符合预期。

@@ -187,6 +187,28 @@ export default {
 1. 给 `el-table-column` 添加 `:key="Math.random()"`
 2. 使用 `v-if` 条件在切换时重新渲染表格组件。
 
+## flex布局页面过渡坍塌
+
+``` vue
+<template>
+  <div class="layout-content">
+    <div class="layout-content-inner">
+      <transition
+        name="el-zoom-in-center"
+        mode="out-in"
+      >
+        <router-view
+          class="container"
+          :key="$router.fullPath"
+        />
+      </transition>
+    </div>
+  </div>
+</template>
+```
+
+解决办法: 给 `transition` 组件添加 `mode="out-in"` 属性。
+
 ## 无需弹出的日历面板
 
 ``` vue
