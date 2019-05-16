@@ -56,9 +56,20 @@ module.exports = {
         'yarn',
         'gulp',
         'webpack',
+        'babel',
         'wechat'
       ],
-      '/vue/': ['core', 'router', 'vuex', 'cli', 'trick', 'faq', 'element', 'mint', 'vant'],
+      '/vue/': [
+        'core',
+        'router',
+        'vuex',
+        'cli',
+        'trick',
+        'faq',
+        'element',
+        'mint',
+        'vant'
+      ],
       '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron'],
       '/tools/': ['git', 'shell', 'editor', 'mongo'],
       '/plugins/': ['echarts', 'videojs', 'swiper']

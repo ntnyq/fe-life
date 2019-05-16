@@ -62,7 +62,7 @@
 
 参考资料：
 - [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
-- []
+- [解决Swiper中translate3d导致字体模糊](http://xuxun.me/blog/2014/04/translate3d-cause-text-blurry-in-swiper/)
 
 ## PC端坑点
 
