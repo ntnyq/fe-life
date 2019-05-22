@@ -71,7 +71,7 @@ module.exports = {
         'vant'
       ],
       '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron'],
-      '/tools/': ['git', 'shell', 'editor', 'mongo'],
+      '/tools/': ['git', 'shell', 'github', 'editor', 'mongo'],
       '/plugins/': ['echarts', 'videojs', 'swiper']
     },
     lastUpdated: '最后更新时间'
