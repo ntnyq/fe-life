@@ -4,6 +4,14 @@
 
 真的比**npm**好用，了解一下。
 
+
+## 全局依赖查看
+
+``` bash
+$ yarn global list
+```
+
+
 ## 升级依赖
 
 ::: warning

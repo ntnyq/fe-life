@@ -22,7 +22,7 @@
 
 ``` css
 .foo {
-  tranform: translate(0);
+  transform: translate(0);
 }
 
 .bar {
@@ -63,6 +63,23 @@
 参考资料：
 - [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
 - [解决Swiper中translate3d导致字体模糊](http://xuxun.me/blog/2014/04/translate3d-cause-text-blurry-in-swiper/)
+
+## 非系统字族延迟渲染
+
+``` css
+h1 {
+  font-family: "FZCYSK";
+}
+```
+
+新闻页面顶部的标题使用了方正某个字体。
+
+页面内容由PHP进行服务器渲染，但加载过程中标题却显示空白，一段时间后才被渲染出来。
+
+去除这个字族设置后，页面渲染恢复正常。
+
+原因：使用非系统字体，未提供回退字体。
+
 
 ## PC端坑点
 
