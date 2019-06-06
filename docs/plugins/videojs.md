@@ -98,7 +98,7 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 }
 ```
 
-### X5浏览器和IOS设备不自动全屏
+### 移动端不自动全屏
 
 ``` html
 <video playsinline="true" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="portrait"></video>
@@ -120,67 +120,6 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 }
 ```
 
-### 全屏后，竖屏宽度铺满，横屏高度铺满
-
-``` scss
-// 横屏
-@mixin for-landscape {
-  @media screen and (orientation: landscape) {
-    @content;
-  }
-}
-
-// 竖屏
-@mixin for-portrait {
-  @media screen and (orientation: portrait) {
-    @content;
-  }
-}
-
-.video-js {
-  &.vjs-fullscreen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 280px;
-    transform: translate3d(-50%, -50%, 0);
-    transform-style: preserve-3d;
-
-    .vjs-tech {
-      display: block;
-      top: 50%;
-      left: 50%;
-      height: 280px;
-      transform: translate3d(-50%, -50%, 0);
-    }
-
-    @include for-portrait {
-      width: 100% !important;
-      min-width: 100% !important;
-      max-width: 100% !important;
-
-      .vjs-tech {
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: 100% !important;
-      }
-    }
-
-    @include for-landscape {
-      max-width: 100%;
-
-      .vjs-tech {
-        width: auto;
-        height: 100% !important;
-        max-height: 100% !important;
-        min-height: 100% !important;
-      }
-    }
-  }
-}
-
-```
-
 ## 事件
 
 Videojs 支持以下事件监听。
@@ -188,6 +127,7 @@ Videojs 支持以下事件监听。
 ```
 durationchange
 ended
+canplay
 firstplay
 fullscreenchange
 loadedalldata

@@ -68,9 +68,10 @@ module.exports = {
         'faq',
         'element',
         'mint',
-        'vant'
+        'vant',
+        'plugin'
       ],
-      '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron'],
+      '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron', 'http'],
       '/tools/': ['git', 'shell', 'github', 'editor', 'mongo'],
       '/plugins/': ['echarts', 'videojs', 'swiper']
     },

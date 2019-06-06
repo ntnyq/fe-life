@@ -2,13 +2,13 @@
 
 > 介绍我常用的各种工具。
 
-## gh-md-toc
+## Markdown-toc
 
-功能：生成**Markdown**文件**目录**。
+功能：为 __Markdown__ 文件 __目录__(Table of Content)。
 
-[Github地址](https://github.com/ekalinin/github-markdown-toc)
+[Github Repo](https://github.com/jonschlinkert/markdown-toc)
 
-## oh-my-zsh
+## Oh-my-zsh
 
 功能：shell扩展，多插件支持，多主题切换。
 
@@ -19,3 +19,9 @@
 - git
 
 [官网地址](https://ohmyz.sh/)
+
+## Githunt
+
+功能：浏览器新标签页推荐每周的 __Github Trending__ 项目，可配置语言等。
+
+[Github Repo](https://github.com/kamranahmedse/githunt)
