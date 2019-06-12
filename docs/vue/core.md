@@ -55,7 +55,7 @@ Object,keys(filters).forEach(k => {
 
 ### vm.$nextTick
 
-将传入的回调函数，延迟到下次 **Dom** 更新循环之后执行。在修改数据之后立即调用它，然后等待 **Dom** 更新。
+将传入的回调函数，延迟到下次 __Dom__ 更新循环之后执行。在修改数据之后立即调用它，然后等待 __Dom__ 更新。
 
 ``` js
 export default {
@@ -70,22 +70,26 @@ export default {
 }
 ```
 
-作用：当我们更新了数据，要对 **Dom** 做操作时，保证操作的是更新后的 **Dom**。
+作用：当我们更新了数据，要对 __Dom__ 做操作时，保证操作的是更新后的 __Dom__。
 
 [官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
 
 ## 函数式组件
 
+函数式组件没有 __状态__ 和 __实例__，(无`data`和`this`)，它使用一个简单的`render`函数返回虚拟节点，比普通的模板更加容易渲染。
+
 ``` js
 export default {
   functional: true,
   render (h, { props, slots }) {
-    render h('span', {
+    return h('span', {
       class: ['class-name', props.attr1, props.att2]
     }, props.text || slots().default)
   } 
 }
 ```
+
+- [参考文档](https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6)
 
 ## $Refs
 
@@ -93,20 +97,54 @@ export default {
 
 对普通元素来说，它相当于获取了 Dom 节点。对于 `Vue Component`，它相当于这个组件的引用。
 
-在 **父组件上** 可以通过它来调用子组件上的方法。例：
+在 __父组件上__ 可以通过它来调用子组件上的方法。例：
 
-``` js
+``` vue
+// Child.vue
+<script>
+export default {
+  name: 'Child',
+  
+  methods: {
+    log () {
+      console.log('Hello world')
+    }
+  },
 
+  render (h) {
+    return h('div')
+  }
+}
+</script>
+
+// Parent
+<template>
+  <div class="parent">
+    <Child ref="child" />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Parent',
+
+  mounted () {
+    this.$refs.child.log() // Hello world
+  }
+}
+</script>
 ```
 
 ## 生命周期
 
-经常遇到的一个问题：
+看的面试题里经常问到的一个问题：
 
-**Vue 中数据请求，应该放在哪个生命周期函数内，created还是mounted？**
+__Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created还是mounted？__
 
-其实，两种都有其优点。
+其实，两者皆有优点和缺点。
 
-总的说来，`mounted` 时候请求数据，肯定没问题，但是因为 `mounted` 会在子组件渲染完毕后才挂载，所以请求时间会滞后一点。
+`mounted` 生命周期内发起请求，不会出现错误，但是因为 `mounted` 直到所有子组件渲染完毕后才触发，所以请求发起的时间会略滞后。
 
-为了更好的用户体验，更快地展现首屏内容，我们应该在可以将数据请求提到 `created` 周期时，就使用 `created` 函数去发起数据请求。
+而 `created` 生命周期发起请求，如果请求的某些参数要基于 DOM 的，那么这时请求有可能会出现报错或数据不符合预期，当然绝大多数情况是不存在问题的。
+
+总的说来，需要增加自己对代码的掌控力，合理选择数据请求的生命周期。
