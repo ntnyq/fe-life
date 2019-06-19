@@ -79,3 +79,9 @@ searchInput.addEventListener('keypress', function (evt) {
   }
 }, !1)
 ```
+
+## 使用mp4替代gif图片
+
+``` html
+<video src="video/mp4" autoplay="autoplay" loop="loop" muted="muted" ></video>
+```

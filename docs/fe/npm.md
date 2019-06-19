@@ -45,3 +45,18 @@ $ npx create-react-app my-app
    ```
 
 3. `npm publish`发布这个依赖。
+
+## 安装依赖后只有 .staging文件夹
+
+此坑出现的情况下，当执行 `npm install` 后，整个 `node_modules` 目录下只有 `.staging` 这一个文件夹。无其他依赖，所以项目无法正常构建。
+
+可能原因: 
+  - 网络情况不好
+  - 电脑内存不足
+
+可以试用 `Yarn` 或者 淘宝镜像。
+
+### 参考文档
+
+- [你的 node 依赖们炸了没？](https://github.com/NoName4Me/yo-FE/issues/17)
+- [".staging" folder inside of node_modules](https://github.com/npm/npm/issues/12540)

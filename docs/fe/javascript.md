@@ -1,6 +1,5 @@
 # JavaScript
 
-
 ## 移动端
 
 移动端页面开发时候遇到的坑点。
@@ -41,7 +40,7 @@ body.addEventListener('touchmove', evt => {
 > ES6 moduels懒加载。
 
 ``` js
-import(‘idcard’).then(IDCard => {
+import('idcard').then(IDCard => {
     // doSomething with module idcard
 })
 ```
@@ -76,15 +75,42 @@ console.log(result)
 window.scrollTo({ top: 0, behavior: 'smooth' }) // Alternative instanll as default
 ```
 
-[兼容性](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)： 除 IE Edge 浏览器外，Safari 支持不佳，不支持 **scrollOptions** 参数。
+[兼容性](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
+
+除 IE Edge 浏览器外，Safari 支持不佳，不支持 **scrollOptions** 参数。
 
 参考资料：[Window-ScrollTo - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
 
-### 页面刷新事件监听
+## 页面刷新事件监听
+
+会在页面刷新时，进行提示。
 
 ``` js
 window.onbeforeunload = function (evt) {
   // do something
 }
 ```
+## 移动端浏览器无痕模式Storage报错
 
+Safari表现：
+
+- localStorage对象仍然存在
+- 但是setItem会报异常：QuotaExceededError
+- getItem和removeItem直接忽略
+
+
+``` js
+function isLocalStorageSupported() {
+    const TEST_KEY = 'test'
+    const storage = window.sessionStorage
+    try {
+        storage.setItem(TEST_KEY, 'testValue')
+        storage.removeItem(TEST_KEY)
+        return true
+    } catch (error) {
+        console.log('You are in private mode!')
+        return false
+    }
+}
+```
+[参考文档](https://my.oschina.net/jamesview/blog/2252926)
