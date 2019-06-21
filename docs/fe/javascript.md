@@ -33,7 +33,7 @@ body.addEventListener('touchmove', evt => {
 
 目前ES6的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做 **转译**。
 
-::: 
+:::
 
 ### 懒加载模块并使用
 
@@ -114,3 +114,15 @@ function isLocalStorageSupported() {
 }
 ```
 [参考文档](https://my.oschina.net/jamesview/blog/2252926)
+
+## 浏览器自动全屏
+
+结论：无法实现，全屏API必须由用户主动触发。
+
+使用了 [screenfull.js](https://github.com/sindresorhus/screenfull.js) 进行测试。
+
+报错如下：
+
+``` text
+Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture.
+```
