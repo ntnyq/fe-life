@@ -57,7 +57,8 @@ module.exports = {
         'gulp',
         'webpack',
         'babel',
-        'wechat'
+        'wechat',
+        'weapp'
       ],
       '/vue/': [
         'core',

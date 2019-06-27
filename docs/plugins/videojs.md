@@ -144,3 +144,33 @@ volumechange
 waiting
 resize inherited
 ```
+
+## vue-video-player动态修改视频源
+
+``` vue
+<template>
+  <vue-video-player ref="videoPlayer" />
+</template>
+
+<script>
+export default {
+  computed: {
+    player () {
+      return this.$refs.videoPlayer.player
+    }
+  },
+
+  methods: {
+    toggle () {
+      const newVideo = 'https://video.com/video.mp4'
+
+      this.player.src(newVideo)
+    }
+  }
+}
+</script>
+```
+
+### 参考资料
+
+[vue-video-player 更改视频源](https://segmentfault.com/a/1190000014738331)
