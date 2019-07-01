@@ -22,10 +22,10 @@
   "author": "ntnyq",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^2.4.1",
+    "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
     "prettier": "^1.18.2",
-    "vuepress": "^1.0.1"
+    "vuepress": "^1.0.2"
   },
   "dependencies": {}
 }

@@ -10,10 +10,13 @@
 
 ``` js
 // vue.config.js
+const path = require('path')
 const webpack = require('webpack')
 const ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminMozjpeg = require('imagemin-mozjpeg')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
+const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
   publicPath: './', // 资源等使用相对路径
@@ -57,25 +60,22 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.extensions.store.add('.scss')
 
-    // svg loader
-    const svgRule = config.module.rule('svg')
-
-    svgRule.uses.clear()
-    svgRule.exclude.add(/node_modules/)
-    svgRule.include.add(`${__dirname}/src/icons`)
-    svgRule
+    // Set svg sprite loader
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('src/icons'))
+      .end()
+    config.module
+      .rule('icons')
       .test(/\.svg$/)
+      .include.add(resolve('src/icons'))
+      .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
-      .options({ symbolId: 'icon-[name]' })
-
-    // images
-    const imagesRule = config.module.rule('images')
-
-    imagesRule.exclude.add(`${__dirname}/src/icons`)
-    config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+      .options({
+        symbolId: 'icon-[name]'
+      })
+      .end()
   }
 };
 ```

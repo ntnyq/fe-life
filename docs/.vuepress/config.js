@@ -74,7 +74,7 @@ module.exports = {
       ],
       '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron', 'http'],
       '/tools/': ['git', 'shell', 'github', 'editor', 'mongo'],
-      '/plugins/': ['echarts', 'videojs', 'swiper']
+      '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor']
     },
     lastUpdated: '最后更新时间'
   }
