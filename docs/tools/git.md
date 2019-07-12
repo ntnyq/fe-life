@@ -154,6 +154,15 @@ $ git reset file_name
 $ git reset --hard commit_id
 ```
 
+## 删除上次commit
+
+`reset` 的本质不是删除了 `commit`，而是重新设置了 `head` 和它指向的 branch.
+
+``` bash
+git reset --hard HEAD^
+```
+
+
 ## 强制更新远程仓库
 
 ``` bash

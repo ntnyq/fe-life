@@ -126,3 +126,13 @@ function isLocalStorageSupported() {
 ``` text
 Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture.
 ```
+
+## 八进制数转字符串
+
+直接对8进制数进行转换字符串操作，例如`num.toString()`，`'' + num` 或 ``0${num}`` 都会触发数字进制转换，默认会将8进制数转换为10进制。
+
+``` js
+const num = 0214 // 8进制数
+
+console.log(`0${num.toString(8)}`)
+```
