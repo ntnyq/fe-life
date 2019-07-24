@@ -73,7 +73,15 @@ module.exports = {
         'plugin'
       ],
       '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron', 'http'],
-      '/tools/': ['git', 'shell', 'github', 'editor', 'mongo'],
+      '/tools/': [
+        'git',
+        'shell',
+        'github',
+        'nginx',
+        'editor',
+        'mongo',
+        'photoshop'
+      ],
       '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor']
     },
     lastUpdated: '最后更新时间'
