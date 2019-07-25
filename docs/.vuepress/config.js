@@ -3,6 +3,7 @@ module.exports = {
   description: 'Ntnyq的前端人生踩坑记录。',
   base: '/',
   dest: 'site',
+  ga: 'UA-144489350-2',
   themeConfig: {
     sidebarDepth: 1,
     repo: 'ntnyq/fe-life',
@@ -79,6 +80,7 @@ module.exports = {
         'github',
         'nginx',
         'editor',
+        'chrome',
         'mongo',
         'photoshop'
       ],
