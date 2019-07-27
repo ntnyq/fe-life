@@ -4,6 +4,7 @@ module.exports = {
   base: '/',
   dest: 'site',
   ga: 'UA-144489350-2',
+  plugins: ['@vuepress/google-analytics'],
   themeConfig: {
     sidebarDepth: 1,
     repo: 'ntnyq/fe-life',
