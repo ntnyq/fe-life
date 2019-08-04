@@ -1,6 +1,6 @@
 # React
 
-## 获取DOM元素
+## Ref获取DOM元素
 
 ``` tsx
 class RefDemo extends Component {
@@ -17,8 +17,8 @@ class RefDemo extends Component {
     this.textInput.current.focus()
   }
 
-  childRef: element => {
-    this.childNode1 = element
+  saveChildNodeOne: (node: HTMLElement) => {
+    this.childNode1 = node
   }
 
   componentDidMount () {
@@ -31,13 +31,13 @@ class RefDemo extends Component {
       <div className='father'>
         <div 
           className='child1'
-          ref={this.childRef}  
+          ref={this.saveChildNodeOne}  
         >
           Child1
         </div>
         <div 
           className='child2' 
-          ref={element => (this.childNode2 = element)}
+          ref={(node: HTMLElement) => (this.childNode2 = node)}
         >
           Child2
         </div>
