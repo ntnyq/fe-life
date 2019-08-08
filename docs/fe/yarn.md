@@ -1,9 +1,6 @@
 # Yarn
 
-> 你们搞的这个包管理器，excited!
-
-真的比**npm**好用，了解一下。
-
+> 你们搞的这个包管理器啊，excited!
 
 ## 全局依赖查看
 
@@ -11,8 +8,7 @@
 $ yarn global list
 ```
 
-
-## 升级依赖
+## 依赖升级
 
 ::: warning
 
@@ -36,6 +32,53 @@ $ yarn upgrade pkg_name --latest
 $ yarn upgradeInteractive
 ```
 
+## 全局配置
+
+通过全局配置，修改一些默认的配置和做个性化修改。
+
+### 全局配置查看
+
+
+``` bash
+# 查看所有配置
+$ yarn config list 
+
+# 查看某项配置
+$ yarn config get registry
+```
+
+### 全局配置修改
+
+做了以下配置后，会修改 `yarn init` 命名创建项目的对应默认值。
+
+``` bash
+# 修改默认 author-name
+$ yarn config set init-author-name ntnyq
+
+# 修改默认 author-email
+$ yarn config set init-author-email ntnyq13@gmail.com
+
+# 修改默认 author-url
+$ yarn config set init-author-url https://ntnyq.com
+
+# 修改默认 version
+$ yarn config set init-version 0.0.1
+```
+
+生成的 `package.json` 文件格式如下：
+
+``` json
+{
+  "version": "0.0.1",
+  "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
+}
+```
+
+### 参考资料
+
+- [yarn init](https://yarnpkg.com/lang/zh-hans/docs/cli/init/)
+- [yarn config](https://yarnpkg.com/zh-Hans/docs/cli/config)
+
 ## 坑点记录
 
 ### 下载node-sass包出错
@@ -47,7 +90,8 @@ $ yarn upgradeInteractive
 在失败提示的时候，会给出`NPM`的解决方法：
 
 ``` bash
-$ npm rebuild node-sass --force # 强制重新打包
+# 强制重新打包
+$ npm rebuild node-sass --force 
 ```
 
 而我们使用`Yarn`，为了把这个包的信息写入`yarn.lock`中，自然不好直接使用`NPM`，可以通过如下命令来解决：

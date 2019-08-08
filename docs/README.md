@@ -7,7 +7,6 @@ actionLink: fe/html
 footer: MIT Licensed | Copyright © 2018-present ntnyq
 ---
 
-![TravisCI](https://travis-ci.org/ntnyq/fe-life.svg?branch=master)
 ![Vuepress](https://img.shields.io/badge/powered--by-vuepress-green.svg)
 ![LastCommit](https://img.shields.io/github/last-commit/ntnyq/fe-life.svg)
 
