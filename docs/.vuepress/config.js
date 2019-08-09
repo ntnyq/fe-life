@@ -3,8 +3,25 @@ module.exports = {
   description: 'Ntnyq的前端人生踩坑记录。',
   base: '/',
   dest: 'site',
+  head: [
+    [
+      'meta',
+      {
+        name: 'google-site-verification',
+        content: 'JVSw-F97ZlD3D0yqM4MiBYvtRfpHfNtmH1J3PFX4fGk'
+      }
+    ]
+  ],
   ga: 'UA-144489350-2',
-  plugins: ['@vuepress/google-analytics'],
+  plugins: [
+    '@vuepress/google-analytics',
+    [
+      'sitemap',
+      {
+        hostname: 'https://fe.ntnyq.com'
+      }
+    ]
+  ],
   themeConfig: {
     sidebarDepth: 1,
     repo: 'ntnyq/fe-life',
