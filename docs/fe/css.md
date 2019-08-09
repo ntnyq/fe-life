@@ -8,17 +8,17 @@
 
 ### 伪元素尺寸大于元素本身引起的可点击位置错误
 
-项目需求，有一个设计效果带光影的按钮，切图后发现设计师提供的`图层`带的光影比较大，已经超过了按钮实际在设计图上占据的空间。于是采用伪元素将光影作为背景加到了按钮的背景下面。没想到这就踩坑了。
+项目需求，有一个设计效果带光影的按钮，切图后发现设计师提供的 __图层__ 带的光影比较大，已经超过了按钮实际在设计图上占据的空间。于是采用伪元素将光影作为背景加到了按钮的背景下面。没想到这就踩坑了。
 
 问题：点击光影也就是伪元素的占据的区域，也能够触发按钮的点击事件。
 
-解决方案：在伪元素上面加`pointer-events: none;`属性，来阻止伪元素响应点击事件。
+解决方案：在伪元素上面加 `pointer-events: none;` 属性，来阻止伪元素响应点击事件。
 
 兼容性：[Can-I-Use](https://caniuse.com/#search=pointer-events) IE11+ 移动端基本无兼容问题。
 
 ### fixed定位的参照物问题
 
-在父元素设置了`transform`属性的情况下，`position: fixed;`定位的元素不再以浏览器视口为参照，即使`transform`并未对元素的位置产生影响。如:
+在父元素设置了 `transform` 属性的情况下，`position: fixed;` 定位的元素不再以浏览器视口为参照，即使 `transform` 并未对元素的位置产生影响。如:
 
 ``` css
 .foo {
@@ -36,11 +36,28 @@
 
 ### input[type=“number”]光标上移异常
 
-当我们设置了input元素的 `height` 和 `line-height` 相等时，中文输入法下，在 `input[type="number"]` 输入框下输入中文字符，会引起光标上移。
+当我们设置了input元素的 `height` 和 `line-height` 相等来实现竖直方向文字居中时，中文输入法下，在 `input[type="number"]` 输入框下输入中文字符，会引起光标上移。
 
 解决方法：不要设置 `line-height` 属性，或者设置`line-height: normal` 默认值，或者给 input 元素设置`padding` 值，即可解决此问题。
 
 [参考资料](https://blog.csdn.net/haihiaandtongtong/article/details/50345065)
+
+## Input["type=number"]上下箭头
+
+``` scss
+input[type="number"] {
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  -moz-appearance: textfield;
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+```
 
 ### translate3d引起字体模糊
 

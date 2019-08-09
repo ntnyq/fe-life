@@ -6,7 +6,7 @@
 
 > 先使用`readFile`方法读取内容`text`。
 
-```
+``` js
 text.split(/\r?\n/)
 ```
 

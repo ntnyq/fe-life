@@ -12,22 +12,26 @@
 
 [IOS webview解决方案](https://www.jianshu.com/p/37404ccfabe8)
 
-## Input["type=number"]上下箭头
+## a链接的target
 
-``` scss
-input[type="number"] {
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    appearance: none;
-  }
+``` html 
+<!-- 所有target为_blank的链接都会在不同的新窗口中打开 -->
+<a href="https://www.google.com" target="_blank">Google</a>
 
-  -moz-appearance: textfield;
-
-  &::-ms-clear {
-    display: none;
-  }
-}
+<!-- 所有target为_blank的链接都会在同一个新窗口中打开 -->
+<a href="https://www.google.com" target="blank">Google</a>
 ```
+
+::: tip 提示
+当使用target属性时，建议给链接添加 `rel="noreferrer"` 来避免 `window.opener` API 带来的安全问题。
+
+当使用 `target="_blank"` 属性的链接打开新页面时，新打开的页面会和当前页面使用同个进程。如果新页面消耗系统资源过多，则会影响当前页面的性能。建议添加 `rel="noopener"` 属性来避免影响。
+:::
+
+### 参考文档
+
+- [MDN-The Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Attributes)
+- [What is the difference between target=“_blank” and “target=blank”?](https://stackoverflow.com/questions/35703005/what-is-the-difference-between-target-blank-and-target-blank)
 
 ## meta标签页面重定向兼容
 
@@ -39,11 +43,11 @@ __content__ 内的3代表3秒后页面跳转，__url__ 指向目标跳转地址�
 
 兼容性差异：
 
-| 浏览器            | 支持性                                     |
+| 浏览器             | 支持性                                      |
 | ----------------- | ------------------------------------------ |
-| IE6 IE7 IE8 Opera | 支持 "分号" 和 "空格" 做分隔符             |
-| Firefox           | 支持 "分号" 、 "逗号" 和 "空格" 做分隔符。 |
-| Chrome Safari     | 支持 "分号" 和 "逗号" 做分隔符。           |
+| IE6 IE7 IE8 Opera | 支持 "分号" 和 "空格" 做分隔符                 |
+| Firefox           | 支持 "分号" 、 "逗号" 和 "空格" 做分隔符。      |
+| Chrome Safari     | 支持 "分号" 和 "逗号" 做分隔符。               |
 
 ## 无搜索按钮搜索
 

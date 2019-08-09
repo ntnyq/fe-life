@@ -58,6 +58,7 @@ module.exports = {
         'yarn',
         'gulp',
         'webpack',
+        'parcel',
         'babel',
         'wechat',
         'weapp'

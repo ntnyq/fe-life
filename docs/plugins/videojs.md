@@ -8,18 +8,32 @@
 
 ``` html
 <!-- 或者使用 div 标签 -->
-<video id="example_video" class="video-js">
-  <source src="path_to_your/video.mp4" type="video/mp4" />
+<video 
+  id="example_video" 
+  class="video-js">
+  <source 
+    src="path_to_your/video.mp4" 
+    type="video/mp4" 
+  />
   <!-- 无js提示 -->
-  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+  <p class="vjs-no-js">
+    To view this video please enable JavaScript, and consider upgrading to a web browser that
+    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+  </p>
 </video>
 ```
 
 ### 通过 `data-setup` 初始化
 
 ``` html
-<video id="example_video" class="video-js" data-setup="{}">
-  <source src="path_to_your/video.mp4" type="video/mp4" />
+<video 
+  id="example_video" 
+  class="video-js" 
+  data-setup="{}">
+  <source 
+    src="path_to_your/video.mp4" 
+    type="video/mp4" 
+  />
 </video>
 ```
 
@@ -61,8 +75,13 @@ height: 360 // 视频高度
 在 video 标签上添加
 
 ``` html
-<video id="example_video" class="video-js vjs-big-play-centered">
-  <source src="./video/portrait.mp4" type="video/mp4" />
+<video 
+  id="video_player" 
+  class="video-js vjs-big-play-centered">
+  <source 
+    src="./video/portrait.mp4" 
+    type="video/mp4" 
+  />
 </video>
 ```
 
@@ -101,7 +120,13 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 ### 移动端不自动全屏
 
 ``` html
-<video playsinline="true" webkit-playsinline="true" x5-video-player-type="h5" x5-video-player-fullscreen="false" x5-video-orientation="portrait"></video>
+<video 
+  playsinline="true" 
+  webkit-playsinline="true" 
+  x5-video-player-type="h5" 
+  x5-video-player-fullscreen="false" 
+  x5-video-orientation="portrait">
+</video>
 ```
 
 ### 暂停时显示点击播放按钮
@@ -109,7 +134,10 @@ js等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout
 > 默认播放按钮只在首次未播放时候显示。
 
 ``` css
-.vjs-paused .vjs-big-play-button, .vjs-paused.vjs-has-started .vjs-big-play-button { display: block; }
+.vjs-paused .vjs-big-play-button, 
+.vjs-paused.vjs-has-started .vjs-big-play-button { 
+  display: block; 
+}
 ```
 
 ### 去掉按钮点击outline
