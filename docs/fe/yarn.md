@@ -32,12 +32,19 @@ $ yarn upgrade pkg_name --latest
 $ yarn upgradeInteractive
 ```
 
+## 安装本地包
+
+可用于本地开发依赖调试。
+
+``` bash
+$ yarn add /path_to_your_package
+```
+
 ## 全局配置
 
 通过全局配置，修改一些默认的配置和做个性化修改。
 
 ### 全局配置查看
-
 
 ``` bash
 # 查看所有配置
