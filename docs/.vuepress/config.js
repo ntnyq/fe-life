@@ -101,7 +101,8 @@ module.exports = {
         'editor',
         'chrome',
         'mongo',
-        'photoshop'
+        'photoshop',
+        'aliyun'
       ],
       '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor']
     },

@@ -59,3 +59,17 @@ $ node -v > .nvmrc
 ### 参考资料
 
 - [.nvmrc example?](https://github.com/nvm-sh/nvm/issues/995#issuecomment-349670827)
+
+## Lint
+
+自动化构建时，做代码风格检测 [__lint__] 时不要对代码进行 __fix__。否则检测的是 fix 后的代码，自然不会有报错。
+可以用如下的形式：
+
+``` json
+{
+  "scripts": {
+    "lint": "eslint --ext .js .",
+    "lint:fix": "eslint --fix --ext .js ."
+  }
+}
+```

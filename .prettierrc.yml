@@ -1,12 +1,11 @@
-# Docs at https://prettier.io/docs/en/options.html
-
 semi: false
 useTabs: false
 tabWidth: 2
-printWidth: 80
+printWidth: 100
 singleQuote: true
 trailingComma: none
 bracketSpacing: true
+jsxSingleQuote: true
 jsxBracketSameLine: false
 arrowParens: avoid
-endofline: lf
+endOfLine: lf

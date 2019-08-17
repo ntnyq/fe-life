@@ -58,6 +58,8 @@ Vetur 中可以使用 `js-beautify-html` 来格式化 Vue 代码中的 Template 
 
 强烈推荐 [snippet generator](https://snippet-generator.app/)，帮助生成代码片段。
 
+[参考资料-Snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+
 ## 出错解决
 
 ### VsCode 集成 Terminal 打开时，nvm 报兼容错误。

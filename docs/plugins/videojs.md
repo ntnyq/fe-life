@@ -202,3 +202,20 @@ export default {
 ### 参考资料
 
 [vue-video-player 更改视频源](https://segmentfault.com/a/1190000014738331)
+
+## 打包体积过大
+
+``` js
+// 无字幕
+import videojs from 'dist/alt/videojs.novtt.js'
+
+// 无 hls
+import videojs from 'dist/alt/video.core.js'
+
+// 无字幕与 hls
+import videojs from 'video.js/dist/alt/videojs.core.novtt.js'
+```
+
+### 参考资料
+
+- [Large bundle size (900KB)](https://github.com/videojs/video.js/issues/6166#issuecomment-520539730)

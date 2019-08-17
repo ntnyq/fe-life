@@ -1,24 +1,25 @@
 # 常用模块
 
-导出类 `class` 需要使用如下方式：
 
-``` js
-class Student {}
-class Teacher {}
+## Env
 
-// right
-export default Student
-export {
-  Student,
-  Teacher
-}
+- [cross-env](https://github.com/kentcdodds/cross-env) 跨平台环境变量设置
 
-// wrong
-export default {
-  Student,
-  Teacher
-}
-```
+## Shell
 
+- [shelljs](https://github.com/shelljs/shelljs) Unix Shell命令行 Node版
 
+## Interfaces
 
+- [inquirer](https://github.com/SBoudrias/Inquirer.js) 可交互用户界面集合
+
+## 
+- [fs-extra](https://github.com/jprichardson/node-fs-extra) 替代默认的 __fs__ 模块
+- [node-schedule](https://github.com/node-schedule/node-schedule) 定时任务
+
+## 
+- [js-yaml](https://github.com/nodeca/js-yaml) YML 文件内容读取
+
+## Log
+
+- [consola](https://github.com/nuxt/consola) 兼容 Node 与浏览器端的 logger

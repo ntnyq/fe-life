@@ -47,5 +47,3 @@ $ nginx -c /etc/nginx/nginx.conf
 - [nginx on Ubuntu: Permission denied](https://stackoverflow.com/questions/18714902/nginx-on-ubuntu-permission-denied?answertab=votes#tab-top)
 
 - [ginx: [error] invalid PID number "" in "/var/run/nginx.pid"](https://www.jianshu.com/p/376038b76221)
-
-
