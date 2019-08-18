@@ -1,4 +1,4 @@
-# Path模块
+# Path 模块
 
 ## dirname 从文件 url 获取目录路径
 
@@ -6,9 +6,9 @@
 
 例子：
 
-``` js
+```js
 // 返回: '/foo/bar/baz/asdf'
-path.dirname('/foo/bar/baz/asdf/quux');
+path.dirname('/foo/bar/baz/asdf/quux')
 ```
 
 ## basename 从文件 url 获取文件名
@@ -19,10 +19,10 @@ path.dirname('/foo/bar/baz/asdf/quux');
 
 例子：
 
-``` js
+```js
 // 返回: 'quux.html
-path.basename('/foo/bar/baz/asdf/quux.html');
+path.basename('/foo/bar/baz/asdf/quux.html')
 
 // 返回: 'quux'
-path.basename('/foo/bar/baz/asdf/quux.html', '.html');
+path.basename('/foo/bar/baz/asdf/quux.html', '.html')
 ```

@@ -6,19 +6,19 @@
 
 在 **SCSS** 中使用图片或字体，可以通过如下形式来引用：
 
-``` scss
+```scss
 // 直接使用
 .icon {
-  background-image: url("~@/assets/images/icon.png");
+  background-image: url('~@/assets/images/icon.png');
 }
 
 // 通过 mixin
-@mixin bg ($name, $ext: "png") {
-  background-image: url("~@/assets/images/#{$name}.#{$ext}");
+@mixin bg($name, $ext: 'png') {
+  background-image: url('~@/assets/images/#{$name}.#{$ext}');
 }
 
 .icon {
-  @include bg("icon");
+  @include bg('icon');
 }
 ```
 
@@ -30,19 +30,19 @@
 
 :::
 
-``` vue
+```vue
 <template>
-	<div>
-  	<img :src="require('@assets/images/icon.png')" alt="icon" />
+  <div>
+    <img :src="require('@assets/images/icon.png')" alt="icon" />
   </div>
 </template>
 ```
 
-## 动态修改页面Title
+## 动态修改页面 Title
 
-使用 __afterEach__ 钩子函数，在路由切换成功后修改 `title`。
+使用 **afterEach** 钩子函数，在路由切换成功后修改 `title`。
 
-``` js
+```js
 const router = new VueRouter({
   // ...
 })
@@ -60,7 +60,7 @@ router.afterEach(route => {
 })
 ```
 
-## EventBus使用场景
+## EventBus 使用场景
 
 ::: tip
 
@@ -68,49 +68,56 @@ router.afterEach(route => {
 
 :::
 
-``` js
+```js
 export default {
-  beforeEnter (to, from, next) {
+  beforeEnter(to, from, next) {
     if (isPrivateMode()) {
       EventBus.$emit('get-localdata-error')
       next(false)
       return
     }
-  }
+  },
 }
 ```
 
-``` vue
+```vue
 // App.vue
 <script>
 export default {
-  mounted () {
+  mounted() {
     EventBus.$on('get-localdata-error', () => {
       this.$alert('请勿使用无痕模式浏览')
     })
-  }
+  },
 }
 </script>
 ```
 
 ## 自定义指令埋点
 
-``` js
+```js
 Vue.directive('stat', {
-  bind (el, binding) {
-    el.addEventListener('click', () => {
-      const data = binding.value
-      let prefix = 'store'
+  bind(el, binding) {
+    el.addEventListener(
+      'click',
+      () => {
+        const data = binding.value
+        let prefix = 'store'
 
-      if (OS.isAndroid || OS.isPhone) {
-        prefix = 'mall'
-      }
+        if (OS.isAndroid || OS.isPhone) {
+          prefix = 'mall'
+        }
 
-      analytics.request({
-        ty: `${prefix}_${data.type}`,
-        dc: data.desc || ''
-      }, 'n')
-    }, false)
-  }
+        analytics.request(
+          {
+            ty: `${prefix}_${data.type}`,
+            dc: data.desc || '',
+          },
+          'n'
+        )
+      },
+      false
+    )
+  },
 })
 ```

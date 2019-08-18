@@ -1,14 +1,14 @@
 # Vue Cli
 
-> 当前Vue-cli的版本为`v3.0.3`。
+> 当前 Vue-cli 的版本为`v3.0.3`。
 
-[Vue-cli官方文档](https://cli.vuejs.org/)
+[Vue-cli 官方文档](https://cli.vuejs.org/)
 
 ## 配置
 
 > 个人用的`vue.config.js`配置，可参考
 
-``` js
+```js
 // vue.config.js
 const path = require('path')
 const webpack = require('webpack')
@@ -82,7 +82,7 @@ module.exports = {
 
 ## 环境变量
 
-通常开发环境和线上环境、测试环境等都不同，我们可能要根据环境的不同来使用一些不同的数据，比如线上请求的API地址。所以我们需要使用环境变量方便再不同的环境进行切换。
+通常开发环境和线上环境、测试环境等都不同，我们可能要根据环境的不同来使用一些不同的数据，比如线上请求的 API 地址。所以我们需要使用环境变量方便再不同的环境进行切换。
 
 在`v2.x.x`中，在使用`Vue-cli`创建的项目根目录下有一个`config`文件夹，用于设置**环境变量**。再通过`webpack.DefinePlugin`注入到页面中。
 
@@ -92,7 +92,7 @@ module.exports = {
 
 我们可以通过修改[模式](https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F)来加载我们想要它加载的文件。模式名可以通过命令行来传入：
 
-``` bash
+```bash
 $ vue-cli-service build --mode ntnyq
 ```
 
@@ -102,43 +102,43 @@ $ vue-cli-service build --mode ntnyq
 
 环境变量文件例：
 
-> 用户自定义的环境变量必须以`VUE_APP_`为前缀，才会被注入到页面。同时页面自身有2给预设的变量`NODE_ENV`和`BASE_URL`。
+> 用户自定义的环境变量必须以`VUE_APP_`为前缀，才会被注入到页面。同时页面自身有 2 给预设的变量`NODE_ENV`和`BASE_URL`。
 
-``` js
+```js
 // .env.ntnyq
-VUE_APP_NAME=ntnyq
+VUE_APP_NAME = ntnyq
 ```
 
 在项目代码中，我们可以通过以下的方式使用定义好的环境变量：
 
-``` js
-console.log(process.env.VUE_APP_NAME); // ntnyq
+```js
+console.log(process.env.VUE_APP_NAME) // ntnyq
 ```
 
-## Vue-Cli v2.x全局样式
+## Vue-Cli v2.x 全局样式
 
 需要`sass-resources-loader`
 
-``` bash
+```bash
 $ yarn add sasss-resources-loader -D
 ```
 
 修改`build/utils.js`中的`exports.cssLoaders`如下字段
 
-``` js
-  // https://vue-loader.vuejs.org/en/configurations/extract-css.html
-  return {
-    css: generateLoaders(),
-    postcss: generateLoaders(),
-    less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass').concat({
-      loader: 'sass-resources-loader',
-      options: {
-        resources: path.resolve(__dirname, './../src/scss/core/syle.scss')
-      }
-    }),
-    stylus: generateLoaders('stylus'),
-    styl: generateLoaders('stylus')
-  }
+```js
+// https://vue-loader.vuejs.org/en/configurations/extract-css.html
+return {
+  css: generateLoaders(),
+  postcss: generateLoaders(),
+  less: generateLoaders('less'),
+  sass: generateLoaders('sass', { indentedSyntax: true }),
+  scss: generateLoaders('sass').concat({
+    loader: 'sass-resources-loader',
+    options: {
+      resources: path.resolve(__dirname, './../src/scss/core/syle.scss'),
+    },
+  }),
+  stylus: generateLoaders('stylus'),
+  styl: generateLoaders('stylus'),
+}
 ```

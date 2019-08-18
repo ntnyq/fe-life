@@ -6,19 +6,19 @@
 
 若参数是内置的依赖，则返回依赖的名字。
 
-``` js
+```js
 console.log(require.resolve('http')) // => http
 ```
 
 若参数是下载的依赖，则返回 `package.json` 里 **main** 字段文件的**绝对路径**。
 
-``` js
+```js
 console.log(require.resolve('vue')) // => Your_path/cwd_path/module_path/main_file_path
 ```
 
 若参数表示的依赖不存在，则报错提示
 
-``` bash
+```bash
 internal/modules/cjs/loader.js:611
     throw err;
     ^
@@ -35,6 +35,3 @@ Error: Cannot find module 'not-exsist'
     at Function.Module.runMain (internal/modules/cjs/loader.js:797:12)
     at executeUserCode (internal/bootstrap/node.js:526:15)
 ```
-
-
-

@@ -2,19 +2,19 @@
 
 ## 查看硬盘使用情况
 
-``` bash
+```bash
 $ df -h
 ```
 
-__df__ 是 disk free 的缩写。
+**df** 是 disk free 的缩写。
 
-`-h` 代表 __human-readable__ 表示人类可读的格式。
+`-h` 代表 **human-readable** 表示人类可读的格式。
 
 ## 服务器位置设置错误
 
 报错信息
 
-``` 
+```
 can't set the locale; make sure $LC_* and $LANG are correct
 ```
 

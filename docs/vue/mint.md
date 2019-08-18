@@ -1,7 +1,7 @@
 # MintUI
 
 ::: danger
-已弃用MintUI做为移动端组件库，因为该项目已长时间不再维护，建议使用[VantUI](https://youzan.github.io/vant)
+已弃用 MintUI 做为移动端组件库，因为该项目已长时间不再维护，建议使用[VantUI](https://youzan.github.io/vant)
 :::
 
 ## 按需导入
@@ -13,23 +13,21 @@
 ```js
 // main.js
 import Vue from 'vue'
-import {
-  Button
-} from 'mint-ui'
+import { Button } from 'mint-ui'
 
 Vue.component(Button.name, Button)
 
 // babel.config.js
 module.exports = {
-  presets: [ '@vue/app' ],
+  presets: ['@vue/app'],
   plugins: [
     [
       'component',
       {
         libraryName: 'mint-ui',
-        style: true
-      }
-    ]
-  ]
+        style: true,
+      },
+    ],
+  ],
 }
 ```

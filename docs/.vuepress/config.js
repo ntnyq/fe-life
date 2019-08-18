@@ -8,9 +8,9 @@ module.exports = {
       'meta',
       {
         name: 'google-site-verification',
-        content: 'JVSw-F97ZlD3D0yqM4MiBYvtRfpHfNtmH1J3PFX4fGk'
-      }
-    ]
+        content: 'JVSw-F97ZlD3D0yqM4MiBYvtRfpHfNtmH1J3PFX4fGk',
+      },
+    ],
   ],
   ga: 'UA-144489350-2',
   plugins: [
@@ -18,9 +18,9 @@ module.exports = {
     [
       'sitemap',
       {
-        hostname: 'https://fe.ntnyq.com'
-      }
-    ]
+        hostname: 'https://fe.ntnyq.com',
+      },
+    ],
   ],
   themeConfig: {
     sidebarDepth: 1,
@@ -38,13 +38,13 @@ module.exports = {
         items: [
           {
             text: 'Vue篇',
-            link: '/vue/core'
+            link: '/vue/core',
           },
           {
             text: 'React篇',
-            link: '/react/core'
-          }
-        ]
+            link: '/react/core',
+          },
+        ],
       },
       { text: 'Node篇', link: '/node/base' },
       { text: '工具篇', link: '/tools/git' },
@@ -54,14 +54,18 @@ module.exports = {
         items: [
           {
             text: 'vuepress-plugin-svg-icons',
-            link: 'https://github.com/ntnyq/vuepress-plugin-svg-icons'
+            link: 'https://github.com/ntnyq/vuepress-plugin-svg-icons',
+          },
+          {
+            text: 'vuepress-plugin-social-share',
+            link: 'https://github.com/ntnyq/vuepress-plugin-social-share',
           },
           {
             text: 'element-boilerplate',
-            link: 'https://github.com/ntnyq/element-boilerplate'
-          }
-        ]
-      }
+            link: 'https://github.com/ntnyq/element-boilerplate',
+          },
+        ],
+      },
     ],
     sidebar: {
       '/fe/': [
@@ -78,7 +82,7 @@ module.exports = {
         'parcel',
         'babel',
         'wechat',
-        'weapp'
+        'weapp',
       ],
       '/vue/': [
         'core',
@@ -90,7 +94,7 @@ module.exports = {
         'element',
         'mint',
         'vant',
-        'plugin'
+        'plugin',
       ],
       '/node/': ['base', 'api', 'path', 'trick', 'modules', 'electron', 'http'],
       '/tools/': [
@@ -102,10 +106,10 @@ module.exports = {
         'chrome',
         'mongo',
         'photoshop',
-        'aliyun'
+        'aliyun',
       ],
-      '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor']
+      '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor'],
     },
-    lastUpdated: '最后更新时间'
-  }
+    lastUpdated: '最后更新时间',
+  },
 }

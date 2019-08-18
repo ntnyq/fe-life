@@ -1,8 +1,8 @@
 # Git
 
-## Git拉取远程仓库某个分支
+## Git 拉取远程仓库某个分支
 
-``` bash
+```bash
 $ git clone repo_url -b branch_name
 ```
 
@@ -20,13 +20,13 @@ $ git rm -rf . # 删除新分支下的所有内容
 
 然后，我们就得到一个**独立且干净**的空白分支，该分支没有任何的提交历史。
 
-## 合并多次Commit
+## 合并多次 Commit
 
-在开发过程中，我们常会因为各种原因进行了许多临时的**commit**，而这多个**commit**连接起来才是完整的任务。为了避免将这类commit提交入版本库，我们需要将他们**合并**起来。
+在开发过程中，我们常会因为各种原因进行了许多临时的**commit**，而这多个**commit**连接起来才是完整的任务。为了避免将这类 commit 提交入版本库，我们需要将他们**合并**起来。
 
-假设我们要将最近的5次提交合并为一次。可以通过下面的过程：
+假设我们要将最近的 5 次提交合并为一次。可以通过下面的过程：
 
-``` bash
+```bash
 $ git rebase -i HEAD~5 # 选取要进行操作的范围
 
 # 进入vi编辑提交界面
@@ -41,9 +41,9 @@ $ git log # 查看是否多个commit已经合并
 >
 > 若操作中有失误，可以使用`git rebase --abort`进行**变基**撤销，会回到没有开始操作前的状态。
 
-## 放弃Rebase
+## 放弃 Rebase
 
-``` bash
+```bash
 $ git rebase --abort
 ```
 
@@ -51,38 +51,38 @@ $ git rebase --abort
 
 报错如下：
 
-``` bash
+```bash
 remote: HTTP Basic: Access denied
 fatal: Authentication failed for 'http://********
 ```
 
-原因：**重置了密码导致git远程操作失败 **
+原因：**重置了密码导致 git 远程操作失败 **
 
 解决方法：
 
-``` bash
+```bash
 $ git config --system --unset credential.helper
 ```
 
-之后进行Git操作，重新输入账号密码即可。
+之后进行 Git 操作，重新输入账号密码即可。
 
-## Push需要输入密码
+## Push 需要输入密码
 
 可以通过配置**ssh-key**的方式，
 
 也可以通过以下代码来实现：
 
-``` bash
+```bash
 $ git config --global credential.helper store
 ```
 
-上面的操作会在**用户根目录**生成`.git-credentials`文件，里面保存着各个git服务器端的账号和密码。格式为`https://git_username:git_password@git_server_name`
+上面的操作会在**用户根目录**生成`.git-credentials`文件，里面保存着各个 git 服务器端的账号和密码。格式为`https://git_username:git_password@git_server_name`
 
 ## 修改上次提交信息
 
 有时候我们在进行**commit**的时候，提交错了信息，这时候强迫症的我们当然受不了了，可以执行下面的命令进行修改：
 
-``` bash
+```bash
 $ git commit --amend
 ```
 
@@ -94,7 +94,7 @@ $ git commit --amend
 
 > 表示项目版本的标签通常格式为`v1.1.1`，详细见[ 语义化版本 ](https://semver.org/lang/zh-CN/)
 
-``` bash
+```bash
 # 查看当前分支已有的标签
 $ git tag
 
@@ -122,13 +122,13 @@ $ git push origin -tags
 
 使用下面的命令即可使仓库回到上个版本：
 
-``` bash
+```bash
 $ git reset HEAD~1
 ```
 
-## 回退head指向
+## 回退 head 指向
 
-``` bash
+```bash
 $ git reset --hard commit_hash
 ```
 
@@ -136,13 +136,13 @@ $ git reset --hard commit_hash
 
 假设执行了 `git add .`，又发现添加错了文件，可以使用如下命令来进行回退：
 
-``` bash
+```bash
 $ git reset HEAD
 ```
 
 若只需要回退指令文件，则执行：
 
-``` bash
+```bash
 $ git reset file_name
 ```
 
@@ -150,22 +150,21 @@ $ git reset file_name
 
 可以先通过 `git log` 查看日志，决定要回归到的版本，并复制它的 id 值。
 
-``` bash
+```bash
 $ git reset --hard commit_id
 ```
 
-## 删除上次commit
+## 删除上次 commit
 
 `reset` 的本质不是删除了 `commit`，而是重新设置了 `head` 和它指向的 branch.
 
-``` bash
+```bash
 git reset --hard HEAD^
 ```
 
-
 ## 强制更新远程仓库
 
-``` bash
+```bash
 $ git push --force origin local_branch:remote_branch
 ```
 
@@ -184,12 +183,12 @@ $ git push --force origin local_branch:remote_branch
 
 而父仓库与子仓库的不同之处在于 **origin** 不同，我们可以添加一个 **upstream** (上游) 来同步父仓库的更新。
 
-默认情况下，当你克隆一个仓库的同时 Git已经将 **origin** 和你的自仓库关联在了一起。可以通过命令 `git remote -vv` 查看远程仓库。
+默认情况下，当你克隆一个仓库的同时 Git 已经将 **origin** 和你的自仓库关联在了一起。可以通过命令 `git remote -vv` 查看远程仓库。
 
 然后你可以通过 `git remote add upstream father_repo_url` 来添加远程仓库上游。再通过以下命令同步上游更新。
 :::
 
-``` bash
+```bash
 $ git checkout master # 切换至默认的 master分支
 
 $ git pull --rebase upstream master:master # 使用rebase模式拉取upstream/master上的更新
@@ -201,7 +200,7 @@ $ git rebase master # 使用rebase模式合并master分支的修改
 
 或
 
-``` bash
+```bash
 $ git checkout master
 
 $ git fetch upstream master

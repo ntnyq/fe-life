@@ -1,6 +1,6 @@
 # Vue
 
-## 指令Directive
+## 指令 Directive
 
 ### 自定义指令
 
@@ -29,91 +29,96 @@
 - self 事件只能由绑定事件的元素上被触发
 - once 事件只能被触发一次
 
-## 过滤器Filter
+## 过滤器 Filter
 
 通过`Vue.filter`指令可注册全局的过滤器。
 
 在项目中，以如下的格式使用：
 
-``` js
+```js
 // utils/filter.js
-export function toThousand (num) {
-  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','));
+export function toThousand(num) {
+  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
 
-``` js
+```js
 // main.js
-import * as filters from '@/utils/filter';
+import * as filters from '@/utils/filter'
 
-Object,keys(filters).forEach(k => {
-  Vue.filter(k, filter[k]);
-});
+Object,
+  keys(filters).forEach(k => {
+    Vue.filter(k, filter[k])
+  })
 ```
 
 ## 实例方法
 
-### vm.$nextTick
+### vm.\$nextTick
 
-将传入的回调函数，延迟到下次 __Dom__ 更新循环之后执行。在修改数据之后立即调用它，然后等待 __Dom__ 更新。
+将传入的回调函数，延迟到下次 **Dom** 更新循环之后执行。在修改数据之后立即调用它，然后等待 **Dom** 更新。
 
-``` js
+```js
 export default {
   methods: {
-    update () {
+    update() {
       this.msg = 'Hello world'
       this.$nextTick(() => {
         // this绑定当前组件实例
       })
-    }
-  }
+    },
+  },
 }
 ```
 
-作用：当我们更新了数据，要对 __Dom__ 做操作时，保证操作的是更新后的 __Dom__。
+作用：当我们更新了数据，要对 **Dom** 做操作时，保证操作的是更新后的 **Dom**。
 
 [官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
 
 ## 函数式组件
 
-函数式组件没有 __状态__ 和 __实例__，(无`data`和`this`)，它使用一个简单的`render`函数返回虚拟节点，比普通的模板更加容易渲染。
+函数式组件没有 **状态** 和 **实例**，(无`data`和`this`)，它使用一个简单的`render`函数返回虚拟节点，比普通的模板更加容易渲染。
 
-``` js
+```js
 export default {
   functional: true,
-  render (h, { props, slots }) {
-    return h('span', {
-      class: ['class-name', props.attr1, props.att2]
-    }, props.text || slots().default)
-  } 
+  render(h, { props, slots }) {
+    return h(
+      'span',
+      {
+        class: ['class-name', props.attr1, props.att2],
+      },
+      props.text || slots().default
+    )
+  },
 }
 ```
 
 - [参考文档](https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6)
 
-## $Refs
+## \$Refs
 
 在元素上添加`ref="Foo` 属性，即可在 Vue 中使用 `this.$refs['Foo']` 来访问这个引用。
 
 对普通元素来说，它相当于获取了 Dom 节点。对于 `Vue Component`，它相当于这个组件的引用。
 
-在 __父组件上__ 可以通过它来调用子组件上的方法。例：
+在 **父组件上** 可以通过它来调用子组件上的方法。例：
 
-``` vue
+```vue
 // Child.vue
 <script>
 export default {
   name: 'Child',
-  
+
   methods: {
-    log () {
+    log() {
       console.log('Hello world')
-    }
+    },
   },
 
-  render (h) {
+  render(h) {
     return h('div')
-  }
+  },
 }
 </script>
 
@@ -128,9 +133,9 @@ export default {
 export default {
   name: 'Parent',
 
-  mounted () {
+  mounted() {
     this.$refs.child.log() // Hello world
-  }
+  },
 }
 </script>
 ```
@@ -139,7 +144,7 @@ export default {
 
 看的面试题里经常问到的一个问题：
 
-__Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created还是mounted？__
+**Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created 还是 mounted？**
 
 其实，两者皆有优点和缺点。
 

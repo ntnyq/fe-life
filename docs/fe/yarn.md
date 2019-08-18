@@ -4,7 +4,7 @@
 
 ## 全局依赖查看
 
-``` bash
+```bash
 $ yarn global list
 ```
 
@@ -18,7 +18,7 @@ $ yarn global list
 
 :::
 
-``` bash
+```bash
 # 查看可版本升级依赖
 $ yarn outdated
 
@@ -36,7 +36,7 @@ $ yarn upgradeInteractive
 
 可用于本地开发依赖调试。
 
-``` bash
+```bash
 $ yarn add /path_to_your_package
 ```
 
@@ -46,9 +46,9 @@ $ yarn add /path_to_your_package
 
 ### 全局配置查看
 
-``` bash
+```bash
 # 查看所有配置
-$ yarn config list 
+$ yarn config list
 
 # 查看某项配置
 $ yarn config get registry
@@ -58,7 +58,7 @@ $ yarn config get registry
 
 做了以下配置后，会修改 `yarn init` 命名创建项目的对应默认值。
 
-``` bash
+```bash
 # 修改默认 author-name
 $ yarn config set init-author-name ntnyq
 
@@ -74,7 +74,7 @@ $ yarn config set init-version 0.0.1
 
 生成的 `package.json` 文件格式如下：
 
-``` json
+```json
 {
   "version": "0.0.1",
   "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
@@ -88,7 +88,7 @@ $ yarn config set init-version 0.0.1
 
 ## 坑点记录
 
-### 下载node-sass包出错
+### 下载 node-sass 包出错
 
 首先说明，这个问题不仅仅存在于使用`Yarn`的时候，使用`NPM`下载也会出现同样的问题。
 
@@ -96,15 +96,15 @@ $ yarn config set init-version 0.0.1
 
 在失败提示的时候，会给出`NPM`的解决方法：
 
-``` bash
+```bash
 # 强制重新打包
-$ npm rebuild node-sass --force 
+$ npm rebuild node-sass --force
 ```
 
 而我们使用`Yarn`，为了把这个包的信息写入`yarn.lock`中，自然不好直接使用`NPM`，可以通过如下命令来解决：
 
-> 此方法针对NPM同样适用，修改命令名为npm即可。
+> 此方法针对 NPM 同样适用，修改命令名为 npm 即可。
 
-``` bash
+```bash
 $ yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 ```

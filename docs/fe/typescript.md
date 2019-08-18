@@ -1,11 +1,10 @@
 # TypeScript
 
-
 ## 报错处理
 
 常见的一些报错问题处理。
 
-### regeneratorRuntime is not defined 
+### regeneratorRuntime is not defined
 
 在使用 `Parcel + TypeScript` 项目中使用 `asyncFunction` 时出现。
 
@@ -13,7 +12,7 @@
 
 编辑 `tsconfig.json` 文件，添加如下配置：
 
-``` json
+```json
 {
   "compilerOptions": {
     "target": "es5"

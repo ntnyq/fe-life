@@ -1,8 +1,8 @@
 # React
 
-## Ref获取DOM元素
+## Ref 获取 DOM 元素
 
-``` tsx
+```tsx
 class RefDemo extends Component {
   public childNode1: HTMLElement | null
   public childNode2: HTMLElement | null
@@ -29,20 +29,20 @@ class RefDemo extends Component {
   render () {
     return (
       <div className='father'>
-        <div 
+        <div
           className='child1'
-          ref={this.saveChildNodeOne}  
+          ref={this.saveChildNodeOne}
         >
           Child1
         </div>
-        <div 
-          className='child2' 
+        <div
+          className='child2'
           ref={(node: HTMLElement) => (this.childNode2 = node)}
         >
           Child2
         </div>
         <input type='text' ref={this.textInput}>
-        <button 
+        <button
           onClick={this.focusTextInput}
           type='button'
         >

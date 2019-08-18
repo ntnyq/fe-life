@@ -8,7 +8,7 @@
 
 解决方法：
 
-``` scss
+```scss
 // themes/iframe.css
 
 img {
@@ -22,10 +22,10 @@ img {
 
 解决方法：
 
-``` js
-var ue = UE.getEditor('#ueditor', {
-  autoHeightEnabled: false
+```js
+const ue = UE.getEditor('#ueditor', {
+  autoHeightEnabled: false,
 })
 ```
 
-[参考资料-UEditor文档](http://fex.baidu.com/ueditor/#start-config)
+[参考资料-UEditor 文档](http://fex.baidu.com/ueditor/#start-config)

@@ -6,11 +6,11 @@
 
 > 先使用`readFile`方法读取内容`text`。
 
-``` js
+```js
 text.split(/\r?\n/)
 ```
 
-## 常用API
+## 常用 API
 
 ### process.cwd()
 
