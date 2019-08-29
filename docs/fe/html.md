@@ -28,7 +28,7 @@
 当使用 `target="_blank"` 属性的链接打开新页面时，新打开的页面会和当前页面使用同个进程。如果新页面消耗系统资源过多，则会影响当前页面的性能。建议添加 `rel="noopener"` 属性来避免影响。
 :::
 
-### 参考文档
+### 参考资料
 
 - [MDN-The Anchor element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Attributes)
 - [What is the difference between target=“\_blank” and “target=blank”?](https://stackoverflow.com/questions/35703005/what-is-the-difference-between-target-blank-and-target-blank)
@@ -74,7 +74,7 @@ const searchInput = document.querySelector('.search-input')
 
 searchInput.addEventListener(
   'keypress',
-  function(evt) {
+  evt => {
     const keyword = searchInput.value.trim()
     const KEYCODE_ENTER = 13
 

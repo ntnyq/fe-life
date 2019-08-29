@@ -101,7 +101,7 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 }
 ```
 
-### 移动端不自动全屏
+### 移动端禁止自动全屏
 
 ```html
 <video
@@ -131,6 +131,32 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
   outline: none;
 }
 ```
+
+### 播放 RTMP 直播流
+
+需要另外安装依赖 `videojs-flash`。
+
+从 v6 开始，VideoJs 不再内置 flash 组件。
+
+```html
+<video class="video-js" id="video_player">
+  <source src="rtmp://58.200.131.2:1935/livetv/hunantv" type="rtmp/mp4" />
+</video>
+```
+
+```js
+import videojs from 'video.js'
+import 'videojs-flash'
+import 'video.js/dist/video-js.min.css'
+
+videojs('video_player', { techOrder: ['html5', 'flash'] }, () => {
+  console.log(`Video player initialize successfully!`)
+})
+```
+
+参考资料：
+
+- [how-can-i-play-rtmp-video-in-videojs](https://docs.videojs.com/tutorial-faq.html#q-how-can-i-play-rtmp-video-in-videojs)
 
 ## 事件
 
@@ -191,10 +217,10 @@ export default {
 
 ```js
 // 无字幕
-import videojs from 'dist/alt/videojs.novtt.js'
+import videojs from 'video.js/dist/alt/videojs.novtt.js'
 
 // 无 hls
-import videojs from 'dist/alt/video.core.js'
+import videojs from 'video.js/dist/alt/video.core.js'
 
 // 无字幕与 hls
 import videojs from 'video.js/dist/alt/videojs.core.novtt.js'

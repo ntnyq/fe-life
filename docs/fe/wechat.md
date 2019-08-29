@@ -5,9 +5,9 @@
 ```js
 const _ = {
   isWechat() {
-    const RE = /micromessenger/i
+    const UA_WECHAT_RE = /micromessenger/i
 
-    return RE.test(navigator.userAgent)
+    return UA_WECHAT_RE.test(navigator.userAgent)
   },
 }
 

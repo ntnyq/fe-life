@@ -8,4 +8,5 @@ bracketSpacing: true
 jsxSingleQuote: true
 jsxBracketSameLine: false
 arrowParens: avoid
+quoteProps: as-needed
 endOfLine: lf

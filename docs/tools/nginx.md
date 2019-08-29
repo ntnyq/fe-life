@@ -14,11 +14,11 @@
 
 当我以 `nginx -s reload` 重启服务时报如下错误
 
-```
+```bash
 [alert] could not open error log file: open() "/var/log/nginx/error.log" failed (13: Permission denied)
 ```
 
-解决方案如下：
+解决方案：
 
 ```bash
 $ sudo nginx -t # Test if nginx config works well
@@ -26,13 +26,13 @@ $ sudo nginx -t # Test if nginx config works well
 $ sudo nginx -s reload
 ```
 
-又遇到报错如下：
+再次报错：
 
 ```
 nginx: [error] invalid PID number "" in "/var/run/nginx.pid"
 ```
 
-解决方案如下：
+解决方案：
 
 ```bash
 $ lsof -i:80 # list all port being used
@@ -47,3 +47,9 @@ $ nginx -c /etc/nginx/nginx.conf
 - [nginx on Ubuntu: Permission denied](https://stackoverflow.com/questions/18714902/nginx-on-ubuntu-permission-denied?answertab=votes#tab-top)
 
 - [ginx: [error] invalid PID number "" in "/var/run/nginx.pid"](https://www.jianshu.com/p/376038b76221)
+
+## 隐藏版本号
+
+```
+
+```

@@ -20,4 +20,6 @@
 }
 ```
 
-参考资料: [经过 babel 转换后的代码，中文乱码](https://github.com/yunxifd/babel-intl/issues/1)
+参考资料:
+
+- [经过 babel 转换后的代码，中文乱码](https://github.com/yunxifd/babel-intl/issues/1)
