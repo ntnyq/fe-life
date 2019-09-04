@@ -4,7 +4,7 @@
 
 ## Markdown-toc
 
-功能：为 **Markdown** 文件 **目录**(Table of Content)。
+功能：为 **Markdown** 文件 **目录** (Table of Content)。
 
 [Github Repo](https://github.com/jonschlinkert/markdown-toc)
 
