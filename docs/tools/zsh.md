@@ -29,3 +29,13 @@ $ cd foo/bar
 # with zsh
 $ take foo/bar
 ```
+
+## 查看启动速度
+
+```bash
+# 整个启动过程
+$ \time zsh -i -c exit
+
+# 无脚本加载启动过程
+$ \time zsh --no-rcs -i -c exit
+```

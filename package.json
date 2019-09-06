@@ -1,34 +1,44 @@
 {
   "name": "fe-life",
   "version": "1.0.0",
-  "description": "Ntnyq's fe life records.",
+  "description": "Ntnyq's fe life records",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ntnyq/fe-life"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ntnyq",
+    "email": "ntnyq13@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
-    "dev": "vuepress dev docs",
     "build": "vuepress build docs",
+    "dev": "vuepress dev docs",
     "pub": "sh deploy.sh"
   },
-  "repository": "https://github.com/ntnyq/fe-life",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "**/*.{js,vue,json,md}": [
+    "*.{js,vue,json,md}": [
       "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "sort-package-json",
       "git add"
     ]
   },
-  "author": "ntnyq",
-  "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.3",
-    "husky": "^3.0.4",
+    "@vuepress/plugin-google-analytics": "^1.0.4",
+    "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
     "prettier": "^1.18.2",
-    "vuepress": "^1.0.3",
+    "sort-package-json": "^1.22.1",
+    "vuepress": "^1.0.4",
     "vuepress-plugin-sitemap": "^2.1.2"
-  },
-  "dependencies": {}
+  }
 }

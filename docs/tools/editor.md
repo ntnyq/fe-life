@@ -1,4 +1,4 @@
-# Vscode
+# VsCode
 
 > 关于 VsCode 编辑器
 

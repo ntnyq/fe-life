@@ -14,13 +14,13 @@ $ df -h
 
 报错信息
 
-```
+```bash
 can't set the locale; make sure $LC_* and $LANG are correct
 ```
 
 解决方案：
 
-```
+```bash
 sudo locale-gen "en_US.UTF-8"
 sudo dpkg-reconfigure locales   //如果跳转到设置页面，可以选择默认的即可。
 sudo vi /etc/default/locale 改为如下

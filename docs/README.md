@@ -7,7 +7,7 @@ actionLink: fe/html
 footer: MIT Licensed | Copyright © 2018-present ntnyq
 ---
 
-![Vuepress](https://img.shields.io/badge/powered--by-vuepress-green.svg)
+![VuePress](https://img.shields.io/badge/powered--by-vuepress-green.svg)
 ![LastCommit](https://img.shields.io/github/last-commit/ntnyq/fe-life.svg)
 
 作为一名 ~~前端小白~~，在开发过程中难免遇到各种 **\*** 蛋的问题，心中难免要说一声 **fuck** 🐶。
