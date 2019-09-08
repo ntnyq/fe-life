@@ -38,7 +38,9 @@
 ```js
 // utils/filter.js
 export function toThousand(num) {
-  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
+  return (+num || 0)
+    .toString()
+    .replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
 
@@ -46,10 +48,7 @@ export function toThousand(num) {
 // main.js
 import * as filters from '@/utils/filter'
 
-Object,
-  keys(filters).forEach(k => {
-    Vue.filter(k, filter[k])
-  })
+Object.keys(filters).forEach(k => Vue.filter(k, filter[k]))
 ```
 
 ## 实例方法

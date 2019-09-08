@@ -36,14 +36,8 @@ module.exports = {
       {
         text: '框架篇',
         items: [
-          {
-            text: 'Vue篇',
-            link: '/vue/core',
-          },
-          {
-            text: 'React篇',
-            link: '/react/core',
-          },
+          { text: 'Vue篇', link: '/vue/core' },
+          { text: 'React篇', link: '/react/core' },
         ],
       },
       { text: 'Node篇', link: '/node/base' },

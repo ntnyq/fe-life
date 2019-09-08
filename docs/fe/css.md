@@ -4,7 +4,7 @@
 
 > 你问我兼容不兼容，我说兼容。
 
-## 通用坑点
+## 通用
 
 ### 伪元素尺寸大于元素本身引起的可点击位置错误
 
@@ -36,7 +36,7 @@
 
 [示例 Demo](https://ntnyq.github.io/demos/html/fixed-test.html)
 
-### input[type=“number”]光标上移异常
+### input[type="number"]光标上移异常
 
 当我们设置了 input 元素的 `height` 和 `line-height` 相等来实现竖直方向文字居中时，中文输入法下，在 `input[type="number"]` 输入框下输入中文字符，会引起光标上移。
 
@@ -44,7 +44,7 @@
 
 [参考资料](https://blog.csdn.net/haihiaandtongtong/article/details/50345065)
 
-## Input["type=number"]上下箭头
+### Input["type=number"]上下箭头
 
 ```scss
 input[type='number'] {
@@ -84,7 +84,7 @@ input[type='number'] {
 - [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
 - [解决 Swiper 中 translate3d 导致字体模糊](http://xuxun.me/blog/2014/04/translate3d-cause-text-blurry-in-swiper/)
 
-## 非系统字族延迟渲染
+### 非系统字族延迟渲染
 
 ```scss
 h1 {
@@ -100,9 +100,22 @@ h1 {
 
 原因：使用非系统字体，未提供回退字体。
 
-## PC 端坑点
+### Chrome 最小字体限制
 
-## 移动端坑点
+在中文版 Chrome 的某些版本下存在字体大小限制，表现为：
+
+- PC 端可设置字体最小为 12px
+- 移动端可设置字体最小为 10px
+
+原因是 Chrome 认为过小的字体对用户是不友好的。
+
+解决方案，使用 CSS transfrom scale 缩放。
+
+英文版 Chrome 不存在此问题。
+
+## PC 端
+
+## 移动端
 
 ☠️☠️☠️
 

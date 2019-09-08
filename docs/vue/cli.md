@@ -1,4 +1,4 @@
-# Vue Cli
+# VueCli
 
 > 当前 Vue-cli 的版本为`v3.0.3`。
 
@@ -6,79 +6,7 @@
 
 ## 配置
 
-> 个人用的`vue.config.js`配置，可参考
-
-```js
-// vue.config.js
-const path = require('path')
-const webpack = require('webpack')
-const ImageminPlugin = require('imagemin-webpack-plugin').default
-const imageminMozjpeg = require('imagemin-mozjpeg')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-
-const resolve = (...args) => path.resolve(__dirname, ...args)
-
-module.exports = {
-  publicPath: './', // 资源等使用相对路径
-
-  css: {
-    loaderOptions: {
-      sass: {
-        data: '@import "@/scss/core/style";' // 全局注入SCSS变量，Mixins等
-      }
-    }
-  },
-
-  devServer: {
-    open: true // 开发环境自动打开浏览器
-    port: 9527 // 自定义监听开发服务器监听端口
-  },
-
-  configureWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      config.plugins.push(
-        new ImageminPlugin({
-          pngquant: { quality: '65-80' },
-          plugins: [
-            imageminMozjpeg({
-              quality: 70,
-              progressive: true
-            })
-          ]
-        }),
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) // no i18n
-        // new webpack.ContextReplacementPugin(/moment[\/\\]locales$/, /zh-cn|en-use/) with i18n
-      )
-      if (!process.env.VUE_APP_TRAVIS) {
-        config.plugins.push(new BundleAnalyzerPlugin())
-      }
-    } else {
-      // doSomething
-    }
-  },
-
-  chainWebpack: config => {
-    config.resolve.extensions.store.add('.scss')
-
-    // Set svg sprite loader
-    config.module
-      .rule('svg')
-      .exclude.add(resolve('src/icons'))
-      .end()
-    config.module
-      .rule('icons')
-      .test(/\.svg$/)
-      .include.add(resolve('src/icons'))
-      .end()
-      .use('svg-sprite-loader')
-      .loader('svg-sprite-loader')
-      .options({
-        symbolId: 'icon-[name]'
-      })
-      .end()
-  }
-};
-```
+[个人配置](https://github.com/ntnyq/vue-vant-template/blob/master/vue.config.js)，可参考。
 
 ## 环境变量
 
@@ -86,11 +14,11 @@ module.exports = {
 
 在`v2.x.x`中，在使用`Vue-cli`创建的项目根目录下有一个`config`文件夹，用于设置**环境变量**。再通过`webpack.DefinePlugin`注入到页面中。
 
-在`v3.x.x`中，提供了使用`.env.[mode_name]`**的环境变量文件**的方式来实现。
+在`v3.x.x`中，提供了使用 `.env.[mode_name]` **的环境变量文件** 的方式来实现。
 
-默认情况下，执行`vue-cli-service build`会加载可能存在的`.env`，`.env.production`，`.env.production.local`文件。
+默认情况下，执行 `vue-cli-service build` 会加载可能存在的 `.env`，`.env.production`，`.env.production.local` 文件。
 
-我们可以通过修改[模式](https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F)来加载我们想要它加载的文件。模式名可以通过命令行来传入：
+我们可以通过修改 [模式](https://cli.vuejs.org/zh/guide/mode-and-env.html#%E6%A8%A1%E5%BC%8F) 来加载我们想要它加载的文件。模式名可以通过命令行来传入：
 
 ```bash
 $ vue-cli-service build --mode ntnyq
@@ -104,8 +32,9 @@ $ vue-cli-service build --mode ntnyq
 
 > 用户自定义的环境变量必须以`VUE_APP_`为前缀，才会被注入到页面。同时页面自身有 2 给预设的变量`NODE_ENV`和`BASE_URL`。
 
-```js
+```
 // .env.ntnyq
+
 VUE_APP_NAME = ntnyq
 ```
 
@@ -115,30 +44,24 @@ VUE_APP_NAME = ntnyq
 console.log(process.env.VUE_APP_NAME) // ntnyq
 ```
 
-## Vue-Cli v2.x 全局样式
+## 全局 SCSS 变量, Mixin 等注入
 
-需要`sass-resources-loader`
+需要 `sass-resources-loader`
 
 ```bash
 $ yarn add sasss-resources-loader -D
 ```
 
-修改`build/utils.js`中的`exports.cssLoaders`如下字段
+修改 `build/utils.js` 中的 `exports.cssLoaders` 如下字段
 
 ```js
 // https://vue-loader.vuejs.org/en/configurations/extract-css.html
 return {
-  css: generateLoaders(),
-  postcss: generateLoaders(),
-  less: generateLoaders('less'),
-  sass: generateLoaders('sass', { indentedSyntax: true }),
   scss: generateLoaders('sass').concat({
     loader: 'sass-resources-loader',
     options: {
       resources: path.resolve(__dirname, './../src/scss/core/syle.scss'),
     },
   }),
-  stylus: generateLoaders('stylus'),
-  styl: generateLoaders('stylus'),
 }
 ```
