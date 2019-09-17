@@ -21,3 +21,13 @@
 ```
 
 参考资料：[regeneratorRuntime is not defined in TypeScript run in web](https://stackoverflow.com/questions/51262244/regeneratorruntime-is-not-defined-in-typescript-run-in-web)
+
+## 语法错误处理
+
+```ts
+const length = 10
+
+Array.apply(null, { length }).map((_, idx) => {})
+```
+
+上述语法在 compilerOptions 设置了 **strict** 为 `true` 时会报错，原因是同时开启了 **strictBindCallApply**。

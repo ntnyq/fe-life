@@ -76,17 +76,16 @@ export default {
 
 ## 函数式组件
 
-函数式组件没有 **状态** 和 **实例**，(无`data`和`this`)，它使用一个简单的`render`函数返回虚拟节点，比普通的模板更加容易渲染。
+函数式组件没有 **状态** 和 **实例**，(无 `data` 和 `this` )，它使用一个简单的 `render` 函数返回虚拟节点，比普通的模板更加容易渲染。
 
 ```js
 export default {
   functional: true,
+
   render(h, { props, slots }) {
     return h(
       'span',
-      {
-        class: ['class-name', props.attr1, props.att2],
-      },
+      { class: ['class-name', props.attr1, props.attr2] },
       props.text || slots().default
     )
   },
@@ -94,6 +93,31 @@ export default {
 ```
 
 - [参考文档](https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6)
+
+### 非 functional 组件无 context?
+
+```js
+```
+
+### 上下文里的 data 是什么
+
+data 包含以下几个部分：
+
+- staticClass `class="foobar"` 的类
+
+- class `v-bind:class` 的类
+
+- attrs 未被解析成 props 或者别的属性 包括 `v-bind:foo-bar` 语法 和 `foobar="foobar"` 语法
+
+```js
+export default {
+  render(h, { props, data }) {
+    return h('span', {
+      ...data,
+    })
+  },
+}
+```
 
 ## \$Refs
 
