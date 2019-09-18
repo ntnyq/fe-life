@@ -154,8 +154,9 @@ h1 {
   top: 10;
 }
 ```
+兼容性:
 
-[兼容性 - Can I Use](https://caniuse.com/#search=sticky)
+- [Can I Use](https://caniuse.com/#search=sticky)
 
 ### 导入 NPM 安装的样式库。
 

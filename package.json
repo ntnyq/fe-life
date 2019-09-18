@@ -23,7 +23,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,vue,json,md}": [
+    "*.{js,vue,json}": [
       "prettier --write",
       "git add"
     ],

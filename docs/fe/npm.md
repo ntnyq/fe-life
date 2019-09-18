@@ -6,11 +6,11 @@
 
 > 我在玩儿`gatsby`的时候，下载了[gatsby-starter-personal-blog](https://github.com/greglobinski/gatsby-starter-personal-blog)，查看它的源码的时候发现了这条命令。
 
-**npx**命令是 npm 为了提升开发者**使用包内提供的命令行**工具的体验 在`v5.2.0`引入的一条命令。[Github-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
+__npx__ 命令是 NPM 为提升开发者使用包内提供的命令行工具体验在`v5.2.0`引入的一条命令。
 
-使用**npx**执行命令就无需再为要执行的命令指定`node_modules`，同时也不需要在`package.json`的`scripts`字段去添加该命令。
+使用 npx 执行命令就无需再为要执行的命令指定` node_modules`，同时也不需要在 `package.json` 的 `scripts` 字段去添加该命令。
 
-同时，**npx**还允许我们临时安装某个依赖来执行命令，命令结束后该依赖便会被删除。
+同时，**npx** 还允许我们临时安装某个依赖来执行命令，命令结束后该依赖便会被删除。
 
 例子:
 
@@ -18,9 +18,10 @@
 $ npx create-react-app my-app
 ```
 
-### 参考资料
+参考资料:
 
-[npx 命令介绍](https://segmentfault.com/a/1190000012974903)
+- [Github-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
+- [npx 命令介绍](https://segmentfault.com/a/1190000012974903)
 
 ## weixin-js-sdk 报错
 
@@ -28,7 +29,9 @@ $ npx create-react-app my-app
 
 解决办法：修改源码，将 **weixin-js-sdk** 中第一个 `this` 改为 `window`。
 
-[参考资料-jsweixin 引入时报错 Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
+参考资料:
+
+- [jsweixin 引入时报错 Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
 
 ## npm 发表带@前缀的依赖
 
@@ -36,13 +39,13 @@ $ npx create-react-app my-app
 
 2. 创建一个 npm 包，带 `package.json` 文件，包的名字格式为 `@组织名/包名`，注意需要设置其中的 `publishConfig` 字段，如下：
 
-   ```json
-   {
-     "publishConfig": {
-       "access": "public"
-     }
-   }
-   ```
+    ```json
+    {
+      "publishConfig": {
+        "access": "public"
+      }
+    }
+    ```
 
 3. `npm publish`发布这个依赖。
 
@@ -57,7 +60,7 @@ $ npx create-react-app my-app
 
 可以试用 `Yarn` 或者 淘宝镜像。
 
-### 参考文档
+参考资料:
 
 - [你的 node 依赖们炸了没？](https://github.com/NoName4Me/yo-FE/issues/17)
 - [".staging" folder inside of node_modules](https://github.com/npm/npm/issues/12540)

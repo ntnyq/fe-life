@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Ntnyq的前端人生',
-  description: 'Ntnyq的前端人生踩坑记录。',
+  title: 'ntnyq的前端人生',
+  description: 'ntnyq的前端人生踩坑记录。',
   base: '/',
   dest: 'site',
   head: [
@@ -90,6 +90,7 @@ module.exports = {
         'vant',
         'plugin',
       ],
+      '/react/': ['core'],
       '/node/': [
         'base',
         'api',
@@ -113,6 +114,7 @@ module.exports = {
         'mongo',
         'photoshop',
         'aliyun',
+        'eslint',
       ],
       '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor'],
     },

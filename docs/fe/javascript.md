@@ -11,16 +11,14 @@
 ```js
 const body = document.body
 
-body.addEventListener(
-  'touchmove',
-  evt => {
-    evt.preventDefault() // 阻止下拉滑动效果
-  },
-  { passive: false }
-) // 兼容 IOS 和安卓 使用 passive:true 提高滚动性能并减少崩溃
+body.addEventListener('touchmove', evt => {
+  evt.preventDefault() // 阻止下拉滑动效果
+}, { passive: false }) // 兼容 IOS 和安卓 使用 passive: true 提高滚动性能并减少崩溃
 ```
 
-[参考资料](https://segmentfault.com/a/1190000014134234)
+参考资料:
+
+- [阻止微信浏览器下拉滑动效果](https://segmentfault.com/a/1190000014134234)
 
 ### 移动端时间格式化
 
@@ -30,11 +28,11 @@ body.addEventListener(
 
 ### 兼容性
 
-在小程序嵌入 Krpano 的 WebView Demo 中使用了 ES6 的**箭头函数**，在 iPhone6sp 上出现问题，页面不可用。
+在小程序嵌入 Krpano 的 WebView Demo 中使用了 ES6 的箭头函数，在 iPhone6sp 上出现问题，页面不可用。
 查询 CanIUse 后得知，箭头函数的兼容性是 ios9.3 及以上。
 
 ::: tip
-目前 ES6 的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做 **转译**。
+目前 ES6 的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做 Babel 转译。
 :::
 
 ### 懒加载模块并使用
@@ -62,11 +60,7 @@ const obj = {
 }
 let result = {}
 
-Object.keys(obj)
-  .sort()
-  .forEach(k => {
-    result[k] = obj[k]
-  })
+Object.keys(obj).sort().forEach(k => { result[k] = obj[k]})
 
 console.log(result)
 ```
@@ -78,13 +72,17 @@ console.log(result)
 window.scrollTo({ top: 0, behavior: 'smooth' })
 ```
 
-兼容性：
+兼容性:
 
-- [Window.scrollTo()](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7)
+- [Window.scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#Browser_Compatibility)
 
 除 IE Edge 浏览器外，Safari 支持不佳，不支持 `scrollOptions` 参数。
 
-参考资料：
+Polyfill:
+
+- [smoothscroll](https://github.com/iamdustan/smoothscroll)
+
+参考资料:
 
 - [Window-ScrollTo - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
 
@@ -122,7 +120,7 @@ function isLocalStorageSupported() {
 }
 ```
 
-参考资料：
+参考资料:
 
 - [移动端浏览器隐私模式/无痕模式使用本地存储 localStorage/sessionStorage 的问题](https://my.oschina.net/jamesview/blog/2252926)
 
