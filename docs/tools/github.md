@@ -1,12 +1,12 @@
-# Github
+# GitHub
 
-记录一些使用 **Github** 的技巧。
+记录一些使用 **GitHub** 相关的东西。
 
 ## NPM Packages
 
-- [github-calendar](https://github.com/IonicaBizau/github-calendar) Github 贡献总览，带日历。
-- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) Github Markdown 样式。
-- [github-corners](https://github.com/tholman/github-corners) 右上角 Github 章鱼猫图标。
+- [github-calendar](https://github.com/IonicaBizau/github-calendar) GitHub 贡献总览，带日历。
+- [github-markdown-css](https://github.com/sindresorhus/github-markdown-css) GitHub Markdown 样式。
+- [github-corners](https://github.com/tholman/github-corners) 右上角 GitHub 章鱼猫图标。
 
 ## Github Apps
 

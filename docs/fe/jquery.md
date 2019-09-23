@@ -4,6 +4,18 @@
 
 - [ScrollPath](https://github.com/JoelBesada/scrollpath) 页面滚动效果插件
 
+## 静态方法
+
+直接挂在 `$` 上的方法。
+
+- $.camelCase()
+- $.Deffered()
+- $.ajax()
+- $.isPlainObject()
+- $.isEmptyObject()
+- $.trim()
+- $.extend()
+
 ## 踩坑记录
 
 ### 无法设置 data-\*\*\*=属性

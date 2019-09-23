@@ -8,6 +8,16 @@
 
 [个人配置](https://github.com/ntnyq/vue-vant-template/blob/master/vue.config.js)，可参考。
 
+## 输出项目配置
+
+在项目根目录下执行命令:
+
+``` bash
+$ vue inspect > webpack.config.js
+```
+
+即可将项目的 webpack 配置输出至文件内。
+
 ## 环境变量
 
 通常开发环境和线上环境、测试环境等都不同，我们可能要根据环境的不同来使用一些不同的数据，比如线上请求的 API 地址。所以我们需要使用环境变量方便再不同的环境进行切换。
@@ -32,8 +42,8 @@ $ vue-cli-service build --mode ntnyq
 
 > 用户自定义的环境变量必须以`VUE_APP_`为前缀，才会被注入到页面。同时页面自身有 2 给预设的变量`NODE_ENV`和`BASE_URL`。
 
-```
-// .env.ntnyq
+``` bash
+# .env.ntnyq
 
 VUE_APP_NAME = ntnyq
 ```
@@ -46,7 +56,11 @@ console.log(process.env.VUE_APP_NAME) // ntnyq
 
 ## 全局 SCSS 变量, Mixin 等注入
 
-需要 `sass-resources-loader`
+全局注入后，就无需再需要使用这些变量，mixins的时候去导入了。
+
+### vue-cli v2.x
+
+对于 2.x 版本，可通过安装 `sass-resources-loader` 来实现。
 
 ```bash
 $ yarn add sasss-resources-loader -D
@@ -60,8 +74,27 @@ return {
   scss: generateLoaders('sass').concat({
     loader: 'sass-resources-loader',
     options: {
-      resources: path.resolve(__dirname, './../src/scss/core/syle.scss'),
+      resources: path.resolve(__dirname, './../src/styles/core/syle.scss'),
     },
   }),
 }
 ```
+
+### vue-cli v3.x
+
+直接在做如下配置即可。
+
+``` js
+// vue.config.js
+module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "@/styles/core/style.scss"`
+      }
+    }
+  }
+}
+```
+
+若升级了 sass-loader 至 __v8.x__，则需将 `data` 修改为 `prependData`。

@@ -1,10 +1,10 @@
-# Videojs
+# VideoJs
 
 > 当前 [videojs](https://github.com/videojs/video.js) 版本为 `v7.4.2`。
 
 ## 初始化
 
-> 可以提供多个 `source` 标签，无法播放时候会自动播放下一个视频。
+> 可提供多个 `source` 标签，无法播放时候会自动播放下一个视频。
 
 ```html
 <!-- 或者使用 div 标签 -->
@@ -26,7 +26,7 @@
 </video>
 ```
 
-### 通过 js **videojs** 函数初始化
+### 通过 js API 初始化
 
 ```js
 videojs('example_video', {}, function() {
@@ -43,7 +43,7 @@ videojs('example_video', {}, function() {
 
 ## 配置
 
-[**详细配置信息**](https://docs.videojs.com/tutorial-options.html)
+常用配置项:
 
 ```js
 poster: 'path_to_your/img.ext', // 海报图
@@ -56,6 +56,8 @@ muted: false, // 是否静音
 width: 640 // 视频宽度
 height: 360 // 视频高度
 ```
+
+[详细配置信息](https://docs.videojs.com/tutorial-options.html)
 
 ## 解决方案
 
@@ -79,7 +81,7 @@ height: 360 // 视频高度
 
 ### 播放器自适应尺寸
 
-在播放器元素上添加 `vjs-fluid` 或者 `vjs-16-9` 或者 `vjs-4-3`类。
+在播放器元素上添加 `vjs-fluid` 或者 `vjs-16-9` 或 `vjs-4-3` 等类。
 
 js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layout.html)
 
@@ -154,7 +156,7 @@ videojs('video_player', { techOrder: ['html5', 'flash'] }, () => {
 })
 ```
 
-参考资料：
+参考资料:
 
 - [how-can-i-play-rtmp-video-in-videojs](https://docs.videojs.com/tutorial-faq.html#q-how-can-i-play-rtmp-video-in-videojs)
 
@@ -181,9 +183,9 @@ VideoJs 支持以下事件监听：
 - waiting
 - resize inherited
 
-## vue-video-player
+## Vue 组件
 
-vue-video-player 动态修改媒体源。
+可使用 [vue-video-player](https://github.com/surmon-china/vue-video-player) 。
 
 ```vue
 <template>
@@ -213,19 +215,19 @@ export default {
 
 - [vue-video-player 更改视频源](https://segmentfault.com/a/1190000014738331)
 
-## 打包体积过大
+## 打包体积优化
 
 ```js
 // 无字幕
-import videojs from 'video.js/dist/alt/videojs.novtt.js'
+import videojs from 'video.js/dist/alt/videojs.novtt'
 
 // 无 hls
-import videojs from 'video.js/dist/alt/video.core.js'
+import videojs from 'video.js/dist/alt/video.core'
 
 // 无字幕与 hls
-import videojs from 'video.js/dist/alt/videojs.core.novtt.js'
+import videojs from 'video.js/dist/alt/videojs.core.novtt'
 ```
 
-参考资料：
+参考资料:
 
 - [Large bundle size (900KB)](https://github.com/videojs/video.js/issues/6166#issuecomment-520539730)

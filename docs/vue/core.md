@@ -1,6 +1,6 @@
 # Vue
 
-## 指令 Directive
+## 指令
 
 ### 自定义指令
 
@@ -29,14 +29,12 @@
 - self 事件只能由绑定事件的元素上被触发
 - once 事件只能被触发一次
 
-## 过滤器 Filter
+## 过滤器
 
-通过`Vue.filter`指令可注册全局的过滤器。
-
-在项目中，以如下的格式使用：
+通过 `Vue.filter` API 可注册全局过滤器。
 
 ```js
-// utils/filter.js
+// src/utils/filter.js
 export function toThousand(num) {
   return (+num || 0)
     .toString()
@@ -55,7 +53,7 @@ Object.keys(filters).forEach(k => Vue.filter(k, filter[k]))
 
 ### vm.\$nextTick
 
-将传入的回调函数，延迟到下次 **Dom** 更新循环之后执行。在修改数据之后立即调用它，然后等待 **Dom** 更新。
+将传入的回调函数，延迟到下次 **DOM** 更新循环之后执行。在修改数据之后立即调用它，然后等待 **DOM** 更新。
 
 ```js
 export default {
@@ -63,41 +61,38 @@ export default {
     update() {
       this.msg = 'Hello world'
       this.$nextTick(() => {
-        // this绑定当前组件实例
+        // Do something with DOM
       })
     },
   },
 }
 ```
 
-作用：当我们更新了数据，要对 **Dom** 做操作时，保证操作的是更新后的 **Dom**。
+当我们更新了数据，要对 **DOM** 做操作时，保证操作的是更新后的 **DOM**。
 
-[官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
+参考资料：
+
+- [官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
 
 ## 函数式组件
 
-函数式组件没有 **状态** 和 **实例**，(无 `data` 和 `this` )，它使用一个简单的 `render` 函数返回虚拟节点，比普通的模板更加容易渲染。
+函数式组件没有 **状态** 和 **实例**，(无 `data` 和 `this` )，它使用一个简单的 `render` 函数返回虚拟节点，比普通的模板更加容易渲染，使用函数式组件有利于性能优化。
 
 ```js
 export default {
   functional: true,
 
   render(h, { props, slots }) {
-    return h(
-      'span',
-      { class: ['class-name', props.attr1, props.attr2] },
-      props.text || slots().default
-    )
+    return h('span',{ 
+      class: ['class-name', props.attr1, props.attr2] 
+    }, props.text || slots().default)
   },
 }
 ```
 
-- [参考文档](https://cn.vuejs.org/v2/guide/render-function.html#%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BB%84%E4%BB%B6)
+参考资料:
 
-### 非 functional 组件无 context?
-
-```js
-```
+- [Render Functions & JSX](https://vuejs.org/v2/guide/render-function.html)
 
 ### 上下文里的 data 是什么
 
@@ -119,7 +114,7 @@ export default {
 }
 ```
 
-## \$Refs
+## $Refs
 
 在元素上添加`ref="Foo` 属性，即可在 Vue 中使用 `this.$refs['Foo']` 来访问这个引用。
 
@@ -145,7 +140,7 @@ export default {
 }
 </script>
 
-// Parent
+// Parent.vue
 <template>
   <div class="parent">
     <Child ref="child" />
@@ -165,9 +160,9 @@ export default {
 
 ## 生命周期
 
-看的面试题里经常问到的一个问题：
+面试题里经常问到的一个问题：
 
-**Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created 还是 mounted？**
+Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created 还是 mounted ?
 
 其实，两者皆有优点和缺点。
 

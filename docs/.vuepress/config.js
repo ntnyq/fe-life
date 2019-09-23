@@ -1,3 +1,12 @@
+const projects = [
+  'vuepress-plugin-svg-icons',
+  'vuepress-plugin-social-share',
+  'gulp-format-html',
+  'gulp-diffable-html',
+  'element-boilerplate',
+  'taro-zhihu-daily',
+]
+
 module.exports = {
   title: 'ntnyq的前端人生',
   description: 'ntnyq的前端人生踩坑记录。',
@@ -12,9 +21,19 @@ module.exports = {
       },
     ],
   ],
-  ga: 'UA-144489350-2',
   plugins: [
-    '@vuepress/google-analytics',
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-144489350-2',
+      },
+    ],
+    [
+      'social-share',
+      {
+        networks: ['twitter', 'qq', 'weibo', 'facebook', 'telegram'],
+      },
+    ],
     [
       'sitemap',
       {
@@ -32,7 +51,14 @@ module.exports = {
     editLinkText: '帮助我改进页面内容！',
     nav: [
       { text: '首页', link: '/' },
-      { text: '前端篇', link: '/fe/html' },
+      {
+        text: '前端篇',
+        items: [
+          { text: '基础篇', link: '/fe/html' },
+          { text: '构建篇', link: '/dev/webpack' },
+          { text: '插件篇', link: '/plugins/videojs' },
+        ],
+      },
       {
         text: '框架篇',
         items: [
@@ -42,23 +68,12 @@ module.exports = {
       },
       { text: 'Node篇', link: '/node/base' },
       { text: '工具篇', link: '/tools/git' },
-      { text: '插件篇', link: '/plugins/videojs' },
       {
         text: '我的项目',
-        items: [
-          {
-            text: 'vuepress-plugin-svg-icons',
-            link: 'https://github.com/ntnyq/vuepress-plugin-svg-icons',
-          },
-          {
-            text: 'vuepress-plugin-social-share',
-            link: 'https://github.com/ntnyq/vuepress-plugin-social-share',
-          },
-          {
-            text: 'element-boilerplate',
-            link: 'https://github.com/ntnyq/element-boilerplate',
-          },
-        ],
+        items: projects.map(project => ({
+          text: `${project}`,
+          link: `https://github.com/ntnyq/${project}`,
+        })),
       },
     ],
     sidebar: {
@@ -68,16 +83,12 @@ module.exports = {
         'scss',
         'jquery',
         'javascript',
-        'typescript',
         'npm',
         'yarn',
-        'gulp',
-        'webpack',
-        'parcel',
-        'babel',
         'wechat',
         'weapp',
       ],
+      '/dev/': ['webpack', 'gulp', 'parcel', 'babel', 'typescript'],
       '/vue/': [
         'core',
         'router',
@@ -96,7 +107,7 @@ module.exports = {
         'api',
         'path',
         'trick',
-        'modules',
+        'package',
         'electron',
         'http',
         'nvm',
@@ -110,13 +121,14 @@ module.exports = {
         'nginx',
         'editor',
         'vim',
+        'markdown',
         'chrome',
         'mongo',
         'photoshop',
         'aliyun',
         'eslint',
       ],
-      '/plugins/': ['echarts', 'videojs', 'swiper', 'ueditor'],
+      '/plugins/': ['videojs', 'echarts', 'swiper', 'ueditor'],
     },
     lastUpdated: '最后更新时间',
   },

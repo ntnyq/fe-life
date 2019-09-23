@@ -22,7 +22,7 @@ body.addEventListener('touchmove', evt => {
 
 ### 移动端时间格式化
 
-在移动端，使用时间格式化函数处理 `yyyy-MM-dd hh:mm:ss` 这个格式的时间，在 PC 预览时格式化正常，但是在手机上，发现数字成了 `NaN`。
+时间格式化 `yyyy-MM-dd hh:mm:ss` 此格式时间，PC 端可正常格式化，移动端会出现 `NaN`。
 
 ## ES6
 
@@ -32,7 +32,7 @@ body.addEventListener('touchmove', evt => {
 查询 CanIUse 后得知，箭头函数的兼容性是 ios9.3 及以上。
 
 ::: tip
-目前 ES6 的兼容性看样子即使在移动端，也无法保证全支持，仍然需要做 Babel 转译。
+目前 ES6 的兼容性看样子即使在移动端，也无法保证完全支持，仍需进行 Babel 转译。
 :::
 
 ### 懒加载模块并使用
@@ -64,6 +64,21 @@ Object.keys(obj).sort().forEach(k => { result[k] = obj[k]})
 
 console.log(result)
 ```
+
+### 数组 includes 无法处理对象数组
+
+代码示例:
+
+``` js
+const array = [{ name: 'ntnyq' }]
+const name = 'ntnyq'
+
+console.log(array.includes(item => item.name === name)) // false
+```
+
+参考资料:
+
+- [Array.prototype.includes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
 ## 页面平滑滚动
 
