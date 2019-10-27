@@ -15,7 +15,7 @@
   "scripts": {
     "build": "vuepress build docs",
     "dev": "vuepress dev docs",
-    "pub": "sh deploy.sh"
+    "pub": "sh scripts/deploy.sh"
   },
   "husky": {
     "hooks": {
@@ -39,7 +39,7 @@
     "prettier": "^1.18.2",
     "sort-package-json": "^1.22.1",
     "vuepress": "^1.2.0",
-    "vuepress-plugin-sitemap": "^2.1.2",
+    "vuepress-plugin-sitemap": "^2.3.0",
     "vuepress-plugin-social-share": "^0.1.0"
   }
 }
