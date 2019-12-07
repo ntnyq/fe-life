@@ -168,6 +168,12 @@ git reset --hard HEAD^
 $ git push --force origin local_branch:remote_branch
 ```
 
+## 清理本地的远程分支
+
+```bash
+$ git remote prune origin
+```
+
 ## 贡献开源项目
 
 1. **fork** 想要贡献的项目仓库。
