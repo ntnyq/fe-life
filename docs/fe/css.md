@@ -154,6 +154,7 @@ h1 {
   top: 10;
 }
 ```
+
 兼容性:
 
 - [Can I Use](https://caniuse.com/#search=sticky)
@@ -163,3 +164,9 @@ h1 {
 ```css
 import "~normalize.css";
 ```
+
+## 字体图标 transform 失效
+
+原因： `transform` 属性无法应用于行内元素。
+
+解决方案： 设置 `display: inline-block`。
