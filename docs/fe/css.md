@@ -113,7 +113,33 @@ h1 {
 
 英文版 Chrome 不存在此问题。
 
+### 字体图标 transform 失效
+
+原因： `transform` 属性无法应用于行内元素。
+
+解决方案： 设置 `display: inline-block`。
+
+### 兼容
+
 ## PC 端
+
+Input 输入框的默认清空按钮与密码明文图标。
+
+```scss
+// type="text"
+input::-ms-clear {
+  display: none;
+}
+
+// type="password"
+input::-ms-reveal {
+  display: none;
+}
+```
+
+参考文档：
+
+- [IE 浏览器 input 输入框的默认清空和密码明文按钮](https://zhuanlan.zhihu.com/p/35725266)
 
 ## 移动端
 
@@ -164,9 +190,3 @@ h1 {
 ```css
 import "~normalize.css";
 ```
-
-## 字体图标 transform 失效
-
-原因： `transform` 属性无法应用于行内元素。
-
-解决方案： 设置 `display: inline-block`。

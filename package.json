@@ -37,9 +37,9 @@
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "sort-package-json": "^1.30.0",
+    "sort-package-json": "^1.31.0",
     "vuepress": "^1.2.0",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-social-share": "^0.1.0"
+    "vuepress-plugin-social-share": "^0.1.1"
   }
 }
