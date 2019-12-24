@@ -1,24 +1,77 @@
 # Git
 
-## Git 拉取远程仓库某个分支
+常用 Git 命令。
+
+## Blame
 
 ```bash
-$ git clone repo_url -b branch_name
+# 显示文件每行上次由谁修改
+$ git blame file_path_name
 ```
 
-## 创建空白分支
-
-有时候，我们会想要在一个仓库的多个分支来放不同的代码。这时候我们就需要创建一个空白的分支。这个分支**不继承仓库其余分支的任何提交**，**没有父节点**，就像新创建的一个仓库一样干净。
-
-新建一个空白分支的操作过程如下：
+## Clone
 
 ```bash
-$ git checkout --orphan branch_name # 在已有的分支下检出新分支并切换至新分支
-
-$ git rm -rf . # 删除新分支下的所有内容
+# 拉取指定分支
+$ git cloone repo_url -b branch_name
 ```
 
-然后，我们就得到一个**独立且干净**的空白分支，该分支没有任何的提交历史。
+## Commit
+
+```bash
+# 修改上次提交信息, 进入编辑消息模式
+$ git commit --amend
+```
+
+## Checkout
+
+```bash
+# 创建空白分支 无提交，无父节点
+$ git checkout --orphan branch_name
+$ git rm -rf .
+```
+
+## Push
+
+```bash
+# 强制推送
+$ git push -f
+$ git push --force
+```
+
+## Rebase
+
+```bash
+# 放弃
+$ git rebase --abort
+```
+
+## Remote
+
+```bash
+# 清理本地的远程无效分支
+$ git remote prune origin
+```
+
+## Stash
+
+```bash
+# 暂存工作区
+$ git stash
+
+# 以工作区内容新建分支
+$ git stash -branch branch_name
+
+# 应用工作区
+$ git stash pop
+```
+
+## Show
+
+```bash
+# 显示某次修改文件变更内容
+$ git show commit_hash
+```
 
 ## 合并多次 Commit
 
@@ -41,34 +94,9 @@ $ git log # 查看是否多个commit已经合并
 >
 > 若操作中有失误，可以使用`git rebase --abort`进行**变基**撤销，会回到没有开始操作前的状态。
 
-## 放弃 Rebase
-
-```bash
-$ git rebase --abort
-```
-
-## 存取操作出错
-
-报错如下：
-
-```bash
-remote: HTTP Basic: Access denied
-fatal: Authentication failed for 'http://********
-```
-
-原因：**重置了密码导致 git 远程操作失败 **
-
-解决方法：
-
-```bash
-$ git config --system --unset credential.helper
-```
-
-之后进行 Git 操作，重新输入账号密码即可。
-
 ## Push 需要输入密码
 
-可以通过配置**ssh-key**的方式，
+可以通过配置 **ssh-key** 的方式，
 
 也可以通过以下代码来实现：
 
@@ -76,17 +104,7 @@ $ git config --system --unset credential.helper
 $ git config --global credential.helper store
 ```
 
-上面的操作会在**用户根目录**生成`.git-credentials`文件，里面保存着各个 git 服务器端的账号和密码。格式为`https://git_username:git_password@git_server_name`
-
-## 修改上次提交信息
-
-有时候我们在进行**commit**的时候，提交错了信息，这时候强迫症的我们当然受不了了，可以执行下面的命令进行修改：
-
-```bash
-$ git commit --amend
-```
-
-执行命令后，会进入编辑界面，重新编辑保存即可。
+上面的操作会在**用户根目录**生成 `.git-credentials` 文件，里面保存着各个 git 服务器端的账号和密码。格式为`https://git_username:git_password@git_server_name`
 
 ## 给分支打标签
 
@@ -162,19 +180,33 @@ $ git reset --hard commit_id
 git reset --hard HEAD^
 ```
 
-## 强制更新远程仓库
+## FAQ
+
+常见问题。
+
+### 存取出错
+
+错误信息:
 
 ```bash
-$ git push --force origin local_branch:remote_branch
+remote: HTTP Basic: Access denied
+fatal: Authentication failed for 'https://foo.bar.com'
 ```
 
-## 清理本地的远程分支
+错误原因:
+
+1. 重置了密码
+2. 切换了用户
+
+解决方法:
 
 ```bash
-$ git remote prune origin
+$ git config --system --unset credential.helper
 ```
 
-## 贡献开源项目
+之后进行 Git 操作，重新输入密码即可正常。
+
+### 贡献开源项目
 
 1. **fork** 想要贡献的项目仓库。
 2. 克隆你 **fork** 后的仓库到本地。
@@ -218,8 +250,8 @@ $ git rebase upstream/master
 
 总的来说，就是将本地的 **master** 分支做为一个同步远程仓库变化的分支，所有的本地改动都不会在 `master` 分支上进行。
 
-而是将上游的 master 分支合并至本地，保证本地的 master 分支为最新版本，。
+而是将上游的 master 分支合并至本地，保证本地的 master 分支为最新版本。
 
-### 参考资料
+## 参考资料
 
 [如何使用 GitHub Flow 给开源项目贡献代码](https://juejin.im/post/5b4611f4f265da0f970d1a0c)
