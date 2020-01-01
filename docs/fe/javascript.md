@@ -11,9 +11,13 @@
 ```js
 const body = document.body
 
-body.addEventListener('touchmove', evt => {
-  evt.preventDefault() // 阻止下拉滑动效果
-}, { passive: false }) // 兼容 IOS 和安卓 使用 passive: true 提高滚动性能并减少崩溃
+body.addEventListener(
+  'touchmove',
+  evt => {
+    evt.preventDefault() // 阻止下拉滑动效果
+  },
+  { passive: false }
+) // 兼容 IOS 和安卓 使用 passive: true 提高滚动性能并减少崩溃
 ```
 
 参考资料:
@@ -60,7 +64,11 @@ const obj = {
 }
 let result = {}
 
-Object.keys(obj).sort().forEach(k => { result[k] = obj[k]})
+Object.keys(obj)
+  .sort()
+  .forEach(k => {
+    result[k] = obj[k]
+  })
 
 console.log(result)
 ```
@@ -69,7 +77,7 @@ console.log(result)
 
 代码示例:
 
-``` js
+```js
 const array = [{ name: 'ntnyq' }]
 const name = 'ntnyq'
 
@@ -160,3 +168,10 @@ const num = 0214 // 8进制数
 
 console.log(`0${num.toString(8)}`)
 ```
+
+## 错误 `cannot convert undefined or null to object`
+
+错误原因：
+
+1. `Object.keys()` 参数为 `null` 或者 `undefined`。
+2. `Object.assign()` 第一个参数为 `null` 或者 `undefined`。

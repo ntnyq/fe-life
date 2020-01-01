@@ -190,3 +190,34 @@ input::-ms-reveal {
 ```css
 import "~normalize.css";
 ```
+
+### 左右两列布局
+
+要求：
+
+- 两列宽度都未知
+- 两列加起来占满整个容器
+- 整体高度需适应最大内容高度
+- 两列内放文本，文本不能侵入对方。
+
+```scss
+.wrap {
+  position: relative;
+  zoom: 1;
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+.aside {
+  float: left;
+}
+
+.main {
+  overflow: hidden;
+}
+```
