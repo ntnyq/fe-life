@@ -35,5 +35,5 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
-          scripts: cp site -f ~/www/fe
+          scripts: sh ${{ secrets.WWW_PATH }}/.deploy/main.sh
           debug: true
