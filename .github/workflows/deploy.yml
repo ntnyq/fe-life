@@ -41,4 +41,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.PASSWORD }}
-          scripts: mv site ~/www/fe
+          scripts: cp site -f ~/www/fe
