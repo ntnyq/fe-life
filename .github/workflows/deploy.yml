@@ -1,0 +1,44 @@
+name: Deploy to server
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build website
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkouy
+        uses: actions/checkout/master
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install Yarn
+        run: npm install yarn -g
+      - name: Install Dependencies
+        run: yarn
+      - name: Build
+        run: yarn build
+
+  deploy:
+    name: Deploy to server
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exec deploy script with SSH
+        uses: applebody/ssh-action@master
+        with:
+          command_timeout: 10m
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          scripts: mv site ~/www/fe
