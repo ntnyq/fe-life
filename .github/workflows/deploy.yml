@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Exec deploy script with SSH
-        uses: applebody/ssh-action@master
+        uses: appleboy/ssh-action@master
         with:
           command_timeout: 10m
           host: ${{ secrets.HOST }}
