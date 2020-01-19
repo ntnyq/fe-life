@@ -31,6 +31,7 @@ jobs:
 
   deploy:
     name: Deploy to server
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Exec deploy script with SSH
