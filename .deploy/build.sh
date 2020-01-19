@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WEB_PATH=${dirname $0}
+WEB_PATH=$(dirname $0)
 
 echo "[deploy] Fetch and rebuilding..."
 cd $WEB_PATH
