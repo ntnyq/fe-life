@@ -1,6 +1,7 @@
 const extendsNetworks = {
   email: {
-    sharer: 'mailto:?subject=@title&body=@url%0D%0A%0D%0A@description',
+    sharer:
+      'mailto:ntnyq@gmail.com?subject=@title&body=@url%0D%0A%0D%0A@description',
     type: 'direct',
     icon: '/email.png',
   },

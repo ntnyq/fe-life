@@ -88,9 +88,17 @@ import './styles/element-reset'
 
       <el-table-column label="操作">
         <template slot-scope="scope">
-          <el-popover placement="top" width="200" trigger="manual" :ref="`popover${scope.$index}`">
+          <el-popover
+            placement="top"
+            width="200"
+            trigger="manual"
+            :ref="`popover${scope.$index}`"
+          >
             <p>Lorem ipsum, dolor sit amet consectetur</p>
-            <el-button slot="reference" @click.stop="showPopover(scope.$index)" type="primary"
+            <el-button
+              slot="reference"
+              @click.stop="showPopover(scope.$index)"
+              type="primary"
               >Popover</el-button
             >
           </el-popover>
@@ -147,7 +155,6 @@ export default {
 <template>
   <el-table>
     <el-table-column v-if="type === 'foo'" prop="type" label="类型" />
-
     <el-table-column v-if="type === 'bar'" prop="title" label="标题" />
     <el-table-column v-if="type === 'baz'" prop="date" label="时间" />
 
@@ -177,6 +184,22 @@ export default {
 ```
 
 解决办法: 给 `transition` 组件添加 `mode="out-in"` 属性。
+
+## Message 组件页面刷新自动弹出
+
+解决方案：
+
+按需引入
+
+```js
+import { Message } from 'element-ui'
+
+// 不能这样使用
+Vue.use(Message)
+
+// 而应该这样
+Vue.prototype.$message = Message
+```
 
 ## 无需弹出的日历面板
 

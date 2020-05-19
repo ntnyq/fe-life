@@ -24,22 +24,20 @@
   },
   "lint-staged": {
     "*.{js,vue,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "package.json": [
-      "sort-package-json",
-      "git add"
+      "sort-package-json"
     ]
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.2.0",
-    "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "sort-package-json": "^1.39.0",
-    "vuepress": "^1.2.0",
+    "@vuepress/plugin-google-analytics": "^1.5.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.4",
+    "prettier": "^2.0.5",
+    "sort-package-json": "^1.42.2",
+    "vuepress": "^1.5.0",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-social-share": "^0.1.2"
+    "vuepress-plugin-social-share": "^0.2.1"
   }
 }

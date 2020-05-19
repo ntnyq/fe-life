@@ -7,7 +7,7 @@ cd $WEB_PATH
 cd ..
 echo "[deploy] path:" ${pwd}
 echo "[deploy] pulling source code..."
-git fetch --all && git reset --hard origin/master && git pulling
+git fetch --all && git reset --hard origin/master && git pull
 git checkout master
 echo "[deploy] building start..."
 yarn
