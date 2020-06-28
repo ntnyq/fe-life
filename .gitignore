@@ -1,4 +1,8 @@
 .DS_Store
-.idea
 node_modules
+
+# Log files
+*log.*
+
+# Output
 site
