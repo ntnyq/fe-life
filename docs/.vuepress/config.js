@@ -96,6 +96,7 @@ module.exports = {
         'vuex',
         'cli',
         'trick',
+        'typescript',
         'faq',
         'element',
         'mint',

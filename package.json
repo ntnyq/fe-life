@@ -27,6 +27,9 @@
     "package.json": "sort-package-json"
   },
   "prettier": "prettier-config-goy",
+  "resolutions": {
+    "watchpack": "1.6.1"
+  },
   "devDependencies": {
     "@vuepress/plugin-google-analytics": "^1.5.2",
     "husky": "^4.2.5",
@@ -36,6 +39,6 @@
     "sort-package-json": "^1.44.0",
     "vuepress": "^1.5.2",
     "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-social-share": "^0.3.0"
+    "vuepress-plugin-social-share": "^0.3.1"
   }
 }

@@ -12,7 +12,7 @@
 
 在项目根目录下执行命令:
 
-``` bash
+```bash
 $ vue inspect > webpack.config.js
 ```
 
@@ -42,7 +42,7 @@ $ vue-cli-service build --mode ntnyq
 
 > 用户自定义的环境变量必须以`VUE_APP_`为前缀，才会被注入到页面。同时页面自身有 2 给预设的变量`NODE_ENV`和`BASE_URL`。
 
-``` bash
+```bash
 # .env.ntnyq
 
 VUE_APP_NAME = ntnyq
@@ -56,7 +56,7 @@ console.log(process.env.VUE_APP_NAME) // ntnyq
 
 ## 全局 SCSS 变量, Mixin 等注入
 
-全局注入后，就无需再需要使用这些变量，mixins的时候去导入了。
+全局注入后，就无需再需要使用这些变量，mixins 的时候去导入了。
 
 ### vue-cli v2.x
 
@@ -84,17 +84,18 @@ return {
 
 直接在做如下配置即可。
 
-``` js
+```js
 // vue.config.js
 module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/styles/core/style.scss"`
-      }
-    }
-  }
+        data: `@import "@/styles/core/style.scss"`,
+      },
+    },
+  },
 }
 ```
 
-若升级了 sass-loader 至 __v8.x__，则需将 `data` 修改为 `prependData`。
+若升级 sass-loader 至 v8.x, 则需将 `data` 修改为 `prependData`。
+若升级 sass-loader 至 v9.x, 则需将 `data` 修改为 `additionalData`
