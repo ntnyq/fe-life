@@ -83,9 +83,13 @@ export default {
   functional: true,
 
   render(h, { props, slots }) {
-    return h('span',{ 
-      class: ['class-name', props.attr1, props.attr2] 
-    }, props.text || slots().default)
+    return h(
+      'span',
+      {
+        class: ['class-name', props.attr1, props.attr2],
+      },
+      props.text || slots().default
+    )
   },
 }
 ```
@@ -114,7 +118,7 @@ export default {
 }
 ```
 
-## $Refs
+## \$Refs
 
 在元素上添加`ref="Foo` 属性，即可在 Vue 中使用 `this.$refs['Foo']` 来访问这个引用。
 
@@ -171,3 +175,54 @@ Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请�
 而 `created` 生命周期发起请求，如果请求的某些参数要基于 DOM 的，那么这时请求有可能会出现报错或数据不符合预期，当然绝大多数情况是不存在问题的。
 
 总的说来，需要增加自己对代码的掌控力，合理选择数据请求的生命周期。
+
+## 响应式数据
+
+小规模替代 vuex 方案。
+
+```js
+// store.js
+import Vue from 'vue'
+
+export const state = Vue.observable({
+  userInfo: {},
+  roleIds: [],
+})
+
+export const mutations = {
+  setUserInfo(userInfo) {
+    state.userInfo = userInfo
+  },
+
+  setRoleIds(roleIds) {
+    state.roleIds = roleIds
+  },
+}
+```
+
+```vue
+// App.vue
+<template>
+  <div>{{ userInfo.username }}</div>
+</template>
+
+<script>
+import { state, mutations } from '@/store'
+
+export default {
+  computed: {
+    userInfo() {
+      return state.userInfo
+    },
+  },
+
+  methods: {
+    async changeUserInfo() {
+      const userInfo = await getUserInfo()
+
+      mutations.setUserInfo(userInfo)
+    },
+  },
+}
+</script>
+```

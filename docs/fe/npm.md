@@ -6,9 +6,9 @@
 
 > 我在玩儿`gatsby`的时候，下载了[gatsby-starter-personal-blog](https://github.com/greglobinski/gatsby-starter-personal-blog)，查看它的源码的时候发现了这条命令。
 
-__npx__ 命令是 NPM 为提升开发者使用包内提供的命令行工具体验在`v5.2.0`引入的一条命令。
+**npx** 命令是 NPM 为提升开发者使用包内提供的命令行工具体验在`v5.2.0`引入的一条命令。
 
-使用 npx 执行命令就无需再为要执行的命令指定` node_modules`，同时也不需要在 `package.json` 的 `scripts` 字段去添加该命令。
+使用 npx 执行命令就无需再为要执行的命令指定`node_modules`，同时也不需要在 `package.json` 的 `scripts` 字段去添加该命令。
 
 同时，**npx** 还允许我们临时安装某个依赖来执行命令，命令结束后该依赖便会被删除。
 
@@ -39,13 +39,13 @@ $ npx create-react-app my-app
 
 2. 创建一个 npm 包，带 `package.json` 文件，包的名字格式为 `@组织名/包名`，注意需要设置其中的 `publishConfig` 字段，如下：
 
-    ```json
-    {
-      "publishConfig": {
-        "access": "public"
-      }
-    }
-    ```
+   ```json
+   {
+     "publishConfig": {
+       "access": "public"
+     }
+   }
+   ```
 
 3. `npm publish`发布这个依赖。
 

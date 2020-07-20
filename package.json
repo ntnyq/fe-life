@@ -14,8 +14,7 @@
   "main": "index.js",
   "scripts": {
     "build": "vuepress build docs",
-    "dev": "vuepress dev docs",
-    "pub": "sh scripts/deploy.sh"
+    "dev": "vuepress dev docs"
   },
   "husky": {
     "hooks": {

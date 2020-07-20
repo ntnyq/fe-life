@@ -28,6 +28,8 @@
 const length = 10
 
 Array.apply(null, { length }).map((_, idx) => {})
+
+Array.from({ length }, (_, idx) => {})
 ```
 
 上述语法在 compilerOptions 设置了 **strict** 为 `true` 时会报错，原因是同时开启了 **strictBindCallApply**。
