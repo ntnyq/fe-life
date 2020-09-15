@@ -35,12 +35,7 @@ module.exports = {
         email: 'ntnyq13@gmail.com',
       },
     ],
-    [
-      'sitemap',
-      {
-        hostname: 'https://fe.ntnyq.com',
-      },
-    ],
+    ['sitemap', { hostname: 'https://fe.ntnyq.com' }],
   ],
   themeConfig: {
     sidebarDepth: 1,
@@ -67,7 +62,13 @@ module.exports = {
           { text: 'React篇', link: '/react/core' },
         ],
       },
-      { text: 'Node篇', link: '/node/base' },
+      {
+        text: '拓展篇',
+        items: [
+          { text: 'Node篇', link: '/node/base' },
+          { text: '浏览器插件篇', link: '/extension/base' },
+        ],
+      },
       { text: '工具篇', link: '/tools/git' },
       {
         text: '我的项目',

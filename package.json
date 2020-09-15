@@ -25,18 +25,15 @@
     "*.{js,vue,json}": "prettier --write",
     "package.json": "sort-package-json"
   },
-  "prettier": "prettier-config-goy",
-  "resolutions": {
-    "watchpack": "1.6.1"
-  },
+  "prettier": "@ntnyq/prettier-config",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.5.3",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "prettier": "^2.0.5",
-    "prettier-config-goy": "^1.1.0",
+    "@ntnyq/prettier-config": "^0.1.0",
+    "@vuepress/plugin-google-analytics": "^1.5.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1",
     "sort-package-json": "^1.44.0",
-    "vuepress": "^1.5.3",
+    "vuepress": "^1.5.4",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-social-share": "^0.3.2"
   }
