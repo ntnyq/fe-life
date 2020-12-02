@@ -10,18 +10,18 @@ Vetur 中可以使用 `js-beautify-html` 来格式化 Vue 代码中的 Template 
 
 ```json
 {
-  "vetur.completion.autoImport": true,
-  "vetur.completion.tagCasing": "kebab",
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "vetur.format.defaultFormatter.scss": "prettier",
-  "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
-  "vetur.experimental.templateInterpolationService": false,
-  "vetur.format.defaultFormatterOptions": {
-    "js-beautify-html": {
-      "wrap_attributes": "force-expand-multiline"
+    "vetur.completion.autoImport": true,
+    "vetur.completion.tagCasing": "kebab",
+    "vetur.format.defaultFormatter.html": "js-beautify-html",
+    "vetur.format.defaultFormatter.js": "vscode-typescript",
+    "vetur.format.defaultFormatter.scss": "prettier",
+    "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+    "vetur.experimental.templateInterpolationService": false,
+    "vetur.format.defaultFormatterOptions": {
+        "js-beautify-html": {
+            "wrap_attributes": "force-expand-multiline"
+        }
     }
-  }
 }
 ```
 
@@ -38,11 +38,11 @@ Vetur 中可以使用 `js-beautify-html` 来格式化 Vue 代码中的 Template 
 
 ```json
 {
-  "stylusSupremacy.insertColons": false,
-  "stylusSupremacy.insertSemicolons": false,
-  "stylusSupremacy.insertBraces": false,
-  "stylusSupremacy.insertNewLineAroundImports": true,
-  "stylusSupremacy.insertNewLineAroundBlocks": true
+    "stylusSupremacy.insertColons": false,
+    "stylusSupremacy.insertSemicolons": false,
+    "stylusSupremacy.insertBraces": false,
+    "stylusSupremacy.insertNewLineAroundImports": true,
+    "stylusSupremacy.insertNewLineAroundBlocks": true
 }
 ```
 
@@ -52,18 +52,18 @@ Prettier Now 有 `spaceBeforeFunctionParen` 配置，可以给函数参数的括
 
 ```json
 {
-  "prettier.semi": false,
-  "prettier.useTabs": false,
-  "prettier.tabWidth": 2,
-  "prettier.singleQuote": true,
-  "prettier.arrowParens": false,
-  "prettier.trailingComma": "es5",
-  "prettier.bracesSpacing": false,
-  "prettier.spaceBeforeFunctionParen": true,
-  "prettier.jsxSingleQuote": true,
-  "prettier.jsxBracketSameLine": true,
-  "prettier.alignObjectProperties": false,
-  "prettier.arrayExpand": false
+    "prettier.semi": false,
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": true,
+    "prettier.arrowParens": false,
+    "prettier.trailingComma": "es5",
+    "prettier.bracesSpacing": false,
+    "prettier.spaceBeforeFunctionParen": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.jsxBracketSameLine": true,
+    "prettier.alignObjectProperties": false,
+    "prettier.arrayExpand": false
 }
 ```
 
@@ -80,3 +80,17 @@ Prettier Now 有 `spaceBeforeFunctionParen` 配置，可以给函数参数的括
 ### 集成 Terminal，nvm 兼容错误
 
 [VsCodeDocs-IntegratedTerminal](https://github.com/Microsoft/vscode-docs/blob/master/docs/editor/integrated-terminal.md#why-is-nvm-complaining-about-a-prefix-option-when-the-integrated-terminal-is-launched)
+
+## 本地 TypeScript SDK
+
+React 17 后 `tsconfig.json` 中需要配置 `jsx: 'react-jsx'`。此为 **typescript@4.1+** 特性。
+
+```sh
+$ yarn global add typescript
+```
+
+```json
+{
+    "typescript.tsdk": "~/.config/yarn/global/node_modules/typescript/lib"
+}
+```
