@@ -1,7 +1,7 @@
 {
   "name": "fe-life",
   "version": "1.0.0",
-  "description": "Ntnyq's fe life records",
+  "description": "The frontend life record of ntnyq",
   "repository": {
     "type": "git",
     "url": "https://github.com/ntnyq/fe-life"
@@ -22,15 +22,15 @@
     }
   },
   "lint-staged": {
-    "*.{js,vue,json}": "prettier --write",
+    "*.{js,vue,json,md}": "prettier --write",
     "package.json": "sort-package-json"
   },
   "prettier": "@ntnyq/prettier-config",
   "devDependencies": {
     "@ntnyq/prettier-config": "^0.2.0",
     "@vuepress/plugin-google-analytics": "^1.7.1",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.2",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "sort-package-json": "^1.48.0",
     "vuepress": "^1.7.1",
