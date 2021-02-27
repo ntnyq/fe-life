@@ -91,7 +91,7 @@ module.exports = {
         'wechat',
         'weapp',
       ],
-      '/dev/': ['webpack', 'gulp', 'parcel', 'babel', 'typescript'],
+      '/dev/': ['webpack', 'gulp', 'parcel', 'babel', 'typescript', 'vite'],
       '/vue/': [
         'core',
         'router',
