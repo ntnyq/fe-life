@@ -11,7 +11,7 @@ module.exports = {
   title: 'ntnyq的前端人生',
   description: 'ntnyq的前端人生踩坑记录。',
   base: '/',
-  dest: 'site',
+  dest: 'dist',
   head: [
     [
       'meta',
