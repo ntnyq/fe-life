@@ -1,6 +1,6 @@
 const projects = [
-  'vuepress-plugin-svg-icons',
   'vuepress-plugin-social-share',
+  'vuepress-plugin-svg-icons',
   'gulp-format-html',
   'gulp-diffable-html',
   'element-boilerplate',
@@ -59,6 +59,7 @@ module.exports = {
         text: '框架篇',
         items: [
           { text: 'Vue篇', link: '/vue/core' },
+          { text: 'Vue3篇', link: '/vue3/core' },
           { text: 'React篇', link: '/react/core' },
         ],
       },
@@ -104,6 +105,7 @@ module.exports = {
         'vant',
         'plugin',
       ],
+      '/vue3/': ['core', 'proxy', 'reactive', 'typescript'],
       '/react/': ['core'],
       '/node/': [
         'base',
