@@ -1,6 +1,7 @@
 {
   "name": "fe-life",
   "version": "1.0.0",
+  "private": true,
   "description": "The frontend life record of ntnyq",
   "repository": {
     "type": "git",
@@ -16,11 +17,6 @@
     "build": "vuepress build docs",
     "dev": "vuepress dev docs"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{js,vue,json,md}": "prettier --write",
     "package.json": "sort-package-json"
@@ -29,10 +25,10 @@
   "devDependencies": {
     "@ntnyq/prettier-config": "^0.3.0",
     "@vuepress/plugin-google-analytics": "^1.8.2",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.2.1",
-    "sort-package-json": "^1.49.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0",
+    "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
     "vuepress-plugin-sitemap": "^2.3.1",
     "vuepress-plugin-social-share": "^1.0.0"
