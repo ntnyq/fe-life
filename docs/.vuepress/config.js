@@ -133,7 +133,7 @@ module.exports = {
         'aliyun',
         'eslint',
       ],
-      '/plugins/': ['videojs', 'echarts', 'swiper', 'ueditor'],
+      '/plugins/': ['videojs', 'echarts', 'swiper', 'ueditor', 'photoswipe'],
     },
     lastUpdated: '最后更新时间',
   },
