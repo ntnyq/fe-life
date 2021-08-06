@@ -107,3 +107,9 @@ $mobile: 767px;
 ```
 
 [参考资料](https://github.com/gonsakon/Learn-Sass-in-90-days/blob/master/docs/Sass/@content.markdown)
+
+## Node Sass version 6.0.0 is incompatible with ^4.0.0 || ^5.0.0
+
+`sass-loader` 与 `node-sass` 版本冲突。
+
+升级 Loader 或者降级 Sass。
