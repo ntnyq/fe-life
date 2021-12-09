@@ -1,4 +1,4 @@
-# ViteJs
+# Vite
 
 ## 全局 SCSS 变量
 
