@@ -17,8 +17,9 @@ jobs:
       - uses: actions/setup-node@v2
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.23.6
+          version: latest
           run_install: true
+
       - run: pnpm run build
       - uses: peaceiris/actions-gh-pages@v3
         with:
