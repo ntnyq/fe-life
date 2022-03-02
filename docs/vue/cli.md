@@ -63,7 +63,7 @@ console.log(process.env.VUE_APP_NAME) // ntnyq
 对于 2.x 版本，可通过安装 `sass-resources-loader` 来实现。
 
 ```bash
-$ yarn add sasss-resources-loader -D
+$ yarn add sass-resources-loader -D
 ```
 
 修改 `build/utils.js` 中的 `exports.cssLoaders` 如下字段
@@ -71,12 +71,15 @@ $ yarn add sasss-resources-loader -D
 ```js
 // https://vue-loader.vuejs.org/en/configurations/extract-css.html
 return {
-  scss: generateLoaders('sass').concat({
-    loader: 'sass-resources-loader',
-    options: {
-      resources: path.resolve(__dirname, './../src/styles/core/syle.scss'),
-    },
-  }),
+    scss: generateLoaders('sass').concat({
+        loader: 'sass-resources-loader',
+        options: {
+            resources: path.resolve(
+                __dirname,
+                './../src/styles/core/style.scss'
+            ),
+        },
+    }),
 }
 ```
 
@@ -87,15 +90,23 @@ return {
 ```js
 // vue.config.js
 module.exports = {
-  css: {
-    loaderOptions: {
-      sass: {
-        data: `@import "@/styles/core/style.scss"`,
-      },
+    css: {
+        loaderOptions: {
+            sass: {
+                additionalData: `@import "@/styles/core/style.scss"`,
+            },
+        },
     },
-  },
 }
 ```
 
-若升级 sass-loader 至 v8.x, 则需将 `data` 修改为 `prependData`。
-若升级 sass-loader 至 v9.x, 则需将 `data` 修改为 `additionalData`
+若升级 sass-loader 为 v8.x, 则需将 `data` 修改为 `prependData`。
+
+## 禁止数据响应式变化
+
+```js
+const ntnyq = Object.freeze({
+    name: `ntnyq`,
+    gender: `male`,
+})
+```
