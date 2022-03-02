@@ -9,16 +9,16 @@
 ```scss
 // 直接使用
 .icon {
-  background-image: url('~@/assets/images/icon.png');
+    background-image: url('~@/assets/images/icon.png');
 }
 
 // 通过 mixin
 @mixin bg($name, $ext: 'png') {
-  background-image: url('~@/assets/images/#{$name}.#{$ext}');
+    background-image: url('~@/assets/images/#{$name}.#{$ext}');
 }
 
 .icon {
-  @include bg('icon');
+    @include bg('icon');
 }
 ```
 
@@ -30,9 +30,9 @@
 
 ```vue
 <template>
-  <div>
-    <img :src="require('@images/icon.png')" alt="icon" />
-  </div>
+    <div>
+        <img :src="require('@images/icon.png')" alt="icon" />
+    </div>
 </template>
 ```
 
@@ -42,19 +42,19 @@
 
 ```js
 const router = new VueRouter({
-  routes: [],
+    routes: [],
 })
 
 router.afterEach(route => {
-  const documentTitle = process.env.VUE_APP_TITLE || 'DEFAULT_TITLE'
+    const documentTitle = process.env.VUE_APP_TITLE || 'DEFAULT_TITLE'
 
-  route.matched.forEach(path => {
-    if (path.meta.title) {
-      documentTitle += ` - ${path.meta.title}`
-    }
-  })
+    route.matched.forEach(path => {
+        if (path.meta.title) {
+            documentTitle += ` - ${path.meta.title}`
+        }
+    })
 
-  document.title = documentTitle
+    document.title = documentTitle
 })
 ```
 
@@ -66,13 +66,13 @@ router.afterEach(route => {
 
 ```js
 export default {
-  beforeEnter(to, from, next) {
-    if (isPrivateMode()) {
-      EventBus.$emit('get-localdata-error')
-      next(false)
-      return
-    }
-  },
+    beforeEnter(to, from, next) {
+        if (isPrivateMode()) {
+            EventBus.$emit('get-localdata-error')
+            next(false)
+            return
+        }
+    },
 }
 ```
 
@@ -80,11 +80,11 @@ export default {
 // App.vue
 <script>
 export default {
-  mounted() {
-    EventBus.$on('get-localdata-error', () => {
-      this.$alert('请勿使用无痕模式浏览')
-    })
-  },
+    mounted() {
+        EventBus.$on('get-localdata-error', () => {
+            this.$alert('请勿使用无痕模式浏览')
+        })
+    },
 }
 </script>
 ```
@@ -93,21 +93,21 @@ export default {
 
 ```js
 Vue.directive('stat', {
-  bind(el, binding) {
-    el.addEventListener('click', () => {
-      const data = binding.value
-      let prefix = 'store'
+    bind(el, binding) {
+        el.addEventListener('click', () => {
+            const data = binding.value
+            let prefix = 'store'
 
-      if (OS.isAndroid || OS.isPhone) {
-        prefix = 'wap'
-      }
+            if (OS.isAndroid || OS.isPhone) {
+                prefix = 'wap'
+            }
 
-      analytics.request(
-        { ty: `${prefix}_${data.type}`, dc: data.desc || '' },
-        'n'
-      )
-    })
-  },
+            analytics.request(
+                { ty: `${prefix}_${data.type}`, dc: data.desc || '' },
+                'n',
+            )
+        })
+    },
 })
 ```
 
@@ -120,9 +120,9 @@ Vue 组件样式在 `scoped` 模式下，默认情况下，无法通过选择器
 ```vue
 <style lang="scss" scoped>
 .parent {
-  & /deep/ .child {
-    color: red;
-  }
+    & /deep/ .child {
+        color: red;
+    }
 }
 </style>
 ```
@@ -136,7 +136,7 @@ $primary-color: #095ce5;
 
 /* stylelint-disable */
 :export {
-  primarycolor: $primary-color;
+    primarycolor: $primary-color;
 }
 /* stylelint-enable */
 ```
@@ -149,4 +149,4 @@ console.log(primaryColor) // #095ce5
 
 参考资料：
 
-- [How to Share Variables Between Javascript and Sass](https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass)
+-   [How to Share Variables Between Javascript and Sass](https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass)

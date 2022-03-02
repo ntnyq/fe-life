@@ -24,11 +24,11 @@
 
 ```css
 .foo {
-  transform: translate(0);
+    transform: translate(0);
 }
 
 .bar {
-  transform: scale(0);
+    transform: scale(0);
 }
 ```
 
@@ -48,16 +48,16 @@
 
 ```scss
 input[type='number'] {
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    appearance: none;
-  }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        appearance: none;
+    }
 
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 
-  &::-ms-clear {
-    display: none;
-  }
+    &::-ms-clear {
+        display: none;
+    }
 }
 ```
 
@@ -67,7 +67,7 @@ input[type='number'] {
 
 ```scss
 .foo {
-  transform: translate3d(100.5px, 100.4px, 0);
+    transform: translate3d(100.5px, 100.4px, 0);
 }
 ```
 
@@ -81,14 +81,14 @@ input[type='number'] {
 
 参考资料：
 
-- [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
-- [解决 Swiper 中 translate3d 导致字体模糊](http://xuxun.me/blog/2014/04/translate3d-cause-text-blurry-in-swiper/)
+-   [Blurry text on transform:rotate in Chrome](https://stackoverflow.com/questions/20326220/blurry-text-on-transformrotate-in-chrome)
+-   [解决 Swiper 中 translate3d 导致字体模糊](http://xuxun.me/blog/2014/04/translate3d-cause-text-blurry-in-swiper/)
 
 ### 非系统字族延迟渲染
 
 ```scss
 h1 {
-  font-family: 'FZCYSK';
+    font-family: 'FZCYSK';
 }
 ```
 
@@ -104,8 +104,8 @@ h1 {
 
 在中文版 Chrome 的某些版本下存在字体大小限制，表现为：
 
-- PC 端可设置字体最小为 12px
-- 移动端可设置字体最小为 10px
+-   PC 端可设置字体最小为 12px
+-   移动端可设置字体最小为 10px
 
 原因是 Chrome 认为过小的字体对用户是不友好的。
 
@@ -119,27 +119,25 @@ h1 {
 
 解决方案： 设置 `display: inline-block`。
 
-### 兼容
-
 ## PC 端
 
-Input 输入框的默认清空按钮与密码明文图标。
+### Input 输入框的默认清空按钮与密码明文图标。
 
 ```scss
 // type="text"
 input::-ms-clear {
-  display: none;
+    display: none;
 }
 
 // type="password"
 input::-ms-reveal {
-  display: none;
+    display: none;
 }
 ```
 
 参考文档：
 
-- [IE 浏览器 input 输入框的默认清空和密码明文按钮](https://zhuanlan.zhihu.com/p/35725266)
+-   [IE 浏览器 input 输入框的默认清空和密码明文按钮](https://zhuanlan.zhihu.com/p/35725266)
 
 ## 移动端
 
@@ -147,11 +145,7 @@ input::-ms-reveal {
 
 ### br 标签行高问题
 
-#### 描述
-
 `<br />` 标签在部分机器上会占据一行的行高，导致原来的行高更高，不同机型之间的文字间隔高度差异过大。
-
-#### 场景
 
 `UeEditor` (百度富文本编辑器)编辑后，得到如下内容：
 
@@ -167,23 +161,21 @@ input::-ms-reveal {
 
 且`p`标签不存在`margin-top, margin-bottom, padding-top, padding-bottom`等样式。
 
-#### 解决
-
 在`Debug`的过程中，我观察到`br`标签的样式继承了`line-height`属性和`font-size`属性，觉得可能是因为`br`标签占据了一行行高导致的。于是把`br`标签的`font-size`设置为`0`，问题完美解决 ❤️。
 
 ### Stick 定位
 
 ```css
 .stick {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 10;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10;
 }
 ```
 
 兼容性:
 
-- [Can I Use](https://caniuse.com/#search=sticky)
+-   [Can I Use](https://caniuse.com/#search=sticky)
 
 ### 导入 NPM 安装的样式库。
 
@@ -195,29 +187,29 @@ import "~normalize.css";
 
 要求：
 
-- 两列宽度都未知
-- 两列加起来占满整个容器
-- 整体高度需适应最大内容高度
-- 两列内放文本，文本不能侵入对方。
+-   两列宽度都未知
+-   两列加起来占满整个容器
+-   整体高度需适应最大内容高度
+-   两列内放文本，文本不能侵入对方。
 
 ```scss
 .wrap {
-  position: relative;
-  zoom: 1;
+    position: relative;
+    zoom: 1;
 
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-    overflow: hidden;
-  }
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
 }
 
 .aside {
-  float: left;
+    float: left;
 }
 
 .main {
-  overflow: hidden;
+    overflow: hidden;
 }
 ```

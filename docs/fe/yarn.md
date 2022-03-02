@@ -42,10 +42,6 @@ $ yarn add /path_to_your_package
 
 ## 全局配置
 
-通过全局配置，修改一些默认的配置和做个性化修改。
-
-### 全局配置查看
-
 ```bash
 # 查看所有配置
 $ yarn config list
@@ -53,8 +49,6 @@ $ yarn config list
 # 查看某项配置
 $ yarn config get registry
 ```
-
-### 全局配置修改
 
 做了以下配置后，会修改 `yarn init` 命名创建项目的对应默认值。
 
@@ -76,15 +70,15 @@ $ yarn config set init-version 0.0.1
 
 ```json
 {
-  "version": "0.0.1",
-  "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
+    "version": "0.0.1",
+    "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
 }
 ```
 
-### 参考资料
+参考资料
 
-- [yarn init](https://yarnpkg.com/lang/zh-hans/docs/cli/init/)
-- [yarn config](https://yarnpkg.com/zh-Hans/docs/cli/config)
+-   [yarn init](https://yarnpkg.com/lang/zh-hans/docs/cli/init/)
+-   [yarn config](https://yarnpkg.com/zh-Hans/docs/cli/config)
 
 ## 坑点记录
 

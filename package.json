@@ -13,8 +13,8 @@
     "email": "ntnyq13@gmail.com"
   },
   "scripts": {
-    "build": "vuepress build docs",
-    "dev": "vuepress dev docs"
+    "build": "vitepress build docs",
+    "dev": "vitepress dev docs --open --host"
   },
   "lint-staged": {
     "*.{js,vue,json,md}": "prettier --write",
@@ -23,21 +23,19 @@
   "prettier": "@ntnyq/prettier-config",
   "devDependencies": {
     "@ntnyq/prettier-config": "^0.3.1",
-    "@vuepress/plugin-google-analytics": "^1.9.7",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1",
     "sort-package-json": "^1.54.0",
-    "vuepress": "^1.9.7",
-    "vuepress-plugin-sitemap": "^2.3.1",
-    "vuepress-plugin-social-share": "^1.1.0"
+    "vitepress": "^0.22.3"
   },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
-        "chalk",
-        "commander",
-        "esm"
+        "types/react",
+        "react",
+        "react-dom",
+        "@algolia/client-search"
       ]
     }
   }

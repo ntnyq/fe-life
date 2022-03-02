@@ -76,7 +76,7 @@ return {
         options: {
             resources: path.resolve(
                 __dirname,
-                './../src/styles/core/style.scss'
+                './../src/styles/core/style.scss',
             ),
         },
     }),

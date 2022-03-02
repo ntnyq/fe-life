@@ -34,7 +34,7 @@ export default routes;
 假设有如下面包屑导航组件
 
 ```js
-// Breadcrum.vue
+// Breadcrumb.vue
 export default {
   data () {
     return {
@@ -43,7 +43,7 @@ export default {
   },
 
   methods () {
-    genBreadcrum () {
+    genBreadcrumb () {
       const matched = this.$route.matched.filter(item => item.name)
 
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false) // routes里配置了meta.breadcrumb: false的路由将不会被渲染到面包屑导航
@@ -53,7 +53,7 @@ export default {
   watch: {
     $route: {
       handler () {
-        this.genBreadcrum()
+        this.genBreadcrumb()
       },
 
       immediate: true
