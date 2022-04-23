@@ -13,7 +13,7 @@ $ git blame file_path_name
 
 ```bash
 # 拉取指定分支
-$ git cloone repo_url -b branch_name
+$ git clone repo_url -b branch_name
 ```
 
 ## Commit

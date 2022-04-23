@@ -23,7 +23,7 @@ internal/modules/cjs/loader.js:611
     throw err;
     ^
 
-Error: Cannot find module 'not-exsist'
+Error: Cannot find module 'not-exist'
     at Function.Module._resolveFilename (internal/modules/cjs/loader.js:609:15)
     at Function.resolve (internal/modules/cjs/helpers.js:28:19)
     at Object.<anonymous> (/Users/ntnyq/Desktop/temp/resolve/app.js:1:83)

@@ -9,12 +9,15 @@
 ```html
 <!-- 或者使用 div 标签 -->
 <video id="example_video" class="video-js">
-  <source src="path_to_your/video.mp4" type="video/mp4" />
-  <!-- 无js提示 -->
-  <p class="vjs-no-js">
-    To view this video please enable JavaScript, and consider upgrading to a web browser that
-    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-  </p>
+    <source src="path_to_your/video.mp4" type="video/mp4" />
+    <!-- 无js提示 -->
+    <p class="vjs-no-js">
+        To view this video please enable JavaScript, and consider upgrading to a
+        web browser that
+        <a href="https://videojs.com/html5-video-support/" target="_blank"
+            >supports HTML5 video</a
+        >
+    </p>
 </video>
 ```
 
@@ -22,20 +25,20 @@
 
 ```html
 <video id="example_video" class="video-js" data-setup="{}">
-  <source src="path_to_your/video.mp4" type="video/mp4" />
+    <source src="path_to_your/video.mp4" type="video/mp4" />
 </video>
 ```
 
 ### 通过 js API 初始化
 
 ```js
-videojs('example_video', {}, function() {
-  console.log('>>> videojs initialized successful!')
+videojs('example_video', {}, function () {
+    console.log('>>> videojs initialized successful!')
 
-  this.load() // 重新加载
-  this.src = 'path_to_your/video2.mp4' // 切换地址
-  this.play() // 播放
-  this.pause() // 暂停
+    this.load() // 重新加载
+    this.src = 'path_to_your/video2.mp4' // 切换地址
+    this.play() // 播放
+    this.pause() // 暂停
 })
 ```
 
@@ -67,7 +70,7 @@ height: 360 // 视频高度
 
 ```html
 <video id="video_player" class="video-js vjs-big-play-centered">
-  <source src="./video/portrait.mp4" type="video/mp4" />
+    <source src="./video/portrait.mp4" type="video/mp4" />
 </video>
 ```
 
@@ -75,7 +78,7 @@ height: 360 // 视频高度
 
 ```css
 .vjs-big-play-centered .vjs-big-play-button {
-  margin-top: -1.5em;
+    margin-top: -1.5em;
 }
 ```
 
@@ -89,7 +92,7 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 
 ```css
 .vjs-poster {
-  background-size: cover;
+    background-size: cover;
 }
 ```
 
@@ -97,9 +100,9 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 
 ```css
 .video-js .vjs-icon-placeholder:before {
-  height: 3em !important;
-  line-height: 1.5em;
-  font-size: 2em;
+    height: 3em !important;
+    line-height: 1.5em;
+    font-size: 2em;
 }
 ```
 
@@ -107,11 +110,11 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 
 ```html
 <video
-  playsinline="true"
-  webkit-playsinline="true"
-  x5-video-player-type="h5"
-  x5-video-player-fullscreen="false"
-  x5-video-orientation="portrait"
+    playsinline="true"
+    webkit-playsinline="true"
+    x5-video-player-type="h5"
+    x5-video-player-fullscreen="false"
+    x5-video-orientation="portrait"
 ></video>
 ```
 
@@ -122,7 +125,7 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 ```css
 .vjs-paused .vjs-big-play-button,
 .vjs-paused.vjs-has-started .vjs-big-play-button {
-  display: block;
+    display: block;
 }
 ```
 
@@ -130,7 +133,7 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 
 ```css
 .video-js button:focus {
-  outline: none;
+    outline: none;
 }
 ```
 
@@ -142,7 +145,7 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 
 ```html
 <video class="video-js" id="video_player">
-  <source src="rtmp://58.200.131.2:1935/livetv/hunantv" type="rtmp/mp4" />
+    <source src="rtmp://58.200.131.2:1935/livetv/hunantv" type="rtmp/mp4" />
 </video>
 ```
 
@@ -152,36 +155,36 @@ import 'videojs-flash'
 import 'video.js/dist/video-js.min.css'
 
 videojs('video_player', { techOrder: ['html5', 'flash'] }, () => {
-  console.log(`Video player initialize successfully!`)
+    console.log(`Video player initialize successfully!`)
 })
 ```
 
 参考资料:
 
-- [how-can-i-play-rtmp-video-in-videojs](https://docs.videojs.com/tutorial-faq.html#q-how-can-i-play-rtmp-video-in-videojs)
+-   [how-can-i-play-rtmp-video-in-videojs](https://docs.videojs.com/tutorial-faq.html#q-how-can-i-play-rtmp-video-in-videojs)
 
 ## 事件
 
 VideoJs 支持以下事件监听：
 
-- durationchange
-- ended
-- canplay
-- firstplay
-- fullscreenchange
-- loadedalldata
-- loadeddata
-- loadedmetadata
-- loadstart
-- pause
-- play
-- progress
-- seeked
-- seeking
-- timeupdate
-- volumechange
-- waiting
-- resize inherited
+-   durationchange
+-   ended
+-   canplay
+-   firstplay
+-   fullscreenchange
+-   loadedalldata
+-   loadeddata
+-   loadedmetadata
+-   loadstart
+-   pause
+-   play
+-   progress
+-   seeked
+-   seeking
+-   timeupdate
+-   volumechange
+-   waiting
+-   resize inherited
 
 ## Vue 组件
 
@@ -189,31 +192,31 @@ VideoJs 支持以下事件监听：
 
 ```vue
 <template>
-  <vue-video-player ref="videoPlayer" />
+    <vue-video-player ref="videoPlayer" />
 </template>
 
 <script>
 export default {
-  computed: {
-    player() {
-      return this.$refs.videoPlayer.player
+    computed: {
+        player() {
+            return this.$refs.videoPlayer.player
+        },
     },
-  },
 
-  methods: {
-    toggle() {
-      const newVideo = 'https://video.com/video.mp4'
+    methods: {
+        toggle() {
+            const newVideo = 'https://video.com/video.mp4'
 
-      this.player.src(newVideo)
+            this.player.src(newVideo)
+        },
     },
-  },
 }
 </script>
 ```
 
 参考资料：
 
-- [vue-video-player 更改视频源](https://segmentfault.com/a/1190000014738331)
+-   [vue-video-player 更改视频源](https://segmentfault.com/a/1190000014738331)
 
 ## 打包体积优化
 
@@ -230,4 +233,4 @@ import videojs from 'video.js/dist/alt/videojs.core.novtt'
 
 参考资料:
 
-- [Large bundle size (900KB)](https://github.com/videojs/video.js/issues/6166#issuecomment-520539730)
+-   [Large bundle size (900KB)](https://github.com/videojs/video.js/issues/6166#issuecomment-520539730)

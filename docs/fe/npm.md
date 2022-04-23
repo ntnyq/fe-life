@@ -20,8 +20,8 @@ $ npx create-react-app my-app
 
 参考资料:
 
-- [Github-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
-- [npx 命令介绍](https://segmentfault.com/a/1190000012974903)
+-   [Github-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
+-   [npx 命令介绍](https://segmentfault.com/a/1190000012974903)
 
 ## weixin-js-sdk 报错
 
@@ -31,7 +31,7 @@ $ npx create-react-app my-app
 
 参考资料:
 
-- [jsweixin 引入时报错 Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
+-   [jsweixin 引入时报错 Cannot read property 'title' of undefined](https://segmentfault.com/q/1010000009724851)
 
 ## npm 发表带@前缀的依赖
 
@@ -39,13 +39,13 @@ $ npx create-react-app my-app
 
 2. 创建一个 npm 包，带 `package.json` 文件，包的名字格式为 `@组织名/包名`，注意需要设置其中的 `publishConfig` 字段，如下：
 
-   ```json
-   {
-     "publishConfig": {
-       "access": "public"
-     }
-   }
-   ```
+    ```json
+    {
+        "publishConfig": {
+            "access": "public"
+        }
+    }
+    ```
 
 3. `npm publish`发布这个依赖。
 
@@ -55,12 +55,12 @@ $ npx create-react-app my-app
 
 可能原因:
 
-- 网络情况不好
-- 电脑内存不足
+-   网络情况不好
+-   电脑内存不足
 
 可以试用 `Yarn` 或者 淘宝镜像。
 
 参考资料:
 
-- [你的 node 依赖们炸了没？](https://github.com/NoName4Me/yo-FE/issues/17)
-- [".staging" folder inside of node_modules](https://github.com/npm/npm/issues/12540)
+-   [你的 node 依赖们炸了没？](https://github.com/NoName4Me/yo-FE/issues/17)
+-   [".staging" folder inside of node_modules](https://github.com/npm/npm/issues/12540)

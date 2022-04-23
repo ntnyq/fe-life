@@ -57,7 +57,7 @@ $ node -v > .nvmrc
 
 ### 参考资料
 
-- [.nvmrc example?](https://github.com/nvm-sh/nvm/issues/995#issuecomment-349670827)
+-   [.nvmrc example?](https://github.com/nvm-sh/nvm/issues/995#issuecomment-349670827)
 
 ## Lint
 
@@ -66,9 +66,9 @@ $ node -v > .nvmrc
 
 ```json
 {
-  "scripts": {
-    "lint": "eslint --ext .js .",
-    "lint:fix": "eslint --fix --ext .js ."
-  }
+    "scripts": {
+        "lint": "eslint --ext .js .",
+        "lint:fix": "eslint --fix --ext .js ."
+    }
 }
 ```

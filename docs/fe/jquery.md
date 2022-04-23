@@ -2,19 +2,19 @@
 
 ## 常用插件
 
-- [ScrollPath](https://github.com/JoelBesada/scrollpath) 页面滚动效果插件
+-   [ScrollPath](https://github.com/JoelBesada/scrollpath) 页面滚动效果插件
 
 ## 静态方法
 
 直接挂在 `$` 上的方法。
 
-- $.camelCase()
-- $.Deffered()
-- $.ajax()
-- $.isPlainObject()
-- $.isEmptyObject()
-- $.trim()
-- $.extend()
+-   $.camelCase()
+-   $.Deffered()
+-   $.ajax()
+-   $.isPlainObject()
+-   $.isEmptyObject()
+-   $.trim()
+-   $.extend()
 
 ## 踩坑记录
 
@@ -32,4 +32,4 @@ Using the data() method to update data does not affect attributes in the DOM. To
 
 参考资料：
 
-- [jQueryDocs-data](https://api.jquery.com/data/)
+-   [jQueryDocs-data](https://api.jquery.com/data/)
