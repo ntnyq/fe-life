@@ -1,10 +1,10 @@
-# VsCode
+# VS Code
 
-> 关于 VsCode 编辑器
+> 关于 VS Code 编辑器
 
 ## Vetur
 
-**[Vetur](https://github.com/vuejs/vetur)** 是 VueJS 官方针对 VsCode 编辑器出品的扩展。
+**[Vetur](https://github.com/vuejs/vetur)** 是 VueJS 官方针对 VS Code 编辑器出品的扩展。
 
 Vetur 中可以使用 `js-beautify-html` 来格式化 Vue 代码中的 Template 部分，个人配置如下：
 

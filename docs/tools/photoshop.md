@@ -1,4 +1,4 @@
-# PhotoShop
+# Photoshop
 
 ## 调整纯色 PNG 图标颜色
 

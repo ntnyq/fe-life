@@ -8,7 +8,7 @@
 
 ### 安装
 
-MacOS 默认无 Tree 命令。
+macOS 默认无 Tree 命令。
 
 ```bash
 $ brew install tree
@@ -22,7 +22,7 @@ $ brew install tree
 
 -   -i 不输出缩进行
 
--   J 输出为 Json 格式
+-   J 输出为 JSON 格式
 -   X 输出为 XML 格式
 -   H 输出为 HTML 文档格式
 -   o 输出至对应文件名文件

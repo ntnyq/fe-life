@@ -7,10 +7,9 @@ import { defineConfig } from 'vitepress'
 const projects = [
   `vuepress-plugin-social-share`,
   `vuepress-plugin-svg-icons`,
-  `gulp-format-html`,
-  `gulp-diffable-html`,
-  `element-boilerplate`,
-  `taro-zhihu-daily`,
+  `element-plus-admin`,
+  `omz-plugin-pnpm`,
+  `gulp-plugins`,
 ]
 
 export default defineConfig({

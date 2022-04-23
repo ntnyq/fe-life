@@ -6,7 +6,7 @@
 
 ## Shell
 
--   [shelljs](https://github.com/shelljs/shelljs) Unix Shell 命令行 Node 版
+-   [shelljs](https://github.com/shelljs/shelljs) UNIX Shell 命令行 Node 版
 
 ## Interfaces
 

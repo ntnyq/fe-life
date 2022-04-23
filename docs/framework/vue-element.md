@@ -120,7 +120,7 @@ export default {
         return {
             data: [
                 { lang: 'Vue', ui: 'Element' },
-                { lang: 'React', ui: 'Antd' },
+                { lang: 'React', ui: 'AntD' },
                 { lang: 'Angular', ui: 'NG-ZORRO' },
             ],
             activePopIndex: undefined,

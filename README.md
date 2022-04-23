@@ -1,6 +1,6 @@
 # Ntnyq 的前端人生
 
-[![VuePress](https://img.shields.io/badge/powered--by-vuepress-green.svg)](https://v1.vuepress.vuejs.org/)
+[![VitePress](https://img.shields.io/badge/powered--by-vitepress-green.svg)](https://vitepress.vuejs.org/)
 [![LastCommit](https://img.shields.io/github/last-commit/ntnyq/fe-life.svg)](https://github.com/ntnyq/fe-life)
 
 作为一个<del>前端</del>小白，在开发过程中难免遇到各种**\***蛋的问题，心中难免要说一声`fuck`🐶。

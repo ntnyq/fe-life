@@ -149,4 +149,4 @@ console.log(primaryColor) // #095ce5
 
 参考资料：
 
--   [How to Share Variables Between Javascript and Sass](https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass)
+-   [How to Share Variables Between JavaScript and Sass](https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass)

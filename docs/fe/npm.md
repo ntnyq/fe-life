@@ -20,7 +20,7 @@ $ npx create-react-app my-app
 
 参考资料:
 
--   [Github-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
+-   [GitHub-npm](https://github.com/npm/npm/releases/tag/v5.2.0)
 -   [npx 命令介绍](https://segmentfault.com/a/1190000012974903)
 
 ## weixin-js-sdk 报错

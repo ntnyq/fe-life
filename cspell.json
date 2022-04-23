@@ -3,7 +3,8 @@
   "language": "en",
   "allowCompoundWords": true,
   "words": [
-    "Antd",
+    "aliyun",
+    "antd",
     "cdnurl",
     "Deffered",
     "dpkg",
@@ -27,7 +28,8 @@
     "ueditor",
     "vant",
     "videojs",
-    "weapp"
+    "weapp",
+    "zhihu"
   ],
   "flagWords": [],
   "ignoreWords": [],

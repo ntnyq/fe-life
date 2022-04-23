@@ -1,4 +1,4 @@
-# Echarts
+# ECharts
 
 ## 大量数据渲染性能提升
 
