@@ -19,7 +19,7 @@ jobs:
         with:
           version: latest
           run_install: true
-    - run: pnpm run lint
+      - run: pnpm run lint
 
   deploy:
     runs-on: ubuntu-latest
