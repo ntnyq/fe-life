@@ -110,3 +110,22 @@ const ntnyq = Object.freeze({
     gender: `male`,
 })
 ```
+
+## 生产移除三方库版权声明信息注释
+
+> 产品线上安全检测版权信息内存在邮箱，领导责令移除掉。
+
+以下为 vue-cli 配置。可根据自身打包工具使用 `terser-webpack-plugin` 或 `uglify-webpack-plugin` 的配置。
+
+```js
+config.when(process.env.NODE_ENV === `production`, config => {
+    config.optimization.minimizer(`terser`).tap(args => {
+        args[0].terserOptions.compress.drop_debugger = true
+        args[0].terserOptions.output = {
+            comments: false,
+        }
+        return args
+    })
+    return config
+})
+```
