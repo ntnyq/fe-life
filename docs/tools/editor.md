@@ -85,7 +85,7 @@ Prettier Now 有 `spaceBeforeFunctionParen` 配置，可以给函数参数的括
 
 React 17 后 `tsconfig.json` 中需要配置 `jsx: 'react-jsx'`。此为 **typescript@4.1+** 特性。
 
-```sh
+```shell
 $ yarn global add typescript
 ```
 

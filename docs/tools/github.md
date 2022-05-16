@@ -6,7 +6,7 @@
 
 ### 删除 tag
 
-```sh
+```shell
 $ git tag -d tag_name
 
 $ git push origin :tag_name
