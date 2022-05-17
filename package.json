@@ -19,6 +19,9 @@
     "package.json": "sort-package-json"
   },
   "prettier": "@ntnyq/prettier-config",
+  "dependencies": {
+    "vue": "^3.2.33"
+  },
   "devDependencies": {
     "@ntnyq/prettier-config": "^1.0.0",
     "@qxy/cspell-dict": "^0.0.3",

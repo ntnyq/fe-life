@@ -5,12 +5,7 @@
 IOS、QQ 和微信浏览器，在 video 标签上加如上 3 个属性。
 
 ```html
-<video
-    src="video.mp4"
-    playsinline
-    webkit-playsinline="true"
-    x5-playsinline
-></video>
+<video src="video.mp4" playsinline webkit-playsinline="true" x5-playsinline></video>
 ```
 
 参考资料:
@@ -88,7 +83,7 @@ searchInput.addEventListener(
             evt.preventDefault()
         }
     },
-    !1
+    !1,
 )
 ```
 
@@ -97,3 +92,20 @@ searchInput.addEventListener(
 ```html
 <video src="video.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
 ```
+
+## 图片缩小变模糊
+
+```css
+img {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    -webkit-font-smoothing: antialiased;
+}
+```
+
+**参考资料**
+
+-   [css-图片缩小变模糊了。](https://juejin.cn/post/6978853282156396557)
