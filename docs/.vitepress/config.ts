@@ -12,6 +12,9 @@ const projects = [
   `gulp-plugins`,
 ]
 
+const ogTitle = `ntnyq的前端人生`
+const ogUrl = `https://fe.ntnyq.com`
+
 export default defineConfig({
   title: `ntnyq的前端人生`,
 
@@ -21,6 +24,9 @@ export default defineConfig({
 
   head: [
     [`link`, { rel: `icon`, href: `/favicon.ico` }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: ogTitle }],
+    ['meta', { property: 'og:url', content: ogUrl }],
     [
       `meta`,
       {
@@ -36,13 +42,28 @@ export default defineConfig({
   },
 
   themeConfig: {
-    repo: `ntnyq/fe-life`,
-    docsRepo: 'ntnyq/fe-life',
-    docsDir: 'docs',
-    docsBranch: 'main',
-    editLinks: true,
-    editLinkText: '帮助我改进页面内容！',
-    lastUpdated: `最后更新时间`,
+    logo: `/favicon.ico`,
+
+    editLink: {
+      pattern: `https://github.com/ntnyq/fe-life/edit/main/docs/:path`,
+      text: `帮助我改进页面内容！`,
+    },
+
+    socialLinks: [
+      { icon: `twitter`, link: `https://twitter.com/ntnyq` },
+      { icon: `github`, link: `https://github.com/ntnyq/fe-life` }
+    ],
+
+    // localeLinks: {
+    //   text: ``,
+    //   items: []
+    // },
+
+    footer: {
+      message: ``,
+      copyright: `Copyright © 2019-present ntnyq. All Rights Reserved.`,
+    },
+
     nav: [
       { text: `首页`, link: `/` },
       {
@@ -81,7 +102,7 @@ export default defineConfig({
       '/fe/': [
         {
           text: `前端篇`,
-          children: [
+          items: [
             { text: `html`, link: `/fe/html` },
             { text: `css`, link: `/fe/css` },
             { text: `scss`, link: `/fe/scss` },
@@ -97,7 +118,7 @@ export default defineConfig({
       '/dev/': [
         {
           text: `构建篇`,
-          children: [
+          items: [
             { text: `webpack`, link: `/dev/webpack` },
             { text: `gulp`, link: `/dev/gulp` },
             { text: `parcel`, link: `/dev/parcel` },
@@ -110,7 +131,7 @@ export default defineConfig({
       '/framework/': [
         {
           text: `vue`,
-          children: [
+          items: [
             { text: `vue`, link: `/framework/vue-core` },
             { text: `router`, link: `/framework/vue-router` },
             { text: `vuex`, link: `/framework/vue-vuex` },
@@ -124,13 +145,13 @@ export default defineConfig({
         },
         {
           text: `react`,
-          children: [{ text: `react`, link: `/framework/react-core` }],
+          items: [{ text: `react`, link: `/framework/react-core` }],
         },
       ],
       '/node/': [
         {
           text: `Node篇`,
-          children: [
+          items: [
             { text: `base`, link: `/node/base` },
             { text: `api`, link: `/node/api` },
             { text: `path`, link: `/node/path` },
@@ -145,7 +166,7 @@ export default defineConfig({
       '/tools/': [
         {
           text: `工具篇`,
-          children: [
+          items: [
             { text: `git`, link: `/tools/git` },
             { text: `github`, link: `/tools/github` },
             { text: `shell`, link: `/tools/shell` },
@@ -166,7 +187,7 @@ export default defineConfig({
       '/plugins/': [
         {
           text: ``,
-          children: [
+          items: [
             { text: `videojs`, link: `/plugins/videojs` },
             { text: `echarts`, link: `/plugins/echarts` },
             { text: `swiper`, link: `/plugins/swiper` },
