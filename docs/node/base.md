@@ -25,13 +25,10 @@ chromedriver_cdnurl=https://cdn.npm.taobao.org/dist/chromedriver
 ### .yarnrc
 
 ```
-registry "https://registry.npm.taobao.org"
-sass_binary_site "https://npm.taobao.org/mirrors/node-sass/"
-phantomjs_cdnurl "http://cnpmjs.org/downloads"
-electron_mirror "https://npm.taobao.org/mirrors/electron/"
-sqlite3_binary_host_mirror "https://foxgis.oss-cn-shanghai.aliyuncs.com/"
-profiler_binary_host_mirror "https://npm.taobao.org/mirrors/node-inspector/"
-chromedriver_cdnurl "https://cdn.npm.taobao.org/dist/chromedriver"
+registry "https://registry.npmmirror.com"
+sass_binary_site "https://npmmirror.com/mirrors/node-sass"
+phantomjs_cdnurl "https://npmmirror.com/mirrors/phantomjs"
+chromedriver_cdnurl "http://npmmirror.com/mirrors/chromedriver"
 ```
 
 ### 参考文档
@@ -57,7 +54,7 @@ $ node -v > .nvmrc
 
 ### 参考资料
 
--   [.nvmrc example?](https://github.com/nvm-sh/nvm/issues/995#issuecomment-349670827)
+-   [.nvmrc example](https://github.com/nvm-sh/nvm/issues/995#issuecomment-349670827)
 
 ## Lint
 

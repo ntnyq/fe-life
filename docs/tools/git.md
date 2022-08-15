@@ -255,3 +255,13 @@ $ git rebase upstream/master
 ## 参考资料
 
 [如何使用 GitHub Flow 给开源项目贡献代码](https://juejin.im/post/5b4611f4f265da0f970d1a0c)
+
+### Git 语言中文切换至英文
+
+通过配置 shell 环境变量，可以将 Git 语言中文切换至英文。
+
+例如 `.zshrc`:
+
+```shell
+export LANG="en_US.UTF-8"
+```

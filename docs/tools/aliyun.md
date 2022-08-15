@@ -32,3 +32,11 @@ LC_ALL=en_US.UTF-8
 参考资料：
 
 -   [manpath: can't set the locale; make sure $LC\_\* and $LANG are correct](https://www.jianshu.com/p/7f8f41e7bca0)
+
+## OSS 存储 PDF 但点击下载而非预览
+
+设置文件的 Response Header。
+
+增加 `Content-Disposition`, 值为 `attachment;`。
+
+若要自定义文件名，可以在 `Content-Disposition` 中添加 `filename="filename.ext"`。
