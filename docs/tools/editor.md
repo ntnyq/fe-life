@@ -34,7 +34,7 @@ Vetur 中可以使用 `js-beautify-html` 来格式化 Vue 代码中的 Template 
 
 ## Stylus 格式化
 
-安装插件 **[Manta's Stylus Supremacy](https://github.com/ThisIsManta/vscode-stylus-supremacy)**插件，并做如下配置:
+安装插件 **[Manta's Stylus Supremacy](https://github.com/ThisIsManta/vscode-stylus-supremacy)** 插件，并做如下配置:
 
 ```json
 {

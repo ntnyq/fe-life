@@ -24,9 +24,9 @@ export default defineConfig({
 
   head: [
     [`link`, { rel: `icon`, href: `/favicon.ico` }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: ogTitle }],
-    ['meta', { property: 'og:url', content: ogUrl }],
+    [`meta`, { property: `og:type`, content: `website` }],
+    [`meta`, { property: `og:title`, content: ogTitle }],
+    [`meta`, { property: `og:url`, content: ogUrl }],
     [
       `meta`,
       {
@@ -51,7 +51,7 @@ export default defineConfig({
 
     socialLinks: [
       { icon: `twitter`, link: `https://twitter.com/ntnyq` },
-      { icon: `github`, link: `https://github.com/ntnyq/fe-life` }
+      { icon: `github`, link: `https://github.com/ntnyq/fe-life` },
     ],
 
     // localeLinks: {
@@ -88,7 +88,6 @@ export default defineConfig({
         ],
       },
       { text: `工具篇`, activeMatch: `^/tools/`, link: `/tools/git` },
-      { text: `插件篇`, activeMatch: `^/plugins/`, link: `/plugins/videojs` },
       {
         text: `我的项目`,
         items: projects.map(project => ({
@@ -112,6 +111,7 @@ export default defineConfig({
             { text: `yarn`, link: `/fe/yarn` },
             { text: `wechat`, link: `/fe/wechat` },
             { text: `weapp`, link: `/fe/weapp` },
+            { text: `ie`, link: `/fe/ie` },
           ],
         },
       ],

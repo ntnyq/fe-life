@@ -2,6 +2,22 @@
 
 > Life is short, I use SCSS.
 
+## At-rule
+
+`@use` 用于从其他 sass 文件导入 mixins, functions, variables，或将多个 sass 文件组合到一起。
+
+`@forward` 用于从其他 sass 文件导入 mixins, functions, variables。用于其他 sass 文件的 `@use` 使用。
+
+`@mixin` 和 `@include` 结合使用。前者用于定义 mixin 后者用于使用 mixin。
+
+`@function` 用户定义 function。
+
+`@at-root` 用于将嵌套的样式提升至样式文件根目录。
+
+`@error`, `@warn`, `@debug` 用户 debug。
+
+`@if`, `@else`, `@for`, `@while`, `@each` 条件循环控制语句，提供编程能力。
+
 ## @content 指令
 
 > [项目链接](https://github.com/ssshooter/nippon-color)
@@ -14,7 +30,7 @@
 
 **@content** 的主要用途是给 **@mixin** 里传递内容，这点可以结合 Vue 的 **slot** 来理解以下。
 
-通常我们使用**@mixin**都会通过参数往里面传递内容，在内部直接使用变量或者做判断来订制产生的内容。
+通常我们使用 **@mixin** 都会通过参数往里面传递内容，在内部直接使用变量或者做判断来订制产生的内容。
 
 例：
 
@@ -37,7 +53,7 @@
 }
 ```
 
-但是，如果在**@mixin** 里添加了 **@content** 指令，就可以传递样式内容进去。
+但是，如果在 **@mixin** 里添加了 **@content** 指令，就可以传递样式内容进去。
 
 例：
 
@@ -119,7 +135,6 @@ module.exports = {
         loaderOptions: {
             sass: {
                 additionalData: `@use "sass:math"; @import "~@/assets/styles/core/style";`,
-
                 sassOptions: {
                     // @see https://stackoverflow.com/questions/67812380/disable-dart-sass-warnings-produced-by-external-theme-file
                     quietDeps: true, // 关闭控制台警告
