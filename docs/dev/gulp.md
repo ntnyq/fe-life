@@ -1,6 +1,6 @@
 # Gulp
 
-> Gulp 是一款基于流的自动化构建工具。与 Webpack 不同，它是一款**Task Runner**。
+> Gulp 是一款基于流的自动化构建工具。与 webpack 不同，它是一款 **Task Runner**。
 
 ## 踩坑记录
 

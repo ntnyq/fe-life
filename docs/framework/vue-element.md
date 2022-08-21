@@ -62,9 +62,9 @@
 以如下的形式修改了主题颜色。
 
 ```scss
-$--color-primary: darkblue
-$--font-path: "~element-ui/lib/theme-chalk/fonts"
-@import "~element-ui/packages/theme-chalk/src/index"
+$--color-primary: darkblue;
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+@import '~element-ui/packages/theme-chalk/src/index';
 ```
 
 ::: tip
@@ -83,13 +83,7 @@ import './styles/element-reset'
     <div class="element-demo">
         <el-table :data="data">
             <el-table-column type="index" label="序号"></el-table-column>
-
-            <el-table-column
-                prop="lang"
-                label="框架"
-                width="180"
-            ></el-table-column>
-
+            <el-table-column prop="lang" label="框架" width="180"></el-table-column>
             <el-table-column label="操作">
                 <template slot-scope="scope">
                     <el-popover
@@ -140,7 +134,6 @@ export default {
 
         hidePopover() {
             const idx = this.activePopIndex
-
             this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
             this.activePopIndex = undefined
         },
@@ -161,7 +154,6 @@ export default {
         <el-table-column v-if="type === 'foo'" prop="type" label="类型" />
         <el-table-column v-if="type === 'bar'" prop="title" label="标题" />
         <el-table-column v-if="type === 'baz'" prop="date" label="时间" />
-
         ...
     </el-table>
     <template />
@@ -211,10 +203,4 @@ Vue.prototype.$message = Message
 
 ```js
 this.$refs.uploader.clearFiles()
-```
-
-## 无需弹出的日历面板
-
-```vue
-
 ```

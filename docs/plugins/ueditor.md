@@ -12,7 +12,7 @@
 // themes/iframe.css
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 ```
 
@@ -24,7 +24,7 @@ img {
 
 ```js
 const ue = UE.getEditor('#ueditor', {
-  autoHeightEnabled: false,
+    autoHeightEnabled: false,
 })
 ```
 

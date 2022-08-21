@@ -4,4 +4,4 @@
 
 ## 常用插件
 
-- [parcel-plugin-imagemin](https://github.com/DeMoorJasper/parcel-plugin-imagemin)
+-   [parcel-plugin-imagemin](https://github.com/DeMoorJasper/parcel-plugin-imagemin)

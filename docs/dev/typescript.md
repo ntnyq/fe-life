@@ -14,9 +14,9 @@
 
 ```json
 {
-  "compilerOptions": {
-    "target": "es5"
-  }
+    "compilerOptions": {
+        "target": "es5"
+    }
 }
 ```
 

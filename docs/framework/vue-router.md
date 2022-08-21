@@ -45,7 +45,6 @@ export default {
   methods () {
     genBreadcrumb () {
       const matched = this.$route.matched.filter(item => item.name)
-
       this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false) // routes里配置了meta.breadcrumb: false的路由将不会被渲染到面包屑导航
     }
   },
@@ -55,7 +54,6 @@ export default {
       handler () {
         this.genBreadcrumb()
       },
-
       immediate: true
     }
   }

@@ -10,18 +10,18 @@
 
 ```js
 const schema = new mongoose.Schema({
-  password: String,
+    password: String,
 })
 
 schema.pre('save', next => {
-  console.log(this)
-  next()
+    console.log(this)
+    next()
 })
 
 const model = mongoose.model('Test', schema)
 
 const test = new model({
-  password: 'testpass',
+    password: 'testpass',
 })
 
 test.save()
@@ -30,9 +30,9 @@ test.save()
 解析：箭头函数会维持 this 的指向，而这里我们需要的是`model`的实例。改成如下形式，即可正常：
 
 ```js
-schema.pre('save', function(next) {
-  console.log(this)
-  next()
+schema.pre('save', function (next) {
+    console.log(this)
+    next()
 })
 ```
 

@@ -12,7 +12,8 @@
     "build": "vitepress build docs",
     "dev": "vitepress dev docs --open --host",
     "lint": "run-p lint:*",
-    "lint:cspell": "cspell \"**\""
+    "lint:cspell": "cspell \"**\"",
+    "pretty": "prettier --write \"**/*.{md,js,ts,css,scss,vue}\""
   },
   "lint-staged": {
     "*.{js,vue,json,md}": "prettier --write",

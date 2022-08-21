@@ -16,7 +16,7 @@ body.addEventListener(
     evt => {
         evt.preventDefault() // 阻止下拉滑动效果
     },
-    { passive: false }
+    { passive: false },
 ) // 兼容 IOS 和安卓 使用 passive: true 提高滚动性能并减少崩溃
 ```
 

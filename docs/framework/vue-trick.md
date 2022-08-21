@@ -25,7 +25,7 @@
 在 **Vue Template** 中使用图片：
 
 ::: tip
-建议通过 Webpack 配置更加简洁的 **alias**，方便使用。
+建议通过 webpack 配置更加简洁的 **alias**，方便使用。
 :::
 
 ```vue
@@ -102,10 +102,7 @@ Vue.directive('stat', {
                 prefix = 'wap'
             }
 
-            analytics.request(
-                { ty: `${prefix}_${data.type}`, dc: data.desc || '' },
-                'n',
-            )
+            analytics.request({ ty: `${prefix}_${data.type}`, dc: data.desc || '' }, 'n')
         })
     },
 })

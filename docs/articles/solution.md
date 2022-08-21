@@ -2,32 +2,32 @@
 
 ## PC 端解决方案
 
-- **各种弹窗**
+-   **各种弹窗**
 
-  - [layer](http://layer.layui.com/)
+    -   [layer](http://layer.layui.com/)
 
-- **日期时间选择**
+-   **日期时间选择**
 
-  - [laydate](https://www.layui.com/laydate/)
+    -   [laydate](https://www.layui.com/laydate/)
 
-- **滚动视差图片**
+-   **滚动视差图片**
 
-  - [Parallax.js](https://github.com/pixelcog/parallax.js)
+    -   [Parallax.js](https://github.com/pixelcog/parallax.js)
 
-- **Tooltip 提示**
+-   **Tooltip 提示**
 
-  - [tooltipster](https://github.com/iamceege/tooltipster)
+    -   [tooltipster](https://github.com/iamceege/tooltipster)
 
-- **图片上传裁剪**
+-   **图片上传裁剪**
 
-  - [cropper](https://github.com/fengyuanchen/cropper)
+    -   [cropper](https://github.com/fengyuanchen/cropper)
 
-- **图片弹出预览**
+-   **图片弹出预览**
 
-  - [fancybox](https://github.com/fancyapps/fancybox)
+    -   [fancybox](https://github.com/fancyapps/fancybox)
 
 ## 移动端解决方案
 
-- **下拉刷新上滑加载**
+-   **下拉刷新上滑加载**
 
-  [meScroll](https://github.com/mescroll/mescroll)
+    [meScroll](https://github.com/mescroll/mescroll)
