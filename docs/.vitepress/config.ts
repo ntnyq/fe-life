@@ -160,6 +160,7 @@ export default defineConfig({
             { text: `electron`, link: `/node/electron` },
             { text: `http`, link: `/node/http` },
             { text: `nvm`, link: `/node/nvm` },
+            { text: `pnpm`, link: `/node/pnpm` },
           ],
         },
       ],
