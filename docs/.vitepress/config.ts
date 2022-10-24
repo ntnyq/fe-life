@@ -34,6 +34,16 @@ export default defineConfig({
         content: `JVSw-F97ZlD3D0yqM4MiBYvtRfpHfNtmH1J3PFX4fGk`,
       },
     ],
+    [`script`, {
+      src: `https://www.googletagmanager.com/gtag/js?id=G-LM88CRBNZ4`,
+      async: ``
+    }],
+    [`script`, {}, `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-LM88CRBNZ4');
+    `]
   ],
 
   markdown: {
@@ -161,6 +171,7 @@ export default defineConfig({
             { text: `http`, link: `/node/http` },
             { text: `nvm`, link: `/node/nvm` },
             { text: `pnpm`, link: `/node/pnpm` },
+            { text: `esm`, link: `/node/esm` },
           ],
         },
       ],

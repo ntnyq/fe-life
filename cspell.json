@@ -6,6 +6,7 @@
     "aliyun",
     "antd",
     "cdnurl",
+    "CRBNZ",
     "Deffered",
     "dpkg",
     "formz",
@@ -17,6 +18,7 @@
     "Krpano",
     "livetv",
     "mkdir",
+    "mlly",
     "mmin",
     "novtt",
     "npmrc",
@@ -26,6 +28,7 @@
     "pinia",
     "rtmp",
     "ueditor",
+    "unjs",
     "vant",
     "videojs",
     "weapp",
@@ -33,7 +36,9 @@
   ],
   "flagWords": [],
   "ignoreWords": [],
-  "import": ["./node_modules/@qxy/cspell-dict/cspell-ext.json"],
+  "import": [
+    "./node_modules/@qxy/cspell-dict/cspell-ext.json"
+  ],
   "ignorePaths": [
     "**/node_modules/**",
     "**/vscode-extension/**",
