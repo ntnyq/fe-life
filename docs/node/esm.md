@@ -8,7 +8,7 @@
 
 ```json
 {
-  "type": "module"
+    "type": "module"
 }
 ```
 
@@ -34,7 +34,7 @@ const require = createRequire(import.meta.url)
 const vue = require.resolve(`vue`)
 ```
 
-## __dirname
+## \_\_dirname
 
 ```js
 import path from 'node:path'
@@ -44,11 +44,18 @@ const __dirname = fileURLToPath(new URL(`.`, import.meta.url))
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+// Both esm and cjs
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const _dirname =
+    typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath(import.meta.url))
 ```
 
-## __filename
+## \_\_filename
 
 ## Refs
 
-- [Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
-- [unjs - mlly](https://github.com/unjs/mlly)
+-   [Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
+-   [unjs - mlly](https://github.com/unjs/mlly)

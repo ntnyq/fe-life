@@ -26,3 +26,7 @@ path.basename('/foo/bar/baz/asdf/not-found.html')
 // 返回: 'not-found'
 path.basename('/foo/bar/baz/asdf/not-found.html', '.html')
 ```
+
+## 路径正则兼容 Windows
+
+例如: `/[\\/]node_modules[\\/]_?vant(.*)/`

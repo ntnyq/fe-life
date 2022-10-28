@@ -33,3 +33,15 @@ Array.from({ length }, (_, idx) => {})
 ```
 
 上述语法在 compilerOptions 设置了 **strict** 为 `true` 时会报错，原因是同时开启了 **strictBindCallApply**。
+
+## 默认配置
+
+```ts
+interface TConfig {
+  name: string
+}
+
+export const DEFAULT_CONFIG: Readonly<Partial<TConfig>> = Object.freeze({
+  name: `ntnyq`
+})
+```

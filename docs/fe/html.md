@@ -71,20 +71,15 @@ PC 端回车触发搜索，并且移动端软键盘显示 **搜索**。
 ```js
 const searchInput = document.querySelector('.search-input')
 
-searchInput.addEventListener(
-    'keypress',
-    evt => {
-        const keyword = searchInput.value.trim()
-        const KEYCODE_ENTER = 13
+searchInput.addEventListener('keypress', evt => {
+  const keyword = searchInput.value.trim()
+  const KEYCODE_ENTER = 13
 
-        if (evt.keyCode === KEYCODE_ENTER) {
-            console.log(keyword)
-
-            evt.preventDefault()
-        }
-    },
-    !1,
-)
+  if (evt.keyCode === KEYCODE_ENTER) {
+    console.log(keyword)
+    evt.preventDefault()
+  }
+}, !1,)
 ```
 
 ## 使用 mp4 替代 gif 图片

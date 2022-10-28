@@ -34,16 +34,23 @@ export default defineConfig({
         content: `JVSw-F97ZlD3D0yqM4MiBYvtRfpHfNtmH1J3PFX4fGk`,
       },
     ],
-    [`script`, {
-      src: `https://www.googletagmanager.com/gtag/js?id=G-LM88CRBNZ4`,
-      async: ``
-    }],
-    [`script`, {}, `window.dataLayer = window.dataLayer || [];
+    [
+      `script`,
+      {
+        src: `https://www.googletagmanager.com/gtag/js?id=G-LM88CRBNZ4`,
+        async: ``,
+      },
+    ],
+    [
+      `script`,
+      {},
+      `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'G-LM88CRBNZ4');
-    `]
+    `,
+    ],
   ],
 
   markdown: {
