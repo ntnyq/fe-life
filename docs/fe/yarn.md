@@ -102,3 +102,16 @@ $ npm rebuild node-sass --force
 ```bash
 $ yarn config set sass-binary-site http://npm.taobao.org/mirrors/node-sass
 ```
+
+### Yarn 安装依赖版本不兼容
+
+Node18 安装 vue 项目依赖，报错 `@achrinza/node-ipc@9.2.2` 不兼容
+
+此包时 `@vue/cli-shared-utils` 的依赖项。
+
+解决方法:
+
+```shell
+# 关闭安装依赖时 engines 检查
+$ yarn config set ignore-engines true
+```

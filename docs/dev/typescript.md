@@ -38,10 +38,10 @@ Array.from({ length }, (_, idx) => {})
 
 ```ts
 interface TConfig {
-  name: string
+    name: string
 }
 
 export const DEFAULT_CONFIG: Readonly<Partial<TConfig>> = Object.freeze({
-  name: `ntnyq`
+    name: `ntnyq`,
 })
 ```

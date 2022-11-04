@@ -108,11 +108,11 @@ $ git config --global credential.helper store
 
 ## 给分支打标签
 
-打标签通常用于建立一个项目的**里程碑**。表示这是一次与普通`commit`不同的一次提交。方便后续查找和更改。
+打标签通常用于建立一个项目的 **里程碑**。表示这是一次与普通 `commit` 不同的一次提交。方便后续查找和更改。
 
 > 表示项目版本的标签通常格式为`v1.1.1`，详细见[ 语义化版本 ](https://semver.org/lang/zh-CN/)
 
-```bash
+```shell
 # 查看当前分支已有的标签
 $ git tag
 
@@ -132,6 +132,19 @@ $ git tag -d tag_name
 $ git push origin tag_name
 
 $ git push origin -tags
+```
+
+## 删除远程 tag
+
+```shell
+# 删除本地 tag
+$ git tag -d v1.0.0
+
+# 推送至远程
+$ git push origin :refs/tags/v1.0.10
+
+# 重新打 tag
+$ git tag v1.0.0 <commit_hash>
 ```
 
 ## 回退到上个版本
