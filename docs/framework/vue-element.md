@@ -80,64 +80,71 @@ import './styles/element-reset'
 
 ```vue
 <template>
-    <div class="element-demo">
-        <el-table :data="data">
-            <el-table-column type="index" label="序号"></el-table-column>
-            <el-table-column prop="lang" label="框架" width="180"></el-table-column>
-            <el-table-column label="操作">
-                <template slot-scope="scope">
-                    <el-popover
-                        placement="top"
-                        width="200"
-                        trigger="manual"
-                        :ref="`popover${scope.$index}`"
-                    >
-                        <p>foo bar baz</p>
-                        <el-button
-                            slot="reference"
-                            @click.stop="showPopover(scope.$index)"
-                            type="primary"
-                            >Popover</el-button
-                        >
-                    </el-popover>
-                </template>
-            </el-table-column>
-        </el-table>
-    </div>
+  <div class="element-demo">
+    <el-table :data="data">
+      <el-table-column
+        type="index"
+        label="序号"
+      ></el-table-column>
+      <el-table-column
+        prop="lang"
+        label="框架"
+        width="180"
+      ></el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-popover
+            placement="top"
+            width="200"
+            trigger="manual"
+            :ref="`popover${scope.$index}`"
+          >
+            <p>foo bar baz</p>
+            <el-button
+              slot="reference"
+              @click.stop="showPopover(scope.$index)"
+              type="primary"
+              >Popover</el-button
+            >
+          </el-popover>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'ElementDemo',
+  name: 'ElementDemo',
 
-    data() {
-        return {
-            data: [
-                { lang: 'Vue', ui: 'Element' },
-                { lang: 'React', ui: 'AntD' },
-                { lang: 'Angular', ui: 'NG-ZORRO' },
-            ],
-            activePopIndex: undefined,
-        }
+  data() {
+    return {
+      data: [
+        { lang: 'Vue', ui: 'Element' },
+        { lang: 'React', ui: 'AntD' },
+        { lang: 'Angular', ui: 'NG-ZORRO' },
+      ],
+      activePopIndex: undefined,
+    }
+  },
+
+  methods: {
+    showPopover(idx) {
+      const index = this.activePopIndex
+
+      if (index && this.$refs[`popover${idx}`]) {
+        this.$refs[`popover${index}`].doClose()
+        this.activePopIndex = undefined
+      }
+      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow()
     },
 
-    methods: {
-        showPopover(idx) {
-            const index = this.activePopIndex
-
-            if (index && this.$refs[`popover${idx}`]) {
-                this.$refs[`popover${index}`].doClose()
-                this.activePopIndex = undefined
-            }
-            this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow()
-        },
-
-        hidePopover() {
-            const idx = this.activePopIndex
-            this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
-            this.activePopIndex = undefined
-        },
+    hidePopover() {
+      const idx = this.activePopIndex
+      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
+      this.activePopIndex = undefined
     },
+  },
 }
 </script>
 ```
@@ -150,13 +157,25 @@ export default {
 
 ```vue
 <template>
-    <el-table>
-        <el-table-column v-if="type === 'foo'" prop="type" label="类型" />
-        <el-table-column v-if="type === 'bar'" prop="title" label="标题" />
-        <el-table-column v-if="type === 'baz'" prop="date" label="时间" />
-        ...
-    </el-table>
-    <template />
+  <el-table>
+    <el-table-column
+      v-if="type === 'foo'"
+      prop="type"
+      label="类型"
+    />
+    <el-table-column
+      v-if="type === 'bar'"
+      prop="title"
+      label="标题"
+    />
+    <el-table-column
+      v-if="type === 'baz'"
+      prop="date"
+      label="时间"
+    />
+    ...
+  </el-table>
+  <template />
 </template>
 ```
 
@@ -169,13 +188,19 @@ export default {
 
 ```vue
 <template>
-    <div class="layout-content">
-        <div class="layout-content-inner">
-            <transition name="el-zoom-in-center" mode="out-in">
-                <router-view class="container" :key="$router.fullPath" />
-            </transition>
-        </div>
+  <div class="layout-content">
+    <div class="layout-content-inner">
+      <transition
+        name="el-zoom-in-center"
+        mode="out-in"
+      >
+        <router-view
+          class="container"
+          :key="$router.fullPath"
+        />
+      </transition>
     </div>
+  </div>
 </template>
 ```
 

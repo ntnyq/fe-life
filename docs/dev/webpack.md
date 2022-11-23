@@ -10,16 +10,16 @@ webpack-dev-server 指定配置文件需要使用 `--config` 参数。
 
 ### 内置插件
 
--   HotModuleReplacement
--   BannerPlugin
+- HotModuleReplacement
+- BannerPlugin
 
 ### 常用插件
 
--   [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin)
--   [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)
--   [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)
--   [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin)
--   [workbox-webpack-plugin](https://github.com/googlechrome/workbox)
+- [terser-webpack-plugin](https://github.com/webpack-contrib/terser-webpack-plugin)
+- [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)
+- [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)
+- [webpack-manifest-plugin](https://github.com/danethurber/webpack-manifest-plugin)
+- [workbox-webpack-plugin](https://github.com/googlechrome/workbox)
 
 ## 配置踩坑
 
@@ -31,21 +31,21 @@ webpack-dev-server 指定配置文件需要使用 `--config` 参数。
 // vue.config.js
 
 module.exports = {
-    chainWebpack: config => {
-        config.module.rule('svg').exclude.add(`${__dirname}/src/icons`).end()
+  chainWebpack: config => {
+    config.module.rule('svg').exclude.add(`${__dirname}/src/icons`).end()
 
-        config.module
-            .rules('icons')
-            .test(/\.svg$/)
-            .include.add(`${__dirname}/src/icons`)
-            .end()
-            .use('svg-sprite-loader')
-            .loader('svg-sprite-loader')
-            .options({
-                symbolId: 'icon-[name]',
-            })
-            .end()
-    },
+    config.module
+      .rules('icons')
+      .test(/\.svg$/)
+      .include.add(`${__dirname}/src/icons`)
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]',
+      })
+      .end()
+  },
 }
 ```
 

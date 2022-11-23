@@ -70,15 +70,15 @@ $ yarn config set init-version 0.0.1
 
 ```json
 {
-    "version": "0.0.1",
-    "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
+  "version": "0.0.1",
+  "author": "ntnyq <ntnyq13@gmail.com> (https://ntnyq.com)"
 }
 ```
 
 参考资料
 
--   [yarn init](https://yarnpkg.com/lang/zh-hans/docs/cli/init/)
--   [yarn config](https://yarnpkg.com/zh-Hans/docs/cli/config)
+- [yarn init](https://yarnpkg.com/lang/zh-hans/docs/cli/init/)
+- [yarn config](https://yarnpkg.com/zh-Hans/docs/cli/config)
 
 ## 坑点记录
 

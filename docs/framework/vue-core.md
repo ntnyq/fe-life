@@ -12,22 +12,22 @@
 
 > `v-model`指令
 
--   trim 可以去除表单输入内容的前后空格
--   number 可以将输入框内容转化为数字
+- trim 可以去除表单输入内容的前后空格
+- number 可以将输入框内容转化为数字
 
 #### 事件绑定
 
 > `v-on`指令或`@`
 
--   left 鼠标左键
--   middle 鼠标滚轮
--   right 鼠标右键
--   prevent 阻止浏览器默认事件
--   stop 停止事件向上冒泡
--   capture 使用事件捕获进行事件监听
--   native 给自定义组件绑定原生事件需要加上此修饰符
--   self 事件只能由绑定事件的元素上被触发
--   once 事件只能被触发一次
+- left 鼠标左键
+- middle 鼠标滚轮
+- right 鼠标右键
+- prevent 阻止浏览器默认事件
+- stop 停止事件向上冒泡
+- capture 使用事件捕获进行事件监听
+- native 给自定义组件绑定原生事件需要加上此修饰符
+- self 事件只能由绑定事件的元素上被触发
+- once 事件只能被触发一次
 
 ## 过滤器
 
@@ -36,7 +36,7 @@
 ```js
 // src/utils/filter.js
 export function toThousand(num) {
-    return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
+  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
 
@@ -55,14 +55,14 @@ Object.keys(filters).forEach(k => Vue.filter(k, filter[k]))
 
 ```js
 export default {
-    methods: {
-        update() {
-            this.msg = 'Hello world'
-            this.$nextTick(() => {
-                // Do something with DOM
-            })
-        },
+  methods: {
+    update() {
+      this.msg = 'Hello world'
+      this.$nextTick(() => {
+        // Do something with DOM
+      })
     },
+  },
 }
 ```
 
@@ -70,7 +70,7 @@ export default {
 
 参考资料：
 
--   [官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
+- [官方文档](https://cn.vuejs.org/v2/api/#vm-nextTick)
 
 ## 函数式组件
 
@@ -78,41 +78,41 @@ export default {
 
 ```js
 export default {
-    functional: true,
+  functional: true,
 
-    render(h, { props, slots }) {
-        return h(
-            'span',
-            {
-                class: ['class-name', props.attr1, props.attr2],
-            },
-            props.text || slots().default,
-        )
-    },
+  render(h, { props, slots }) {
+    return h(
+      'span',
+      {
+        class: ['class-name', props.attr1, props.attr2],
+      },
+      props.text || slots().default,
+    )
+  },
 }
 ```
 
 参考资料:
 
--   [Render Functions & JSX](https://vuejs.org/v2/guide/render-function.html)
+- [Render Functions & JSX](https://vuejs.org/v2/guide/render-function.html)
 
 ### 上下文里的 data 是什么
 
 data 包含以下几个部分：
 
--   staticClass `class="foobar"` 的类
+- staticClass `class="foobar"` 的类
 
--   class `v-bind:class` 的类
+- class `v-bind:class` 的类
 
--   attrs 未被解析成 props 或者别的属性 包括 `v-bind:foo-bar` 语法 和 `foobar="foobar"` 语法
+- attrs 未被解析成 props 或者别的属性 包括 `v-bind:foo-bar` 语法 和 `foobar="foobar"` 语法
 
 ```js
 export default {
-    render(h, { props, data }) {
-        return h('span', {
-            ...data,
-        })
-    },
+  render(h, { props, data }) {
+    return h('span', {
+      ...data,
+    })
+  },
 }
 ```
 
@@ -128,34 +128,34 @@ export default {
 // Child.vue
 <script>
 export default {
-    name: 'Child',
+  name: 'Child',
 
-    methods: {
-        log() {
-            console.log('Hello world')
-        },
+  methods: {
+    log() {
+      console.log('Hello world')
     },
+  },
 
-    render(h) {
-        return h('div')
-    },
+  render(h) {
+    return h('div')
+  },
 }
 </script>
 
 // Parent.vue
 <template>
-    <div class="parent">
-        <Child ref="child" />
-    </div>
+  <div class="parent">
+    <Child ref="child" />
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Parent',
+  name: 'Parent',
 
-    mounted() {
-        this.$refs.child.log() // Hello world
-    },
+  mounted() {
+    this.$refs.child.log() // Hello world
+  },
 }
 </script>
 ```
@@ -183,44 +183,44 @@ Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请�
 import Vue from 'vue'
 
 export const state = Vue.observable({
-    userInfo: {},
-    roleIds: [],
+  userInfo: {},
+  roleIds: [],
 })
 
 export const mutations = {
-    setUserInfo(userInfo) {
-        state.userInfo = userInfo
-    },
+  setUserInfo(userInfo) {
+    state.userInfo = userInfo
+  },
 
-    setRoleIds(roleIds) {
-        state.roleIds = roleIds
-    },
+  setRoleIds(roleIds) {
+    state.roleIds = roleIds
+  },
 }
 ```
 
 ```vue
 // App.vue
 <template>
-    <div>{{ userInfo.username }}</div>
+  <div>{{ userInfo.username }}</div>
 </template>
 
 <script>
 import { state, mutations } from '@/store'
 
 export default {
-    computed: {
-        userInfo() {
-            return state.userInfo
-        },
+  computed: {
+    userInfo() {
+      return state.userInfo
     },
+  },
 
-    methods: {
-        async changeUserInfo() {
-            const userInfo = await getUserInfo()
+  methods: {
+    async changeUserInfo() {
+      const userInfo = await getUserInfo()
 
-            mutations.setUserInfo(userInfo)
-        },
+      mutations.setUserInfo(userInfo)
     },
+  },
 }
 </script>
 ```

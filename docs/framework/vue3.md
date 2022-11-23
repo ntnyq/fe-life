@@ -6,16 +6,16 @@
 import { App, inject } from 'vue'
 
 interface Config {
-    name: string
+  name: string
 }
 
 const CONFIG_SYMBOL = symbol(`app-config`)
 
 export const injectConfig = (app: App, config?: Config) => {
-    app.provide(CONFIG_SYMBOL, config)
+  app.provide(CONFIG_SYMBOL, config)
 }
 
 export const useConfig = () => {
-    return inject<Config>(CONFIG_SYMBOL, {} as Config)
+  return inject<Config>(CONFIG_SYMBOL, {} as Config)
 }
 ```

@@ -8,7 +8,7 @@
 
 ```json
 {
-    "type": "module"
+  "type": "module"
 }
 ```
 
@@ -50,12 +50,12 @@ import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const _dirname =
-    typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath(import.meta.url))
+  typeof __dirname !== 'undefined' ? __dirname : dirname(fileURLToPath(import.meta.url))
 ```
 
 ## \_\_filename
 
 ## Refs
 
--   [Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
--   [unjs - mlly](https://github.com/unjs/mlly)
+- [Pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c)
+- [unjs - mlly](https://github.com/unjs/mlly)

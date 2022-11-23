@@ -37,19 +37,19 @@
 ```scss
 // 定义mixin
 @mixin bg($textColor, $bgColor) {
-    background-color: $bgColor;
-    color: $textColor;
+  background-color: $bgColor;
+  color: $textColor;
 }
 
 // 使用mixin
 .box {
-    @include bg(#fff, #333);
+  @include bg(#fff, #333);
 }
 
 // 编译后
 .box {
-    background-color: #fff;
-    color: #333;
+  background-color: #fff;
+  color: #333;
 }
 ```
 
@@ -60,22 +60,22 @@
 ```scss
 // 定义mixin
 @mixin bg($textColor, $bgColor) {
-    background-color: $bgColor;
-    color: $textColor;
-    @content;
+  background-color: $bgColor;
+  color: $textColor;
+  @content;
 }
 
 // 使用mixin
 .box {
-    @include bg(#fff, #333);
-    font-size: 14px;
+  @include bg(#fff, #333);
+  font-size: 14px;
 }
 
 // 编译后
 .box {
-    background-color: #fff;
-    color: #333;
-    font-size: 14px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
 }
 ```
 
@@ -88,25 +88,25 @@
 ```scss
 // 定义mixin
 @mixin themeIndigo {
-    .theme-indigo & {
-        @content;
-    }
+  .theme-indigo & {
+    @content;
+  }
 }
 
 // 使用mixin
 .box {
-    background-color: #fff;
-    @include themeIndigo {
-        background-color: indigo;
-    }
+  background-color: #fff;
+  @include themeIndigo {
+    background-color: indigo;
+  }
 }
 
 // 编译结果
 .box {
-    background-color: #fff;
+  background-color: #fff;
 }
 .theme-indigo .box {
-    background-color: indigo;
+  background-color: indigo;
 }
 ```
 
@@ -131,22 +131,22 @@ $mobile: 767px;
 ```js
 // vue.config.js
 module.exports = {
-    css: {
-        loaderOptions: {
-            sass: {
-                additionalData: `@use "sass:math"; @import "~@/assets/styles/core/style";`,
-                sassOptions: {
-                    // @see https://stackoverflow.com/questions/67812380/disable-dart-sass-warnings-produced-by-external-theme-file
-                    quietDeps: true, // 关闭控制台警告
-                },
-            },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@use "sass:math"; @import "~@/assets/styles/core/style";`,
+        sassOptions: {
+          // @see https://stackoverflow.com/questions/67812380/disable-dart-sass-warnings-produced-by-external-theme-file
+          quietDeps: true, // 关闭控制台警告
         },
+      },
     },
+  },
 }
 ```
 
 ```scss
 .box {
-    width: math.div($box-width, 2);
+  width: math.div($box-width, 2);
 }
 ```

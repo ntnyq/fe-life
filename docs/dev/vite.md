@@ -6,12 +6,12 @@
 // vite.config.{js|ts}
 
 export default {
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "path_to_your/variables;"`,
-            },
-        },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "path_to_your/variables;"`,
+      },
     },
+  },
 }
 ```

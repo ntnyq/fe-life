@@ -16,16 +16,16 @@ $ brew install tree
 
 ### 常用参数
 
--   -L 指定遍历层级
--   -d 只列出文件夹
--   -I 过滤指定的文件或文件夹
+- -L 指定遍历层级
+- -d 只列出文件夹
+- -I 过滤指定的文件或文件夹
 
--   -i 不输出缩进行
+- -i 不输出缩进行
 
--   J 输出为 JSON 格式
--   X 输出为 XML 格式
--   H 输出为 HTML 文档格式
--   o 输出至对应文件名文件
+- J 输出为 JSON 格式
+- X 输出为 XML 格式
+- H 输出为 HTML 文档格式
+- o 输出至对应文件名文件
 
 ### 使用示例
 
@@ -46,14 +46,14 @@ tree -L 2 -d  -I "node_modules" > directory.md
 
 ### 常用参数
 
--   maxdepth 指定遍历层级
--   regex 正则匹配文件名
--   name 正则匹配文件名
--   type 匹配类型 `f` 代表 文件，`d` 代表目录。
--   mtime 日期范围 后面跟 数字 代表天数，有正负区别。
--   mmin 分钟范围 同上
--   ! -path 排除文件或者目录
--   exec 对匹配的文件目录执行操作
+- maxdepth 指定遍历层级
+- regex 正则匹配文件名
+- name 正则匹配文件名
+- type 匹配类型 `f` 代表 文件，`d` 代表目录。
+- mtime 日期范围 后面跟 数字 代表天数，有正负区别。
+- mmin 分钟范围 同上
+- ! -path 排除文件或者目录
+- exec 对匹配的文件目录执行操作
 
 ### 使用示例
 
@@ -79,7 +79,7 @@ $ find . -type d -mtime +20 ! -path ./node_modules  -exec ls -l {} \;
 
 ### 参考文档
 
--   [批量删除 Linux 的文件](https://www.cnblogs.com/shengulong/p/6742027.html)
+- [批量删除 Linux 的文件](https://www.cnblogs.com/shengulong/p/6742027.html)
 
 ## rm 命令
 
@@ -87,8 +87,8 @@ $ find . -type d -mtime +20 ! -path ./node_modules  -exec ls -l {} \;
 
 ### 常用参数
 
--   r 递归删除
--   f 强制删除
+- r 递归删除
+- f 强制删除
 
 ### 使用示例
 
@@ -103,15 +103,15 @@ $ rm `ls *.txt|egrep -v test.txt`
 
 ### 常用参数
 
--   r 递归复制目录
--   q 不显示传输进度条
--   C 允许 ssh 开启压缩功能
--   P 指定数据传输使用的端口号
+- r 递归复制目录
+- q 不显示传输进度条
+- C 允许 ssh 开启压缩功能
+- P 指定数据传输使用的端口号
 
 ### 参考资料
 
--   [Linux scp 命令](https://www.runoob.com/linux/linux-comm-scp.html)
--   [Mac 终端中上传文件到 Linux 服务器](https://www.jianshu.com/p/1385bfb45b26)
+- [Linux scp 命令](https://www.runoob.com/linux/linux-comm-scp.html)
+- [Mac 终端中上传文件到 Linux 服务器](https://www.jianshu.com/p/1385bfb45b26)
 
 ### 使用示例
 

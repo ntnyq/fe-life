@@ -13,6 +13,7 @@
     "dev": "vitepress dev docs --open --host",
     "lint": "run-p lint:*",
     "lint:cspell": "cspell \"**\"",
+    "prepare": "husky install",
     "pretty": "prettier --write \"**/*.{md,js,ts,css,scss,vue}\""
   },
   "lint-staged": {
@@ -21,21 +22,21 @@
   },
   "prettier": "@ntnyq/prettier-config",
   "dependencies": {
-    "vue": "^3.2.41"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@ntnyq/prettier-config": "^1.0.7",
+    "@ntnyq/prettier-config": "^1.1.0",
     "@qxy/cspell-dict": "^0.0.3",
-    "cspell": "^6.14.0",
-    "husky": "^8.0.1",
+    "cspell": "^6.14.3",
+    "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^7.14.2",
-    "prettier": "^2.7.1",
-    "sort-package-json": "^2.0.0",
-    "vitepress": "1.0.0-alpha.27"
+    "pnpm": "^7.17.0",
+    "prettier": "^2.8.0",
+    "sort-package-json": "^2.1.0",
+    "vitepress": "1.0.0-alpha.29"
   },
-  "packageManager": "pnpm@7.14.1",
+  "packageManager": "pnpm@7.17.0",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [

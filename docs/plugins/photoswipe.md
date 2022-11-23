@@ -10,10 +10,10 @@ OA 系统中使用了 `PhotoSwipe` 库实现图片预览。问题：
 
 ```js
 const options = {
-    fullscreenEl: false,
+  fullscreenEl: false,
 }
 
 const ps = new PhotoSwipe(`DOM`, options)
 ```
 
--   [PhotoSwipe - Options](https://photoswipe.com/documentation/options.html)
+- [PhotoSwipe - Options](https://photoswipe.com/documentation/options.html)

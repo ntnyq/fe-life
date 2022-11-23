@@ -4,7 +4,10 @@
   <div class="VPHomeIntroduction">
     <div class="container">
       <a href="https://vitepress.vuejs.org/">
-        <img src="https://img.shields.io/badge/powered--by-vitepress-green.svg" alt="vitepress" />
+        <img
+          src="https://img.shields.io/badge/powered--by-vitepress-green.svg"
+          alt="vitepress"
+        />
       </a>
       <a href="https://github.com/ntnyq/fe-life">
         <img

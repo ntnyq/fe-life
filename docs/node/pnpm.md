@@ -6,9 +6,9 @@ pnpm 内置配置功能，启用后会使用一个 JS 实现的类 bash 环境�
 
 ```json
 {
-    "scripts": {
-        "dev": "NODE_ENV=development node scripts/dev.js"
-    }
+  "scripts": {
+    "dev": "NODE_ENV=development node scripts/dev.js"
+  }
 }
 ```
 
@@ -19,4 +19,4 @@ pnpm 内置配置功能，启用后会使用一个 JS 实现的类 bash 环境�
 shell-emulator=true
 ```
 
--   [pnpm - hell-emulator](https://pnpm.io/cli/run#shell-emulator)
+- [pnpm - hell-emulator](https://pnpm.io/cli/run#shell-emulator)

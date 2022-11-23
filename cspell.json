@@ -8,7 +8,7 @@
     "antd",
     "cdnurl",
     "CRBNZ",
-    "Deffered",
+    "deffered",
     "dpkg",
     "formz",
     "fuser",
@@ -24,7 +24,7 @@
     "novtt",
     "npmrc",
     "onbeforeunload",
-    "Paren",
+    "paren",
     "pbcopy",
     "pinia",
     "rtmp",
@@ -37,9 +37,7 @@
   ],
   "flagWords": [],
   "ignoreWords": [],
-  "import": [
-    "./node_modules/@qxy/cspell-dict/cspell-ext.json"
-  ],
+  "import": ["./node_modules/@qxy/cspell-dict/cspell-ext.json"],
   "ignorePaths": [
     "**/node_modules/**",
     "**/vscode-extension/**",

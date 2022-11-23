@@ -10,7 +10,7 @@ Prettier 禁止 Trailing Comma 配置:
 
 ```js
 module.exports = {
-    trailingComma: `none`,
+  trailingComma: `none`,
 }
 ```
 
@@ -18,13 +18,13 @@ ESLint 禁止 Trailing Comma 配置:
 
 ```js
 module.exports = {
-    rules: {
-        'comma-dangle': [`error`, `never`],
-    },
+  rules: {
+    'comma-dangle': [`error`, `never`],
+  },
 }
 ```
 
 **参考文档**:
 
--   [Prettier - Trailing Commas](https://prettier.io/docs/en/options.html#trailing-commas)
--   [ESLint - comma-dangle](https://eslint.org/docs/latest/rules/comma-dangle)
+- [Prettier - Trailing Commas](https://prettier.io/docs/en/options.html#trailing-commas)
+- [ESLint - comma-dangle](https://eslint.org/docs/latest/rules/comma-dangle)

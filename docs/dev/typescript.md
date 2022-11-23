@@ -14,9 +14,9 @@
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es5"
-    }
+  "compilerOptions": {
+    "target": "es5"
+  }
 }
 ```
 
@@ -38,10 +38,26 @@ Array.from({ length }, (_, idx) => {})
 
 ```ts
 interface TConfig {
-    name: string
+  name: string
 }
 
 export const DEFAULT_CONFIG: Readonly<Partial<TConfig>> = Object.freeze({
-    name: `ntnyq`,
+  name: `ntnyq`,
 })
+```
+
+## 扩展环境变量
+
+比如使用 `dotenv`
+
+```ts
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      __DEV__: boolean
+    }
+  }
+}
+
+export {}
 ```

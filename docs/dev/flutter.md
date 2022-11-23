@@ -6,9 +6,9 @@
 
 BlocListener 和 BlocBuilder 内无法访问如下值:
 
--   `state.status.isValidated`
--   `state.status.isSubmissionSuccess`
--   `state.status.isSubmissionInProgress`
+- `state.status.isValidated`
+- `state.status.isSubmissionSuccess`
+- `state.status.isSubmissionInProgress`
 
 **解决方案**: 页面引入 `import 'package:formz/formz.dart';`
 
@@ -54,4 +54,4 @@ class CustomPage extends StatelessWidget {
 
 **参考资料**:
 
--   [Disable drag down to close showModalBottomSheet](https://stackoverflow.com/questions/54743566/disable-drag-down-to-close-showmodalbottomsheet)
+- [Disable drag down to close showModalBottomSheet](https://stackoverflow.com/questions/54743566/disable-drag-down-to-close-showmodalbottomsheet)

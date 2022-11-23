@@ -10,18 +10,18 @@
 
 ```js
 const schema = new mongoose.Schema({
-    password: String,
+  password: String,
 })
 
 schema.pre('save', next => {
-    console.log(this)
-    next()
+  console.log(this)
+  next()
 })
 
 const model = mongoose.model('Test', schema)
 
 const test = new model({
-    password: 'testpass',
+  password: 'testpass',
 })
 
 test.save()
@@ -31,8 +31,8 @@ test.save()
 
 ```js
 schema.pre('save', function (next) {
-    console.log(this)
-    next()
+  console.log(this)
+  next()
 })
 ```
 

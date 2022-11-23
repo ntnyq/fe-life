@@ -71,12 +71,12 @@ $ yarn add sass-resources-loader -D
 ```js
 // https://vue-loader.vuejs.org/en/configurations/extract-css.html
 return {
-    scss: generateLoaders('sass').concat({
-        loader: 'sass-resources-loader',
-        options: {
-            resources: path.resolve(__dirname, './../src/styles/core/style.scss'),
-        },
-    }),
+  scss: generateLoaders('sass').concat({
+    loader: 'sass-resources-loader',
+    options: {
+      resources: path.resolve(__dirname, './../src/styles/core/style.scss'),
+    },
+  }),
 }
 ```
 
@@ -87,13 +87,13 @@ return {
 ```js
 // vue.config.js
 module.exports = {
-    css: {
-        loaderOptions: {
-            sass: {
-                additionalData: `@import "@/styles/core/style.scss"`,
-            },
-        },
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `@import "@/styles/core/style.scss"`,
+      },
     },
+  },
 }
 ```
 
@@ -103,8 +103,8 @@ module.exports = {
 
 ```js
 const ntnyq = Object.freeze({
-    name: `ntnyq`,
-    gender: `male`,
+  name: `ntnyq`,
+  gender: `male`,
 })
 ```
 
@@ -116,13 +116,13 @@ const ntnyq = Object.freeze({
 
 ```js
 config.when(process.env.NODE_ENV === `production`, config => {
-    config.optimization.minimizer(`terser`).tap(args => {
-        args[0].terserOptions.compress.drop_debugger = true
-        args[0].terserOptions.output = {
-            comments: false,
-        }
-        return args
-    })
-    return config
+  config.optimization.minimizer(`terser`).tap(args => {
+    args[0].terserOptions.compress.drop_debugger = true
+    args[0].terserOptions.output = {
+      comments: false,
+    }
+    return args
+  })
+  return config
 })
 ```

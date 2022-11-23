@@ -12,17 +12,17 @@
 const body = document.body
 
 body.addEventListener(
-    'touchmove',
-    evt => {
-        evt.preventDefault() // 阻止下拉滑动效果
-    },
-    { passive: false },
+  'touchmove',
+  evt => {
+    evt.preventDefault() // 阻止下拉滑动效果
+  },
+  { passive: false },
 ) // 兼容 IOS 和安卓 使用 passive: true 提高滚动性能并减少崩溃
 ```
 
 参考资料:
 
--   [阻止微信浏览器下拉滑动效果](https://segmentfault.com/a/1190000014134234)
+- [阻止微信浏览器下拉滑动效果](https://segmentfault.com/a/1190000014134234)
 
 ### 移动端时间格式化
 
@@ -45,7 +45,7 @@ body.addEventListener(
 
 ```js
 import('id-card').then(IDCard => {
-    // doSomething with module idCard
+  // doSomething with module idCard
 })
 ```
 
@@ -57,18 +57,18 @@ import('id-card').then(IDCard => {
 
 ```js
 const obj = {
-    f: 'f',
-    a: 'a',
-    e: 'e',
-    b: 'b',
+  f: 'f',
+  a: 'a',
+  e: 'e',
+  b: 'b',
 }
 let result = {}
 
 Object.keys(obj)
-    .sort()
-    .forEach(k => {
-        result[k] = obj[k]
-    })
+  .sort()
+  .forEach(k => {
+    result[k] = obj[k]
+  })
 
 console.log(result)
 ```
@@ -86,7 +86,7 @@ console.log(array.includes(item => item.name === name)) // false
 
 参考资料:
 
--   [Array.prototype.includes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+- [Array.prototype.includes()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 
 ## 页面平滑滚动
 
@@ -97,17 +97,17 @@ window.scrollTo({ top: 0, behavior: 'smooth' })
 
 兼容性:
 
--   [Window.scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#Browser_Compatibility)
+- [Window.scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo#Browser_Compatibility)
 
 除 IE Edge 浏览器外，Safari 支持不佳，不支持 `scrollOptions` 参数。
 
 Polyfill:
 
--   [smoothscroll](https://github.com/iamdustan/smoothscroll)
+- [smoothscroll](https://github.com/iamdustan/smoothscroll)
 
 参考资料:
 
--   [Window-ScrollTo - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
+- [Window-ScrollTo - MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/scrollTo)
 
 ## 页面刷新事件监听
 
@@ -115,7 +115,7 @@ Polyfill:
 
 ```js
 window.onbeforeunload = function (evt) {
-    // do something
+  // do something
 }
 ```
 
@@ -123,29 +123,29 @@ window.onbeforeunload = function (evt) {
 
 Safari 表现：
 
--   localStorage 对象仍然存在
--   但是 setItem 会报异常：`QuotaExceededError`
--   getItem 和 removeItem 直接忽略
+- localStorage 对象仍然存在
+- 但是 setItem 会报异常：`QuotaExceededError`
+- getItem 和 removeItem 直接忽略
 
 ```js
 function isLocalStorageSupported() {
-    const TEST_KEY = 'test'
-    const storage = window.sessionStorage
+  const TEST_KEY = 'test'
+  const storage = window.sessionStorage
 
-    try {
-        storage.setItem(TEST_KEY, 'testValue')
-        storage.removeItem(TEST_KEY)
-        return true
-    } catch (error) {
-        console.log('You are in private mode!')
-        return false
-    }
+  try {
+    storage.setItem(TEST_KEY, 'testValue')
+    storage.removeItem(TEST_KEY)
+    return true
+  } catch (error) {
+    console.log('You are in private mode!')
+    return false
+  }
 }
 ```
 
 参考资料:
 
--   [移动端浏览器隐私模式/无痕模式使用本地存储 localStorage/sessionStorage 的问题](https://my.oschina.net/jamesview/blog/2252926)
+- [移动端浏览器隐私模式/无痕模式使用本地存储 localStorage/sessionStorage 的问题](https://my.oschina.net/jamesview/blog/2252926)
 
 ## 浏览器自动全屏
 
