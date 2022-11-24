@@ -22,6 +22,13 @@ export default defineConfig({
 
   outDir: `../dist`,
 
+  vite: {
+    server: {
+      open: true,
+      host: true,
+    }
+  },
+
   head: [
     [`link`, { rel: `icon`, href: `/favicon.ico` }],
     [`meta`, { property: `og:type`, content: `website` }],
@@ -59,7 +66,7 @@ gtag('config', 'G-LM88CRBNZ4');
   },
 
   themeConfig: {
-    logo: `/favicon.ico`,
+    logo: `/favicon-32x32.png`,
 
     editLink: {
       pattern: `https://github.com/ntnyq/fe-life/edit/main/docs/:path`,

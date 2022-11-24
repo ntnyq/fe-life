@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "vitepress build docs",
-    "dev": "vitepress dev docs --open --host",
+    "dev": "vitepress dev docs",
     "lint": "run-p lint:*",
     "lint:cspell": "cspell \"**\"",
     "prepare": "husky install",

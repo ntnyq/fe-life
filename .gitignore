@@ -1,8 +1,9 @@
 .DS_Store
 node_modules
-
-# Log files
 *log.*
+*.local
+.cache
+.temp
 
 # Output
 dist

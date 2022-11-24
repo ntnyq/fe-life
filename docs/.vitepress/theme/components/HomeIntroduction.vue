@@ -1,15 +1,19 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="VPHomeIntroduction">
     <div class="container">
-      <a href="https://vitepress.vuejs.org/">
+      <a
+        href="https://vitepress.vuejs.org/"
+        target="_blank"
+      >
         <img
           src="https://img.shields.io/badge/powered--by-vitepress-green.svg"
           alt="vitepress"
         />
       </a>
-      <a href="https://github.com/ntnyq/fe-life">
+      <a
+        href="https://github.com/ntnyq/fe-life"
+        target="_blank"
+      >
         <img
           src="https://img.shields.io/github/last-commit/ntnyq/fe-life.svg"
           alt="ntnyq/fe-life"
@@ -21,7 +25,12 @@
       </p>
       <p>
         本着 <b>DRY</b> 的原则，避免重复踩坑，所以开一个
-        <a href="https://github.com/ntnyq/fe-life">Repo</a> 记录我的前端人生。
+        <a
+          href="https://github.com/ntnyq/fe-life"
+          target="_blank"
+          >Repo</a
+        >
+        记录我的前端人生。
       </p>
     </div>
   </div>
