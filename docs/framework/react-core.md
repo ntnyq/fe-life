@@ -17,7 +17,7 @@ class RefDemo extends Component {
     this.textInput.current.focus()
   }
 
-  saveChildNodeOne: (node: HTMLElement) => {
+  saveChildNodeOne (node: HTMLElement) {
     this.childNode1 = node
   }
 
@@ -41,7 +41,10 @@ class RefDemo extends Component {
         >
           Child2
         </div>
-        <input type='text' ref={this.textInput}>
+        <input
+          type='text'
+          ref={this.textInput}
+        />
         <button
           onClick={this.focusTextInput}
           type='button'

@@ -28,8 +28,8 @@
 ```vue
 <!-- svg-icon.vue -->
 <template>
-	<svg class="svg-icon">
-  	<use :xlink:href="`icon-${svg}`">
+  <svg class="svg-icon">
+    <use :xlink:href="`icon-${svg}`" />
   </svg>
 </template>
 ```
@@ -41,7 +41,7 @@
 ```vue
 <el-dropdown trigger="click" @command="delete">
   <span>
-  	<svg-icon icon="ellipsis-v"></svg-icon>
+<svg-icon icon="ellipsis-v"></svg-icon>
   </span>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item class="text-danger" :command="scope.$index">
@@ -85,27 +85,29 @@ import './styles/element-reset'
       <el-table-column
         type="index"
         label="序号"
-      ></el-table-column>
+      />
       <el-table-column
         prop="lang"
         label="框架"
         width="180"
-      ></el-table-column>
+      />
       <el-table-column label="操作">
-        <template slot-scope="scope">
+        <template #default="scope">
           <el-popover
+            :ref="`popover${scope.$index}`"
             placement="top"
             width="200"
             trigger="manual"
-            :ref="`popover${scope.$index}`"
           >
             <p>foo bar baz</p>
-            <el-button
-              slot="reference"
-              @click.stop="showPopover(scope.$index)"
-              type="primary"
-              >Popover</el-button
-            >
+            <template #reference>
+              <el-button
+                @click.stop="showPopover(scope.$index)"
+                type="primary"
+              >
+                Popover
+              </el-button>
+            </template>
           </el-popover>
         </template>
       </el-table-column>
@@ -117,7 +119,7 @@ import './styles/element-reset'
 export default {
   name: 'ElementDemo',
 
-  data() {
+  data () {
     return {
       data: [
         { lang: 'Vue', ui: 'Element' },
@@ -129,7 +131,7 @@ export default {
   },
 
   methods: {
-    showPopover(idx) {
+    showPopover (idx) {
       const index = this.activePopIndex
 
       if (index && this.$refs[`popover${idx}`]) {
@@ -139,7 +141,7 @@ export default {
       this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow()
     },
 
-    hidePopover() {
+    hidePopover () {
       const idx = this.activePopIndex
       this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
       this.activePopIndex = undefined
@@ -175,7 +177,6 @@ export default {
     />
     ...
   </el-table>
-  <template />
 </template>
 ```
 
@@ -195,8 +196,8 @@ export default {
         mode="out-in"
       >
         <router-view
-          class="container"
           :key="$router.fullPath"
+          class="container"
         />
       </transition>
     </div>

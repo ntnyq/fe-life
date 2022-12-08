@@ -6,24 +6,24 @@
 
 ```js
 // routes.js
-import Index = () => import(/* webpackChunkName: "index" */ '@/views/Index');
-import About = () => import(/* webpackChunkName: "about" */ '@/views/About');
+const Index = () => import(/* webpackChunkName: "index" */ '@/views/Index')
+const About = () => import(/* webpackChunkName: "about" */ '@/views/About')
 
 const routes = [
   {
-  	path: '/index',
-  	name: 'index',
-  	component: Index
+    path: '/index',
+    name: 'index',
+    component: Index,
   },
 
   {
-  	path: '/about',
-  	name: 'about',
-  	component: About
-  }
-];
+    path: '/about',
+    name: 'about',
+    component: About,
+  },
+]
 
-export default routes;
+export default routes
 ```
 
 ## 面包屑导航
@@ -38,15 +38,17 @@ export default routes;
 export default {
   data () {
     return {
-      levelList: []
+      levelList: [],
     }
   },
 
-  methods () {
+  methods: {
     genBreadcrumb () {
       const matched = this.$route.matched.filter(item => item.name)
-      this.levelList = matched.filter(item => item.meta && item.meta.title && item.meta.breadcrumb !== false) // routes里配置了meta.breadcrumb: false的路由将不会被渲染到面包屑导航
-    }
+      this.levelList = matched.filter(
+        item => item.meta && item.meta.title && item.meta.breadcrumb !== false,
+      ) // routes里配置了meta.breadcrumb: false的路由将不会被渲染到面包屑导航
+    },
   },
 
   watch: {
@@ -54,8 +56,8 @@ export default {
       handler () {
         this.genBreadcrumb()
       },
-      immediate: true
-    }
-  }
+      immediate: true,
+    },
+  },
 }
 ```

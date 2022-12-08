@@ -26,7 +26,7 @@ export default defineConfig({
     server: {
       open: true,
       host: true,
-    }
+    },
   },
 
   head: [
@@ -60,11 +60,6 @@ gtag('config', 'G-LM88CRBNZ4');
     ],
   ],
 
-  markdown: {
-    // extend markdown-it
-    config: md => {},
-  },
-
   themeConfig: {
     logo: `/favicon-32x32.png`,
 
@@ -78,13 +73,13 @@ gtag('config', 'G-LM88CRBNZ4');
       { icon: `github`, link: `https://github.com/ntnyq/fe-life` },
     ],
 
-    // localeLinks: {
-    //   text: ``,
-    //   items: []
-    // },
-
     footer: {
-      message: ``,
+      message: `<a
+      class="VPLink"
+      href="https://creativecommons.org/licenses/by-nc/4.0/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >CC BY-NC 4.0</a>`,
       copyright: `Copyright © 2019-present ntnyq. All Rights Reserved.`,
     },
 
@@ -165,6 +160,7 @@ gtag('config', 'G-LM88CRBNZ4');
             { text: `element`, link: `/framework/vue-element` },
             { text: `vant`, link: `/framework/vue-vant` },
             { text: `plugin`, link: `/framework/vue-plugin` },
+            { text: `i18n`, link: `/vue/i18n` },
           ],
         },
         {

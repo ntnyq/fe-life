@@ -3,7 +3,7 @@
 ## 全局变量类型声明
 
 ```ts
-import { App } from 'vue'
+import type { App } from 'vue'
 
 declare global {
   interface Window {
@@ -19,21 +19,21 @@ declare global {
 import { defineStore } from 'pinia'
 
 export interface IUserStateTree {
-    roles: string[]
+  roles: string[]
 }
 
 export const useUserStore = defineStore({
-    id: `user`,
+  id: `user`,
 
-    // state(): IUserStateTree {
-    //     return {
-    //         roles: [],
-    //     }
-    // },
+  // state(): IUserStateTree {
+  //     return {
+  //         roles: [],
+  //     }
+  // },
 
-    state: () => <IUserStateTree>({
-      roles: []
-    }),
+  state: () => <IUserStateTree>({
+    roles: []
+  }),
 })
 ```
 <!-- prettier-ignore-end -->

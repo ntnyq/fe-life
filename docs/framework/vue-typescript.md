@@ -7,11 +7,12 @@ Vue 项目使用 `vue-tsx-support` 后，无法渲染 tsx 文件组件。
 经过大量时间 debug 后发现是由于自己习惯性地将 `main.ts` 中做了如下修改:
 
 ```ts
+// eslint-disable-next-line import/default
 import Vue from 'vue'
 import App from './App'
 
+// eslint-disable-next-line no-new
 new Vue({
-  // render: h => h(App)
   ...App,
 })
 ```

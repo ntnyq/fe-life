@@ -62,7 +62,7 @@ const obj = {
   e: 'e',
   b: 'b',
 }
-let result = {}
+const result = {}
 
 Object.keys(obj)
   .sort()
@@ -128,7 +128,7 @@ Safari 表现：
 - getItem 和 removeItem 直接忽略
 
 ```js
-function isLocalStorageSupported() {
+function isLocalStorageSupported () {
   const TEST_KEY = 'test'
   const storage = window.sessionStorage
 
@@ -164,6 +164,7 @@ Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by
 直接对 8 进制数进行转换字符串操作，例如`num.toString()`，`'' + num` 或 `0${num}` 都会触发数字进制转换，默认会将 8 进制数转换为 10 进制。
 
 ```js
+// eslint-disable-next-line no-octal, @typescript-eslint/no-loss-of-precision
 const num = 0214 // 8进制数
 
 console.log(`0${num.toString(8)}`)

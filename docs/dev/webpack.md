@@ -30,14 +30,18 @@ webpack-dev-server 指定配置文件需要使用 `--config` 参数。
 ```js
 // vue.config.js
 
+const path = require('path')
+
+const resolve = (...args) => path.resolve(__dirname, ...args)
+
 module.exports = {
   chainWebpack: config => {
-    config.module.rule('svg').exclude.add(`${__dirname}/src/icons`).end()
+    config.module.rule('svg').exclude.add(resolve(`/src/icons`)).end()
 
     config.module
       .rules('icons')
       .test(/\.svg$/)
-      .include.add(`${__dirname}/src/icons`)
+      .include.add(resolve(`/src/icons`))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')

@@ -4,7 +4,7 @@
 
 ```js
 const _ = {
-  isWechat() {
+  isWechat () {
     const UA_WECHAT_RE = /micromessenger/i
 
     return UA_WECHAT_RE.test(navigator.userAgent)

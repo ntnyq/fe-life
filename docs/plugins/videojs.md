@@ -62,16 +62,16 @@ videojs('example_video', {}, function () {
 
 常用配置项:
 
-```js
-poster: 'path_to_your/img.ext', // 海报图
-preload: 'auto', // 预加载 'none' | metadata | auto
-fluid: true,  // 是否自适应尺寸
-controls: true, // 是否显示播放控件
-autoplay: true, // 是否自动播放
-loop: true, // 是否循环播放
-muted: false, // 是否静音
-width: 640 // 视频宽度
-height: 360 // 视频高度
+```yaml
+poster: path_to_your/img.ext # 海报图
+preload: auto # 预加载 'none' | metadata | auto
+fluid: true # 是否自适应尺寸
+controls: true # 是否显示播放控件
+autoplay: true # 是否自动播放
+loop: true # 是否循环播放
+muted: false # 是否静音
+width: 640 # 视频宽度
+height: 360 # 视频高度
 ```
 
 [详细配置信息](https://docs.videojs.com/tutorial-options.html)
@@ -224,13 +224,13 @@ VideoJs 支持以下事件监听：
 <script>
 export default {
   computed: {
-    player() {
+    player () {
       return this.$refs.videoPlayer.player
     },
   },
 
   methods: {
-    toggle() {
+    toggle () {
       const newVideo = 'https://video.com/video.mp4'
 
       this.player.src(newVideo)

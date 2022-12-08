@@ -18,9 +18,9 @@ schema.pre('save', next => {
   next()
 })
 
-const model = mongoose.model('Test', schema)
+const Model = mongoose.model('Test', schema)
 
-const test = new model({
+const test = new Model({
   password: 'testpass',
 })
 
