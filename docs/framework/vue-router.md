@@ -36,14 +36,14 @@ export default routes
 ```js
 // Breadcrumb.vue
 export default {
-  data () {
+  data() {
     return {
       levelList: [],
     }
   },
 
   methods: {
-    genBreadcrumb () {
+    genBreadcrumb() {
       const matched = this.$route.matched.filter(item => item.name)
       this.levelList = matched.filter(
         item => item.meta && item.meta.title && item.meta.breadcrumb !== false,
@@ -53,7 +53,7 @@ export default {
 
   watch: {
     $route: {
-      handler () {
+      handler() {
         this.genBreadcrumb()
       },
       immediate: true,

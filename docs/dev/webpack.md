@@ -36,12 +36,12 @@ const resolve = (...args) => path.resolve(__dirname, ...args)
 
 module.exports = {
   chainWebpack: config => {
-    config.module.rule('svg').exclude.add(resolve(`/src/icons`)).end()
+    config.module.rule('svg').exclude.add(resolve('/src/icons')).end()
 
     config.module
       .rules('icons')
       .test(/\.svg$/)
-      .include.add(resolve(`/src/icons`))
+      .include.add(resolve('/src/icons'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')

@@ -4,7 +4,7 @@ import HomeIntroduction from './components/HomeIntroduction.vue'
 
 export default {
   ...Theme,
-  Layout () {
+  Layout() {
     return h(Theme.Layout, null, {
       'home-features-after': () => h(HomeIntroduction),
     })

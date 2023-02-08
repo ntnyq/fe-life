@@ -134,7 +134,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        additionalData: `@use "sass:math"; @import "~@/assets/styles/core/style";`,
+        additionalData: '@use "sass:math"; @import "~@/assets/styles/core/style";',
         sassOptions: {
           // @see https://stackoverflow.com/questions/67812380/disable-dart-sass-warnings-produced-by-external-theme-file
           quietDeps: true, // 关闭控制台警告

@@ -7,26 +7,26 @@ class RefDemo extends Component {
   public childNode1: HTMLElement | null
   public childNode2: HTMLElement | null
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.textInput = React.createRef()
     this.focusTextInput = this.focusTextInput.bind(this)
   }
 
-  focusTextInput () {
+  focusTextInput() {
     this.textInput.current.focus()
   }
 
-  saveChildNodeOne (node: HTMLElement) {
+  saveChildNodeOne(node: HTMLElement) {
     this.childNode1 = node
   }
 
-  componentDidMount () {
+  componentDidMount() {
     console.log(this.childNode1)
     console.log(this.childNode2)
   }
 
-  render () {
+  render() {
     return (
       <div className='father'>
         <div

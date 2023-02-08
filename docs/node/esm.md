@@ -31,7 +31,7 @@ import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
 
-const vue = require.resolve(`vue`)
+const vue = require.resolve('vue')
 ```
 
 ## \_\_dirname
@@ -44,7 +44,7 @@ import { URL, fileURLToPath } from 'node:url'
 import { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
-const __dirname = fileURLToPath(new URL(`.`, import.meta.url))
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

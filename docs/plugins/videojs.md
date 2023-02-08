@@ -181,7 +181,7 @@ import 'videojs-flash'
 import 'video.js/dist/video-js.min.css'
 
 videojs('video_player', { techOrder: ['html5', 'flash'] }, () => {
-  console.log(`Video player initialize successfully!`)
+  console.log('Video player initialize successfully!')
 })
 ```
 
@@ -224,13 +224,13 @@ VideoJs 支持以下事件监听：
 <script>
 export default {
   computed: {
-    player () {
+    player() {
       return this.$refs.videoPlayer.player
     },
   },
 
   methods: {
-    toggle () {
+    toggle() {
       const newVideo = 'https://video.com/video.mp4'
 
       this.player.src(newVideo)

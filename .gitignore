@@ -4,6 +4,7 @@ node_modules
 *.local
 .cache
 .temp
+.eslintcache
 
 # Output
 dist

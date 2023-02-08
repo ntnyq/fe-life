@@ -40,7 +40,7 @@ interface TConfig {
 }
 
 export const DEFAULT_CONFIG: Readonly<Partial<TConfig>> = Object.freeze({
-  name: `ntnyq`,
+  name: 'ntnyq',
 })
 ```
 

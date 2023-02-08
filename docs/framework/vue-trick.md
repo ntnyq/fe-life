@@ -69,7 +69,7 @@ router.afterEach(route => {
 
 ```js
 export default {
-  beforeEnter (to, from, next) {
+  beforeEnter(to, from, next) {
     if (isPrivateMode()) {
       EventBus.$emit('get-localdata-error')
       next(false)
@@ -82,7 +82,7 @@ export default {
 // App.vue
 <script>
 export default {
-  mounted () {
+  mounted() {
     EventBus.$on('get-localdata-error', () => {
       this.$alert('请勿使用无痕模式浏览')
     })
@@ -95,7 +95,7 @@ export default {
 
 ```js
 Vue.directive('stat', {
-  bind (el, binding) {
+  bind(el, binding) {
     el.addEventListener('click', () => {
       const data = binding.value
       let prefix = 'store'

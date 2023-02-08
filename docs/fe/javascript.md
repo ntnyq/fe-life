@@ -128,7 +128,7 @@ Safari 表现：
 - getItem 和 removeItem 直接忽略
 
 ```js
-function isLocalStorageSupported () {
+function isLocalStorageSupported() {
   const TEST_KEY = 'test'
   const storage = window.sessionStorage
 

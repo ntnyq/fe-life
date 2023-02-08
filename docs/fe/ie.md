@@ -10,7 +10,7 @@ Prettier 禁止 Trailing Comma 配置:
 
 ```js
 module.exports = {
-  trailingComma: `none`,
+  trailingComma: 'none',
 }
 ```
 
@@ -19,7 +19,7 @@ ESLint 禁止 Trailing Comma 配置:
 ```js
 module.exports = {
   rules: {
-    'comma-dangle': [`error`, `never`],
+    'comma-dangle': ['error', 'never'],
   },
 }
 ```

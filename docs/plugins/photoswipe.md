@@ -13,7 +13,7 @@ const options = {
   fullscreenEl: false,
 }
 
-const ps = new PhotoSwipe(`DOM`, options)
+const ps = new PhotoSwipe('DOM', options)
 ```
 
 - [PhotoSwipe - Options](https://photoswipe.com/documentation/options.html)

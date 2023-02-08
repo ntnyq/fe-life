@@ -35,7 +35,7 @@
 
 ```js
 // src/utils/filter.js
-export function toThousand (num) {
+export function toThousand(num) {
   return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=(?!\b)(\d{3})+$)/g, ','))
 }
 ```
@@ -56,7 +56,7 @@ Object.keys(filters).forEach(k => Vue.filter(k, filter[k]))
 ```js
 export default {
   methods: {
-    update () {
+    update() {
       this.msg = 'Hello world'
       this.$nextTick(() => {
         // Do something with DOM
@@ -80,7 +80,7 @@ export default {
 export default {
   functional: true,
 
-  render (h, { props, slots }) {
+  render(h, { props, slots }) {
     return h(
       'span',
       {
@@ -108,7 +108,7 @@ data 包含以下几个部分：
 
 ```js
 export default {
-  render (h, { props, data }) {
+  render(h, { props, data }) {
     return h('span', {
       ...data,
     })
@@ -131,12 +131,12 @@ export default {
   name: 'Child',
 
   methods: {
-    log () {
+    log() {
       console.log('Hello world')
     },
   },
 
-  render (h) {
+  render(h) {
     return h('div')
   },
 }
@@ -189,11 +189,11 @@ export const state = Vue.observable({
 })
 
 export const mutations = {
-  setUserInfo (userInfo) {
+  setUserInfo(userInfo) {
     state.userInfo = userInfo
   },
 
-  setRoleIds (roleIds) {
+  setRoleIds(roleIds) {
     state.roleIds = roleIds
   },
 }
@@ -210,13 +210,13 @@ import { mutations, state } from '@/store'
 
 export default {
   computed: {
-    userInfo () {
+    userInfo() {
       return state.userInfo
     },
   },
 
   methods: {
-    async changeUserInfo () {
+    async changeUserInfo() {
       const userInfo = await getUserInfo()
 
       mutations.setUserInfo(userInfo)

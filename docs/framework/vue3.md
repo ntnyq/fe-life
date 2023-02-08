@@ -10,7 +10,7 @@ interface Config {
   name: string
 }
 
-const CONFIG_SYMBOL = symbol(`app-config`)
+const CONFIG_SYMBOL = symbol('app-config')
 
 export const injectConfig = (app: App, config?: Config) => {
   app.provide(CONFIG_SYMBOL, config)

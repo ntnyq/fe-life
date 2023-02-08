@@ -9,7 +9,7 @@ export default {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import "path_to_your/variables;"`,
+        additionalData: '@import "path_to_your/variables;"',
       },
     },
   },

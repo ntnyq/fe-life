@@ -2,6 +2,16 @@
 
 > Flutter 踩坑记录.
 
+## 常用命令
+
+```sh
+# 更新 SDK 版本
+$ flutter upgrade
+
+# 清理工作区临时文件
+$ flutter clean
+```
+
 ## FormzStatus 无类型提示
 
 BlocListener 和 BlocBuilder 内无法访问如下值:
@@ -140,3 +150,13 @@ class MyAPP extends StatelessWidget {
   }
 }
 ```
+
+## 常见错误
+
+### fluro 报错
+
+```
+(Invalid argument(s): Illegal percent encoding in URI)
+```
+
+[Illegal percent encoding in URI](https://github.com/lukepighetti/fluro/issues/134)

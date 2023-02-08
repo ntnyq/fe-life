@@ -119,7 +119,7 @@ import './styles/element-reset'
 export default {
   name: 'ElementDemo',
 
-  data () {
+  data() {
     return {
       data: [
         { lang: 'Vue', ui: 'Element' },
@@ -131,7 +131,7 @@ export default {
   },
 
   methods: {
-    showPopover (idx) {
+    showPopover(idx) {
       const index = this.activePopIndex
 
       if (index && this.$refs[`popover${idx}`]) {
@@ -141,7 +141,7 @@ export default {
       this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow()
     },
 
-    hidePopover () {
+    hidePopover() {
       const idx = this.activePopIndex
       this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
       this.activePopIndex = undefined

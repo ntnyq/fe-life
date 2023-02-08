@@ -23,7 +23,7 @@ export interface IUserStateTree {
 }
 
 export const useUserStore = defineStore({
-  id: `user`,
+  id: 'user',
 
   // state(): IUserStateTree {
   //     return {
