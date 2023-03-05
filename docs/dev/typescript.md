@@ -25,9 +25,7 @@
 ## 语法错误处理
 
 ```ts
-const length = 10
-
-Array.from({ length }, (_, idx) => idx)
+Array.from({ length: 10 }, (_, idx) => idx)
 ```
 
 上述语法在 compilerOptions 设置了 **strict** 为 `true` 时会报错，原因是同时开启了 **strictBindCallApply**。
