@@ -1,5 +1,5 @@
 {
   "root": true,
   "extends": ["@ntnyq"],
-  "ignorePatterns": ["docs/.vitepress/temp", "docs/.vitepress/.cache"]
+  "ignorePatterns": ["docs/.vitepress/temp", "docs/.vitepress/cache"]
 }

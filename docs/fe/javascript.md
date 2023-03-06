@@ -155,7 +155,7 @@ function isLocalStorageSupported() {
 
 报错如下：
 
-```text
+```txt
 Failed to execute 'requestFullscreen' on 'Element': API can only be initiated by a user gesture.
 ```
 
