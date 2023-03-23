@@ -249,10 +249,8 @@ export default {
 ```js
 // 无字幕
 import videojs from 'video.js/dist/alt/videojs.novtt'
-
 // 无 hls
 import videojs from 'video.js/dist/alt/video.core'
-
 // 无字幕与 hls
 import videojs from 'video.js/dist/alt/videojs.core.novtt'
 ```

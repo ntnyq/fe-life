@@ -8,7 +8,7 @@
         <img
           src="https://img.shields.io/badge/powered--by-vitepress-green.svg"
           alt="vitepress"
-        >
+        />
       </a>
       <a
         href="https://github.com/ntnyq/fe-life"
@@ -17,7 +17,7 @@
         <img
           src="https://img.shields.io/github/last-commit/ntnyq/fe-life.svg"
           alt="ntnyq/fe-life"
-        >
+        />
       </a>
       <p>
         作为一名 <del>前端小白</del>，在开发过程中难免遇到各种 <b>*</b> 蛋的问题，心中难免要说一声
@@ -28,7 +28,8 @@
         <a
           href="https://github.com/ntnyq/fe-life"
           target="_blank"
-        >Repo</a>
+          >Repo</a
+        >
         记录我的前端人生。
       </p>
     </div>

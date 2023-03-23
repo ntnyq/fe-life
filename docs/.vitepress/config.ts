@@ -3,6 +3,7 @@
  */
 
 import { defineConfig } from 'vitepress'
+import { SearchPlugin } from 'vitepress-plugin-search'
 
 const projects = [
   'vuepress-plugin-social-share',
@@ -11,7 +12,11 @@ const projects = [
   'omz-plugin-pnpm',
   'gulp-plugins',
 ]
-
+const searchOptions = {
+  previewLength: 62,
+  buttonLabel: '搜索',
+  placeholder: '搜索文档...',
+}
 const ogTitle = 'ntnyq的前端人生'
 const ogUrl = 'https://fe.ntnyq.com'
 
@@ -27,6 +32,12 @@ export default defineConfig({
       open: true,
       host: true,
     },
+
+    build: {
+      ssr: false,
+    },
+
+    plugins: [SearchPlugin(searchOptions)],
   },
 
   head: [

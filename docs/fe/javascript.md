@@ -114,9 +114,9 @@ Polyfill:
 会在页面刷新时，进行提示。
 
 ```js
-window.onbeforeunload = function (evt) {
+window.addEventListener('beforeunload', (evt) => {
   // do something
-}
+})
 ```
 
 ## 移动端浏览器无痕模式 Storage 报错
@@ -136,7 +136,7 @@ function isLocalStorageSupported() {
     storage.setItem(TEST_KEY, 'testValue')
     storage.removeItem(TEST_KEY)
     return true
-  } catch (error) {
+  } catch {
     console.log('You are in private mode!')
     return false
   }
@@ -180,9 +180,9 @@ console.log(`0${num.toString(8)}`)
 ## ESM 使用 require 方法
 
 ```js
+// eslint-disable-next-line import/order
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
-
 const foobar = require('foo-bar')
 ```

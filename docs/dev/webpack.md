@@ -30,7 +30,7 @@ webpack-dev-server 指定配置文件需要使用 `--config` 参数。
 ```js
 // vue.config.js
 
-const path = require('path')
+const path = require('node:path')
 
 const resolve = (...args) => path.resolve(__dirname, ...args)
 

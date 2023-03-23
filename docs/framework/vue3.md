@@ -3,8 +3,8 @@
 ## Provide & Inject 传递配置
 
 ```ts
-import type { App } from 'vue'
 import { inject } from 'vue'
+import type { App } from 'vue'
 
 interface Config {
   name: string

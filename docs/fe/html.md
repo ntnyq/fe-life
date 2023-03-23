@@ -100,7 +100,7 @@ searchInput.addEventListener(
     const keyword = searchInput.value.trim()
     const KEYCODE_ENTER = 13
 
-    if (evt.keyCode === KEYCODE_ENTER) {
+    if (evt.key === KEYCODE_ENTER) {
       console.log(keyword)
       evt.preventDefault()
     }

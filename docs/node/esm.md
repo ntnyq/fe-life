@@ -37,13 +37,10 @@ const vue = require.resolve('vue')
 ## \_\_dirname
 
 ```js
-import path from 'node:path'
-import { URL, fileURLToPath } from 'node:url'
+import path, { dirname } from 'node:path'
+import { URL, fileURLToPath , fileURLToPath } from 'node:url'
 
 // Both esm and cjs
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const __filename = fileURLToPath(import.meta.url)
