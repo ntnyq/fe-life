@@ -180,7 +180,6 @@ Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请�
 
 ```js
 // store.js
-// eslint-disable-next-line import/default
 import Vue from 'vue'
 
 export const state = Vue.observable({

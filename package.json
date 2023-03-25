@@ -2,7 +2,7 @@
   "name": "fe-life",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@7.30.0",
+  "packageManager": "pnpm@7.30.3",
   "description": "The frontend life record of ntnyq",
   "license": "MIT",
   "author": {
@@ -16,27 +16,32 @@
     "lint:cspell": "cspell \"**\"",
     "lint:script": "eslint --cache .",
     "prepare": "husky install",
-    "pretty": "prettier --write \"**/*.{md,js,ts,css,scss,vue}\""
+    "pretty": "prettier --write \"**/*.{md,js,ts,css,scss,vue}\"",
+    "preview": "vitepress preview docs"
   },
   "dependencies": {
     "vue": "^3.2.47"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^1.6.0",
-    "@ntnyq/prettier-config": "^1.6.0",
+    "@ntnyq/eslint-config": "^1.6.1",
+    "@ntnyq/prettier-config": "^1.6.1",
     "@qxy/cspell-dict": "^0.0.3",
-    "cspell": "^6.30.2",
+    "@vite-pwa/vitepress": "^0.0.5",
+    "cspell": "^6.31.1",
     "eslint": "^8.36.0",
     "flexsearch": "^0.7.31",
     "husky": "^8.0.3",
     "markdown-it": "^13.0.1",
     "nano-staged": "^0.8.0",
     "npm-run-all": "^4.1.5",
-    "pnpm": "^7.30.0",
-    "prettier": "^2.8.6",
+    "pnpm": "^7.30.3",
+    "prettier": "^2.8.7",
     "typescript": "^5.0.2",
-    "vitepress": "1.0.0-alpha.61",
-    "vitepress-plugin-search": "1.0.4-alpha.19"
+    "vite": "^4.2.1",
+    "vite-plugin-pwa": "^0.14.6",
+    "vitepress": "1.0.0-alpha.62",
+    "vitepress-plugin-search": "1.0.4-alpha.19",
+    "workbox-window": "^6.5.4"
   },
   "pnpm": {
     "peerDependencyRules": {
