@@ -20,3 +20,11 @@ shell-emulator=true
 ```
 
 - [pnpm - hell-emulator](https://pnpm.io/cli/run#shell-emulator)
+
+## Patch a package
+
+```bash
+pnpm patch package_name
+
+pnpm patch-commit temp_path
+```

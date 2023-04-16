@@ -12,7 +12,5 @@ export default <ITheme>{
       'layout-bottom': () => h(RegisterSW),
     })
   },
-  enhanceApp({ app }) {
-    console.log(app)
-  },
+  enhanceApp() {},
 }

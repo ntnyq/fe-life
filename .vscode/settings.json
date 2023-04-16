@@ -1,19 +1,16 @@
 {
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
     "vue",
     "yaml",
     "html",
-    "markdown",
     "json",
     "jsonc",
-    "json5"
-  ],
-  "[markdown]": {
-    "editor.formatOnSave": true
-  }
+    "json5",
+    "markdown",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ]
 }

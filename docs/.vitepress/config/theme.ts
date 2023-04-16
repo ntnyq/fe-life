@@ -11,6 +11,31 @@ const projects = [
 export const themeConfig: DefaultTheme.Config = {
   logo: '/favicon-32x32.png',
 
+  search: {
+    provider: 'local',
+    options: {
+      translations: {
+        button: {
+          buttonText: '搜索全站',
+          buttonAriaLabel: 'Search full site',
+        },
+        modal: {
+          displayDetails: '显示详情',
+          resetButtonTitle: '重置',
+          backButtonTitle: '回退',
+          noResultsText: '暂无匹配内容',
+          footer: {
+            selectText: '选择',
+            selectKeyAriaLabel: 'Select',
+            navigateText: '导航',
+            navigateUpKeyAriaLabel: 'Navigate up',
+            navigateDownKeyAriaLabel: 'Navigate down',
+          },
+        },
+      },
+    },
+  },
+
   editLink: {
     pattern: 'https://github.com/ntnyq/fe-life/edit/main/docs/:path',
     text: '帮助我改进页面内容！',
