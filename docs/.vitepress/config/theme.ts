@@ -30,6 +30,8 @@ export const themeConfig: DefaultTheme.Config = {
             navigateText: '导航',
             navigateUpKeyAriaLabel: 'Navigate up',
             navigateDownKeyAriaLabel: 'Navigate down',
+            closeText: '关闭',
+            closeKeyAriaLabel: 'Close',
           },
         },
       },

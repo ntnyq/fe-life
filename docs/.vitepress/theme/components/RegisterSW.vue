@@ -32,8 +32,8 @@ onBeforeMount(async () => {
       aria-labelledby="pwa-message"
     >
       <div
-        class="mb-3"
         id="pwa-message"
+        class="mb-3"
       >
         App ready to work offline
       </div>

@@ -46,13 +46,12 @@
 ### 通过 js API 初始化
 
 ```js
-videojs('example_video', {}, function () {
+videojs('example_video', {}, () => {
   console.log('>>> videojs initialized successful!')
-
-  this.load() // 重新加载
-  this.src = 'path_to_your/video2.mp4' // 切换地址
-  this.play() // 播放
-  this.pause() // 暂停
+  video.load() // 重新加载
+  video.src = 'path_to_your/video2.mp4' // 切换地址
+  video.play() // 播放
+  video.pause() // 暂停
 })
 ```
 
@@ -217,10 +216,6 @@ VideoJs 支持以下事件监听：
 可使用 [vue-video-player](https://github.com/surmon-china/vue-video-player) 。
 
 ```vue
-<template>
-  <vue-video-player ref="videoPlayer" />
-</template>
-
 <script>
 export default {
   computed: {
@@ -238,6 +233,10 @@ export default {
   },
 }
 </script>
+
+<template>
+  <VueVideoPlayer ref="videoPlayer" />
+</template>
 ```
 
 参考资料：

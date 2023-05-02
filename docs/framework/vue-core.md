@@ -143,12 +143,6 @@ export default {
 </script>
 
 // Parent.vue
-<template>
-  <div class="parent">
-    <Child ref="child" />
-  </div>
-</template>
-
 <script>
 export default {
   name: 'Parent',
@@ -158,6 +152,12 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="parent">
+    <Child ref="child" />
+  </div>
+</template>
 ```
 
 ## 生命周期
@@ -200,10 +200,6 @@ export const mutations = {
 
 ```vue
 // App.vue
-<template>
-  <div>{{ userInfo.username }}</div>
-</template>
-
 <script>
 import { mutations, state } from '@/store'
 
@@ -223,4 +219,8 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div>{{ userInfo.username }}</div>
+</template>
 ```

@@ -79,42 +79,6 @@ import './styles/element-reset'
 ## Table 内嵌套 Popover 无法弹出
 
 ```vue
-<template>
-  <div class="element-demo">
-    <el-table :data="data">
-      <el-table-column
-        type="index"
-        label="序号"
-      />
-      <el-table-column
-        prop="lang"
-        label="框架"
-        width="180"
-      />
-      <el-table-column label="操作">
-        <template #default="scope">
-          <el-popover
-            :ref="`popover${scope.$index}`"
-            placement="top"
-            width="200"
-            trigger="manual"
-          >
-            <p>foo bar baz</p>
-            <template #reference>
-              <el-button
-                @click.stop="showPopover(scope.$index)"
-                type="primary"
-              >
-                Popover
-              </el-button>
-            </template>
-          </el-popover>
-        </template>
-      </el-table-column>
-    </el-table>
-  </div>
-</template>
-
 <script>
 export default {
   name: 'ElementDemo',
@@ -149,6 +113,42 @@ export default {
   },
 }
 </script>
+
+<template>
+  <div class="element-demo">
+    <ElTable :data="data">
+      <ElTableColumn
+        type="index"
+        label="序号"
+      />
+      <ElTableColumn
+        prop="lang"
+        label="框架"
+        width="180"
+      />
+      <ElTableColumn label="操作">
+        <template #default="scope">
+          <ElPopover
+            :ref="`popover${scope.$index}`"
+            placement="top"
+            width="200"
+            trigger="manual"
+          >
+            <p>foo bar baz</p>
+            <template #reference>
+              <ElButton
+                @click.stop="showPopover(scope.$index)"
+                type="primary"
+              >
+                Popover
+              </ElButton>
+            </template>
+          </ElPopover>
+        </template>
+      </ElTableColumn>
+    </ElTable>
+  </div>
+</template>
 ```
 
 通过调用 **el-popover** 组件自身的 `doShow` 和 `doClose` 两个 methods 来实现。
@@ -159,24 +159,24 @@ export default {
 
 ```vue
 <template>
-  <el-table>
-    <el-table-column
+  <ElTable>
+    <ElTableColumn
       v-if="type === 'foo'"
       prop="type"
       label="类型"
     />
-    <el-table-column
+    <ElTableColumn
       v-if="type === 'bar'"
       prop="title"
       label="标题"
     />
-    <el-table-column
+    <ElTableColumn
       v-if="type === 'baz'"
       prop="date"
       label="时间"
     />
     ...
-  </el-table>
+  </ElTable>
 </template>
 ```
 
@@ -191,15 +191,15 @@ export default {
 <template>
   <div class="layout-content">
     <div class="layout-content-inner">
-      <transition
+      <Transition
         name="el-zoom-in-center"
         mode="out-in"
       >
-        <router-view
+        <RouterView
           :key="$router.fullPath"
           class="container"
         />
-      </transition>
+      </Transition>
     </div>
   </div>
 </template>
@@ -228,5 +228,5 @@ Vue.prototype.$message = Message
 当 `limit="1"` 时候，未清空已选择文件。
 
 ```js
-this.$refs.uploader.clearFiles()
+uploaderRef.clearFiles()
 ```
