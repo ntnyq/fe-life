@@ -78,7 +78,8 @@ export const themeConfig: DefaultTheme.Config = {
       activeMatch: '^/(node|extension)/',
       items: [
         { text: 'Node篇', link: '/node/base' },
-        { text: '浏览器插件篇', link: '/extension/base' },
+        { text: '浏览器插件篇', link: '/extension/webext' },
+        { text: '油猴插件', link: '/extension/monkey' },
       ],
     },
     { text: '工具篇', activeMatch: '^/tools/', link: '/tools/git' },
@@ -128,7 +129,6 @@ export const themeConfig: DefaultTheme.Config = {
         items: [
           { text: 'vue', link: '/framework/vue-core' },
           { text: 'router', link: '/framework/vue-router' },
-          { text: 'vuex', link: '/framework/vue-vuex' },
           { text: 'vuex', link: '/framework/vue-vuex' },
           { text: 'cli', link: '/framework/vue-cli' },
           { text: 'trick', link: '/framework/vue-trick' },

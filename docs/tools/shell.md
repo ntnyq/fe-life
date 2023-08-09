@@ -11,7 +11,7 @@
 macOS 默认无 Tree 命令。
 
 ```bash
-$ brew install tree
+brew install tree
 ```
 
 ### 常用参数
@@ -31,10 +31,10 @@ $ brew install tree
 
 ```bash
 # 输出至粘贴板
-$ tree . | pbcopy
+tree . | pbcopy
 
 # 输出至当前目录下的 DIRECTORY.md
-$ tree -L 2 > DIRECTORY.md
+tree -L 2 > DIRECTORY.md
 
 # 遍历当前目录下层级为2的所有目录 忽略node_modules目录 将文件树输入至 directory.md
 tree -L 2 -d  -I "node_modules" > directory.md
@@ -59,18 +59,18 @@ tree -L 2 -d  -I "node_modules" > directory.md
 
 ```bash
 # 删除当前目录下所有名字格式为 nodePipe*.sock的文件
-$ find . -maxdepth 1 -regex "nodePipe*.sock" -exec rm -rf {} \;
+find . -maxdepth 1 -regex "nodePipe*.sock" -exec rm -rf {} \;
 
 # 同上
-$ find . -maxdepth 1 -name "nodePipe*.sock" -exec rm -rf {} \;
+find . -maxdepth 1 -name "nodePipe*.sock" -exec rm -rf {} \;
 
 # 同上 xargs 用于把前面的输出作为后面的参数
-$ find . -maxdepth 1 -name "nodePipe*.sock" | xargs rm -rf
+find . -maxdepth 1 -name "nodePipe*.sock" | xargs rm -rf
 
 # 显示当前目录下20天前的目录
-$ find . -type d -mtime +20 -exec ls -l {} \;
+find . -type d -mtime +20 -exec ls -l {} \;
 
-$ find . -type d -mtime +20 ! -path ./node_modules  -exec ls -l {} \;
+find . -type d -mtime +20 ! -path ./node_modules  -exec ls -l {} \;
 ```
 
 ::: tip
@@ -94,7 +94,7 @@ $ find . -type d -mtime +20 ! -path ./node_modules  -exec ls -l {} \;
 
 ```bash
 # 删除当前目录下所有 *.txt 命名的文件，除了test.txt
-$ rm `ls *.txt|egrep -v test.txt`
+rm `ls *.txt|egrep -v test.txt`
 ```
 
 ## scp 命令
@@ -121,16 +121,16 @@ $ rm `ls *.txt|egrep -v test.txt`
 
 ```bash
 # 复制服务器文件
-$ scp -P 9527 root@0.0.0.0:/home/root/tmp/foo.zip /home/root/tmp/bar.zip
+scp -P 9527 root@0.0.0.0:/home/root/tmp/foo.zip /home/root/tmp/bar.zip
 
 # 复制服务器目录
-$ scp -r root@0.0.0.0:/home/root/tmp/ /home/root/tmp/
+scp -r root@0.0.0.0:/home/root/tmp/ /home/root/tmp/
 
 # 复制本地文件至服务器
-$ scp -P 9527 /home/root/tmp/bar.zip 0.0.0.0:/home/root/tmp/foo.zip
+scp -P 9527 /home/root/tmp/bar.zip 0.0.0.0:/home/root/tmp/foo.zip
 
 # 复制本地目录至服务器
-$ scp -r /home/root/tmp/ 0.0.0.0:/home/root/tmp/
+scp -r /home/root/tmp/ 0.0.0.0:/home/root/tmp/
 ```
 
 若未指定用户名，则命令执行后需要输入用户名和密码，否则只输入密码即可。
@@ -145,22 +145,32 @@ $ scp -r /home/root/tmp/ 0.0.0.0:/home/root/tmp/
 
 ```bash
 # 本机执行命令
-$ ssh-keygen -t rsa # 连续回车 在本地生成ssh公钥和私钥
-$ ssh root@your_server_ip # 需要输入密码
+ssh-keygen -t rsa # 连续回车 在本地生成ssh公钥和私钥
+ssh root@your_server_ip # 需要输入密码
 
 # 主机执行命令
-$ mkdir .ssh # 若已经存在 则无需创建
-$ chmod 0700 .ssh # 必须给.ssh目录700权限
+mkdir .ssh # 若已经存在 则无需创建
+chmod 0700 .ssh # 必须给.ssh目录700权限
 
 # 本机执行命令
-$ scp ~/.ssh/id_rsa.pub root@your_server_ip:.ssh/id_rsa.pub # 需要输入密码
+scp ~/.ssh/id_rsa.pub root@your_server_ip:.ssh/id_rsa.pub # 需要输入密码
 
 # 主机执行命令
-$ touch /root/.ssh/authorized_keys # 若已存在，无需创建
-$ chmod 600 ~/.ssh/authorized_keys # 必须修改加权限
-$ cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys # 需要使用2个>>来进行追加
+touch /root/.ssh/authorized_keys # 若已存在，无需创建
+chmod 600 ~/.ssh/authorized_keys # 必须修改加权限
+cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys # 需要使用2个>>来进行追加
 
 # 配置已经完成
 # 本机测试
-$ ssh root@your_server_ip
+ssh root@your_server_ip
+```
+
+### 获取当前 unix 时间戳
+
+```bash
+# 获取时间戳
+date +%s
+
+# 将时间戳作为环境变量使用
+cross-env VITE_BUNDLE_TIME=$(date +%s) pnpm run build
 ```

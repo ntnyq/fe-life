@@ -31,9 +31,9 @@ export const useUserStore = defineStore({
   //     }
   // },
 
-  state: () => <IUserStateTree>({
+  state: () => ({
     roles: []
-  }),
+  }) as IUserStateTree,
 })
 ```
 <!-- prettier-ignore-end -->
