@@ -61,16 +61,27 @@ videojs('example_video', {}, () => {
 
 常用配置项:
 
-```yaml
-poster: path_to_your/img.ext # 海报图
-preload: auto # 预加载 'none' | metadata | auto
-fluid: true # 是否自适应尺寸
-controls: true # 是否显示播放控件
-autoplay: true # 是否自动播放
-loop: true # 是否循环播放
-muted: false # 是否静音
-width: 640 # 视频宽度
-height: 360 # 视频高度
+```js
+const options = {
+  // 海报图
+  poster: 'path_to_your/img.ext',
+  // 预加载 'none' | metadata | auto
+  preload: 'auto',
+  // 是否自适应尺寸
+  fluid: true,
+  // 是否显示播放控件
+  controls: true,
+  // 是否自动播放
+  autoplay: true,
+  // 是否循环播放
+  loop: true,
+  // 是否静音
+  muted: false,
+  // 视频宽度
+  width: 640,
+  // 视频高度
+  height: 360,
+}
 ```
 
 [详细配置信息](https://docs.videojs.com/tutorial-options.html)
@@ -248,10 +259,12 @@ export default {
 ```js
 // 无字幕
 import videojs from 'video.js/dist/alt/videojs.novtt'
+
 // 无 hls
-import videojs from 'video.js/dist/alt/video.core'
+// import videojs from 'video.js/dist/alt/video.core'
+
 // 无字幕与 hls
-import videojs from 'video.js/dist/alt/videojs.core.novtt'
+// import videojs from 'video.js/dist/alt/videojs.core.novtt'
 ```
 
 参考资料:

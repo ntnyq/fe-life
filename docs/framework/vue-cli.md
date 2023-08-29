@@ -70,7 +70,7 @@ $ yarn add sass-resources-loader -D
 
 ```js
 // https://vue-loader.vuejs.org/en/configurations/extract-css.html
-return {
+const config = {
   scss: generateLoaders('sass').concat({
     loader: 'sass-resources-loader',
     options: {

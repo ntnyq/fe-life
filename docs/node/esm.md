@@ -38,15 +38,16 @@ const vue = require.resolve('vue')
 
 ```js
 import path, { dirname } from 'node:path'
-import { URL, fileURLToPath , fileURLToPath } from 'node:url'
+import { URL, fileURLToPath } from 'node:url'
 
 // Both esm and cjs
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const _dirname = __dirname !== undefined ? __dirname : dirname(fileURLToPath(import.meta.url))
+// const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+// const __dirname = __dirname !== undefined ? __dirname : dirname(fileURLToPath(import.meta.url))
 ```
 
 ## \_\_filename

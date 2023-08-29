@@ -44,9 +44,8 @@ body.addEventListener(
 > ES6 module 懒加载。
 
 ```js
-import('id-card').then(IDCard => {
-  // doSomething with module idCard
-})
+const idCard = await import('id-card')
+// doSomething with module idCard
 ```
 
 ### 对象 key 排序

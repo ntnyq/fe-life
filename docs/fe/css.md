@@ -44,7 +44,7 @@
 
 [参考资料](https://blog.csdn.net/haihiaandtongtong/article/details/50345065)
 
-### Input["type=number"]上下箭头
+### input["type=number"]上下箭头
 
 ```scss
 input[type='number'] {
@@ -161,7 +161,7 @@ input::-ms-reveal {
 
 且`p`标签不存在`margin-top, margin-bottom, padding-top, padding-bottom`等样式。
 
-在`Debug`的过程中，我观察到`br`标签的样式继承了`line-height`属性和`font-size`属性，觉得可能是因为`br`标签占据了一行行高导致的。于是把`br`标签的`font-size`设置为`0`，问题完美解决 ❤️。
+在 Debug 的过程中，我观察到`br`标签的样式继承了`line-height`属性和`font-size`属性，觉得可能是因为`br`标签占据了一行行高导致的。于是把`br`标签的`font-size`设置为 0，问题完美解决 ❤️。
 
 ### Stick 定位
 
@@ -211,5 +211,23 @@ import "~normalize.css";
 
 .main {
   overflow: hidden;
+}
+```
+
+## 禁用动画
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 ```
