@@ -51,6 +51,8 @@ VUE_APP_NAME = ntnyq
 在项目代码中，我们可以通过以下的方式使用定义好的环境变量：
 
 ```js
+import process from 'node:process'
+
 console.log(process.env.VUE_APP_NAME) // ntnyq
 ```
 
@@ -115,6 +117,8 @@ const ntnyq = Object.freeze({
 以下为 vue-cli 配置。可根据自身打包工具使用 `terser-webpack-plugin` 或 `uglify-webpack-plugin` 的配置。
 
 ```js
+import process from 'node:process'
+
 config.when(process.env.NODE_ENV === 'production', config => {
   config.optimization.minimizer('terser').tap(args => {
     args[0].terserOptions.compress.drop_debugger = true

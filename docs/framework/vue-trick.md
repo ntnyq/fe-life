@@ -34,7 +34,7 @@
     <img
       :src="require('@images/icon.png')"
       alt="icon"
-    >
+    />
   </div>
 </template>
 ```
@@ -44,6 +44,8 @@
 使用 **afterEach** 钩子函数，在路由切换成功后修改 `title`。
 
 ```js
+import process from 'node:process'
+
 const router = new VueRouter({
   routes: [],
 })
@@ -79,7 +81,6 @@ export default {
 ```
 
 ```vue
-// App.vue
 <script>
 export default {
   mounted() {

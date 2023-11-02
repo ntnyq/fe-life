@@ -15,14 +15,24 @@
 ## El-dropdown 内部嵌套 svg-icon
 
 ```vue
-<el-dropdown trigger="click" @command="delete">
-  <svg-icon icon="ellipsis-v"></svg-icon>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item class="text-danger" :command="scope.$index">
-      {{ scope.title }}
-    </el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+<template>
+  <ElDropdown
+    @command="handleDelete"
+    trigger="click"
+  >
+    <SvgIcon icon="ellipsis-v"></SvgIcon>
+    <template #dropdown>
+      <ElDropdownMenu>
+        <ElDropdownItem
+          :command="scope.$index"
+          class="text-danger"
+        >
+          {{ scope.title }}
+        </ElDropdownItem>
+      </ElDropdownMenu>
+    </template>
+  </ElDropdown>
+</template>
 ```
 
 ```vue
@@ -39,16 +49,25 @@
 解决方案 使用 html 标签再对 `svg` 进行一次包裹。例如：
 
 ```vue
-<el-dropdown trigger="click" @command="delete">
-  <span>
-<svg-icon icon="ellipsis-v"></svg-icon>
-  </span>
-  <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item class="text-danger" :command="scope.$index">
-      {{ scope.title }}
-    </el-dropdown-item>
-  </el-dropdown-menu>
-</el-dropdown>
+<template>
+  <ElDropdown
+    @command="handleDelete"
+    trigger="click"
+  >
+    <span>
+      <SvgIcon icon="ellipsis-v"></SvgIcon>
+    </span>
+    <template #dropdown>
+      <ElDropdownMenu>
+        <ElDropdownItem
+          :command="scope.$index"
+          class="text-danger"
+        >
+          {{ scope.title }}
+        </ElDropdownItem>
+      </ElDropdownMenu>
+  </ElDropdown>
+</template>
 ```
 
 [参考文档](https://github.com/ElemeFE/element/issues/13453#issuecomment-441138145)

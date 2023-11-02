@@ -25,15 +25,9 @@ export interface IUserStateTree {
 export const useUserStore = defineStore({
   id: 'user',
 
-  // state(): IUserStateTree {
-  //     return {
-  //         roles: [],
-  //     }
-  // },
-
-  state: () => ({
+  state: (): IUserStateTree => ({
     roles: []
-  }) as IUserStateTree,
+  }),
 })
 ```
 <!-- prettier-ignore-end -->

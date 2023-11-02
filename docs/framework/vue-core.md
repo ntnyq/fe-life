@@ -125,7 +125,6 @@ export default {
 在 **父组件上** 可以通过它来调用子组件上的方法。例：
 
 ```vue
-// Child.vue
 <script>
 export default {
   name: 'Child',
