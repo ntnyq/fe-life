@@ -37,7 +37,7 @@
     "pnpm": "^8.13.1",
     "prettier": "^3.1.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10",
+    "vite": "^5.0.12",
     "vite-plugin-pwa": "^0.17.4",
     "vitepress": "1.0.0-rc.24",
     "workbox-window": "^7.0.0"
