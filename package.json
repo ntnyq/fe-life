@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@8.15.5",
+  "packageManager": "pnpm@9.1.0",
   "description": "The frontend life record of ntnyq",
   "license": "MIT",
   "author": {
@@ -21,26 +21,26 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.27"
   },
   "devDependencies": {
-    "@ntnyq/eslint-config": "^1.21.0",
-    "@ntnyq/prettier-config": "^1.21.0",
+    "@ntnyq/eslint-config": "^2.0.1",
+    "@ntnyq/prettier-config": "^1.21.2",
     "@qxy/cspell-dict": "^0.0.3",
-    "@vite-pwa/vitepress": "^0.4.0",
-    "cspell": "^8.6.1",
-    "eslint": "^8.57.0",
+    "@vite-pwa/vitepress": "^0.5.0",
+    "cspell": "^8.8.0",
+    "eslint": "^9.2.0",
     "husky": "^9.0.11",
     "markdown-it": "^14.1.0",
     "nano-staged": "^0.8.0",
     "npm-run-all2": "^6.1.2",
-    "pnpm": "^8.15.5",
+    "pnpm": "^9.1.0",
     "prettier": "^3.2.5",
-    "typescript": "^5.4.3",
-    "vite": "^5.2.6",
-    "vite-plugin-pwa": "^0.19.7",
-    "vitepress": "^1.0.1",
-    "workbox-window": "^7.0.0"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-pwa": "^0.20.0",
+    "vitepress": "^1.1.4",
+    "workbox-window": "^7.1.0"
   },
   "pnpm": {
     "peerDependencyRules": {

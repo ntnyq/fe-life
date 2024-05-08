@@ -151,6 +151,37 @@ class MyAPP extends StatelessWidget {
 }
 ```
 
+## 安卓签名
+
+### 生成密钥
+
+执行后，会在用户目录生成 `upload-keystore.jks` 文件。
+
+交互式询问，可只提供密码。
+
+```bash
+keytool -genkey -v -keystore ~/upload-keystore.jks -keyalg RSA \
+        -keysize 2048 -validity 10000 -alias upload
+```
+
+### 查看密钥
+
+```bash
+keytool -list -v -keystore ~/upload-keystore.jks
+```
+
+### 获取MD5
+
+```bash
+keytool -exportcert -keystore ~/upload-keystore.jks | openssl dgst -md5
+```
+
+### 获取公钥
+
+```bash
+keytool -list -rfc -keystore ~/upload-keystore.jks | openssl x509 -inform pem -pubkey
+```
+
 ## 常见错误
 
 ### fluro 报错

@@ -4,7 +4,7 @@ import RegisterSW from './components/RegisterSW.vue'
 import HomeIntroduction from './components/HomeIntroduction.vue'
 import type { Theme as ITheme } from 'vitepress/client'
 
-export default {
+const theme: ITheme = {
   ...Theme,
   Layout() {
     return h(Theme.Layout, null, {
@@ -13,4 +13,6 @@ export default {
     })
   },
   enhanceApp() {},
-} as ITheme
+}
+
+export default theme
