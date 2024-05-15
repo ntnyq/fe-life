@@ -23,6 +23,13 @@ $ git clone repo_url -b branch_name
 $ git commit --amend
 ```
 
+### Clean
+
+```bash
+# 删除本地所有修改
+$ git clean -f
+```
+
 ## Checkout
 
 ```bash
