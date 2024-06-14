@@ -121,12 +121,12 @@ export default {
         this.$refs[`popover${index}`].doClose()
         this.activePopIndex = undefined
       }
-      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doShow()
+      this.$refs[`popover${idx}`]?.doShow()
     },
 
     hidePopover() {
       const idx = this.activePopIndex
-      this.$refs[`popover${idx}`] && this.$refs[`popover${idx}`].doClose()
+      this.$refs[`popover${idx}`].doClose()
       this.activePopIndex = undefined
     },
   },

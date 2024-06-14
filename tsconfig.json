@@ -3,7 +3,7 @@
     "target": "ESNext",
     "jsx": "preserve",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "types": ["vite/client", "vite-plugin-pwa/client"],
     "esModuleInterop": true,
     "strict": true,
