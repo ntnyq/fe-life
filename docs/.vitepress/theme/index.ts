@@ -10,6 +10,7 @@ import RegisterSW from './components/RegisterSW.vue'
 import HomeIntroduction from './components/HomeIntroduction.vue'
 import type { Theme as ITheme } from 'vitepress/client'
 
+import 'uno.css'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
 const theme: ITheme = {

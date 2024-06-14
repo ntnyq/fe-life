@@ -28,8 +28,9 @@
         <a
           href="https://github.com/ntnyq/fe-life"
           target="_blank"
-          >Repo</a
         >
+          Repo
+        </a>
         记录我的前端人生。
       </p>
     </div>

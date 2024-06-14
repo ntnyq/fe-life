@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { onBeforeMount, ref } from 'vue'
+import { VPButton } from 'vitepress/theme'
 
 const offlineReady = ref(false)
-const onOfflineReady = () => {
+
+function showDialog() {
   offlineReady.value = true
 }
-const close = async () => {
+function hideDialog() {
   offlineReady.value = false
 }
 
@@ -13,7 +15,9 @@ onBeforeMount(async () => {
   const { registerSW } = await import('virtual:pwa-register')
   registerSW({
     immediate: true,
-    onOfflineReady,
+    onOfflineReady() {
+      showDialog()
+    },
     onRegistered() {
       console.info('Service Worker registered')
     },
@@ -25,53 +29,21 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <template v-if="offlineReady">
+  <div
+    v-if="offlineReady"
+    class="absolute bottom-8 right-8 z-100 flex flex-col justify-center border border-$vp-c-divider rounded-lg bg-white p-4 shadow-2xl"
+    role="alertdialog"
+    aria-labelledby="pwa-message"
+  >
     <div
-      class="pwa-toast"
-      role="alertdialog"
-      aria-labelledby="pwa-message"
+      id="pwa-message"
+      class="text-md mb-3"
     >
-      <div
-        id="pwa-message"
-        class="mb-3"
-      >
-        App ready to work offline
-      </div>
-      <button
-        @click="close"
-        type="button"
-        class="pwa-cancel"
-      >
-        Close
-      </button>
+      App ready to work offline
     </div>
-  </template>
+    <VPButton
+      @click="hideDialog"
+      text="Close"
+    />
+  </div>
 </template>
-
-<style>
-.pwa-toast {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 16px;
-  padding: 12px;
-  border: 1px solid #8885;
-  border-radius: 4px;
-  z-index: 100;
-  text-align: left;
-  box-shadow: 3px 4px 5px 0 #8885;
-  background-color: white;
-}
-
-.pwa-toast #pwa-message {
-  margin-bottom: 8px;
-}
-
-.pwa-toast button {
-  border: 1px solid #8885;
-  outline: none;
-  margin-right: 5px;
-  border-radius: 2px;
-  padding: 3px 10px;
-}
-</style>

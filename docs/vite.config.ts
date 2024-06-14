@@ -3,9 +3,10 @@
  */
 
 import { defineConfig } from 'vite'
+import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
-  plugins: [],
+  plugins: [UnoCSS()],
 
   optimizeDeps: {
     exclude: ['@nolebase/vitepress-plugin-enhanced-readabilities', 'vitepress'],
