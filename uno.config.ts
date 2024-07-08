@@ -2,8 +2,14 @@
  * @file UnoCSS
  */
 
-import { defineConfig, presetUno } from 'unocss'
+import { defineConfig, presetIcons, presetUno } from 'unocss'
 
 export default defineConfig({
-  presets: [presetUno()],
+  presets: [
+    presetUno(),
+    presetIcons({
+      scale: 1.2,
+      extraProperties: {},
+    }),
+  ],
 })

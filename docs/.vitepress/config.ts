@@ -7,6 +7,7 @@ import { withPwa } from '@vite-pwa/vitepress'
 import { pwa } from './config/pwa'
 import { head } from './config/head'
 import { themeConfig } from './config/theme'
+import { mdPlugins } from './plugins/md'
 
 export default withPwa(
   defineConfig({
@@ -17,7 +18,12 @@ export default withPwa(
     vite: {
       server: {
         open: true,
-        host: true,
+      },
+    },
+
+    markdown: {
+      config: md => {
+        md.use(mdPlugins)
       },
     },
 
