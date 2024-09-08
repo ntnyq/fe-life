@@ -120,6 +120,7 @@ export const themeConfig: DefaultTheme.Config = {
           { text: 'babel', link: '/dev/babel' },
           { text: 'typescript', link: '/dev/typescript' },
           { text: 'vite', link: '/dev/vite' },
+          { text: 'browser', link: '/dev/browser' },
         ],
       },
     ],
