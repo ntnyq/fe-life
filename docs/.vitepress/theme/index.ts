@@ -1,20 +1,20 @@
-import { h } from 'vue'
-import Theme from 'vitepress/theme'
-import FloatingVue from 'floating-vue'
+import 'floating-vue/dist/style.css'
+import 'uno.css'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 import {
   LayoutMode,
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesPlugin,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import RegisterSW from './components/RegisterSW.vue'
-import HomeIntroduction from './components/HomeIntroduction.vue'
+import FloatingVue from 'floating-vue'
+import Theme from 'vitepress/theme'
+import { h } from 'vue'
 import DemoContainer from './components/DemoContainer/index.vue'
-import type { Theme as ITheme } from 'vitepress/client'
 
-import 'floating-vue/dist/style.css'
-import 'uno.css'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+import HomeIntroduction from './components/HomeIntroduction.vue'
+import RegisterSW from './components/RegisterSW.vue'
+import type { Theme as ITheme } from 'vitepress/client'
 
 FloatingVue.options.distance = 10
 

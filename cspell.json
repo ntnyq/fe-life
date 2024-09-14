@@ -1,6 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
+  "useGitignore": true,
   "allowCompoundWords": true,
   "words": [
     "achrinza",
@@ -11,6 +12,7 @@
     "antv",
     "cdnurl",
     "CRBNZ",
+    "czvf",
     "deffered",
     "dgst",
     "dpkg",
@@ -47,6 +49,7 @@
     "videojs",
     "weapp",
     "xcassets",
+    "xzvf",
     "zhihu"
   ],
   "flagWords": [],

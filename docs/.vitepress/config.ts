@@ -2,10 +2,10 @@
  * @file vitepress config
  */
 
-import { defineConfig } from 'vitepress'
 import { withPwa } from '@vite-pwa/vitepress'
-import { pwa } from './config/pwa'
+import { defineConfig } from 'vitepress'
 import { head } from './config/head'
+import { pwa } from './config/pwa'
 import { themeConfig } from './config/theme'
 import { mdPlugins } from './plugins/md'
 

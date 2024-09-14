@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { onBeforeMount, ref } from 'vue'
 import { VPButton } from 'vitepress/theme'
+import { onBeforeMount, ref } from 'vue'
 
 const offlineReady = ref(false)
 

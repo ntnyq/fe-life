@@ -20,7 +20,7 @@
     @command="handleDelete"
     trigger="click"
   >
-    <SvgIcon icon="ellipsis-v"></SvgIcon>
+    <SvgIcon icon="ellipsis-v" />
     <template #dropdown>
       <ElDropdownMenu>
         <ElDropdownItem
@@ -55,7 +55,7 @@
     trigger="click"
   >
     <span>
-      <SvgIcon icon="ellipsis-v"></SvgIcon>
+      <SvgIcon icon="ellipsis-v"/>
     </span>
     <template #dropdown>
       <ElDropdownMenu>

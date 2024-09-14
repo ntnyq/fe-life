@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
+import Editor from './components/Editor.vue'
 import Header from './components/Header.vue'
 import Preview from './components/Preview.vue'
-import Editor from './components/Editor.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -37,8 +37,8 @@ const highlightedHtml = computed(() =>
 <template>
   <div class="demo-container mt-[24px] of-hidden rounded-lg bg-[#2e3138]">
     <Header
-      v-model:isUsingTs="isUsingTs"
-      v-model:showHighlighted="showHighlighted"
+      v-model:is-using-ts="isUsingTs"
+      v-model:show-highlighted="showHighlighted"
       :codesandbox="codesandbox"
       :sfc-ts-code="sfcTsCode"
       :sfc-js-code="sfcJsCode"

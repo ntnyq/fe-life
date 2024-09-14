@@ -178,7 +178,7 @@ console.log(`0${num.toString(8)}`)
 ## ESM 使用 require 方法
 
 ```js
-// eslint-disable-next-line import/order
+ 
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)

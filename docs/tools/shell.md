@@ -108,16 +108,17 @@ rm `ls *.txt|egrep -v test.txt`
 - C 允许 ssh 开启压缩功能
 - P 指定数据传输使用的端口号
 
-### 参考资料
-
-- [Linux scp 命令](https://www.runoob.com/linux/linux-comm-scp.html)
-- [Mac 终端中上传文件到 Linux 服务器](https://www.jianshu.com/p/1385bfb45b26)
-
 ### 使用示例
 
 ::: warning
 使用 scp 命令需保证用户对远程服务器具有相应的文件权限，否则无作用。
 :::
+
+```bash
+scp -P port_number local_file user_name@server_ip:server_path_start_with_slash
+
+scp -P 123456 x.tar.gz ntnyq@111.111.111.111:/data/static
+```
 
 ```bash
 # 复制服务器文件
@@ -134,6 +135,11 @@ scp -r /home/root/tmp/ 0.0.0.0:/home/root/tmp/
 ```
 
 若未指定用户名，则命令执行后需要输入用户名和密码，否则只输入密码即可。
+
+### 参考资料
+
+- [Linux scp 命令](https://www.runoob.com/linux/linux-comm-scp.html)
+- [Mac 终端中上传文件到 Linux 服务器](https://www.jianshu.com/p/1385bfb45b26)
 
 ## 实用技巧
 
@@ -173,4 +179,17 @@ date +%s
 
 # 将时间戳作为环境变量使用
 cross-env VITE_BUNDLE_TIME=$(date +%s) pnpm run build
+```
+
+### 压缩解压文件
+
+Tar 命令。
+
+```bash
+# 压缩目录 foobar 为文件 foobar.tar.gz
+tar -czvf foobar.tar.gz foobar
+
+
+# 解压文件 不指定 -C 参数则解压至当前目录
+tar -xzvf foobar.tar.gz -C target_path
 ```
