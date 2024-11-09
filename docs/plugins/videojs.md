@@ -186,9 +186,9 @@ js 等方案查看 [videojs-docs Layout](https://docs.videojs.com/tutorial-layou
 ```
 
 ```js
+import 'video.js/dist/video-js.min.css'
 import videojs from 'video.js'
 import 'videojs-flash'
-import 'video.js/dist/video-js.min.css'
 
 videojs('video_player', { techOrder: ['html5', 'flash'] }, () => {
   console.log('Video player initialize successfully!')
