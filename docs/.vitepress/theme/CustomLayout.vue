@@ -12,7 +12,7 @@ import RegisterSW from './components/RegisterSW.vue'
 
 const { isDark } = useData()
 
-function enableTransitions() {
+function supportViewTransition() {
   return (
     !!document.startViewTransition &&
     window.matchMedia('(prefers-reduced-motion: no-preference)').matches
@@ -20,7 +20,7 @@ function enableTransitions() {
 }
 
 provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
-  if (!enableTransitions()) {
+  if (!supportViewTransition()) {
     isDark.value = !isDark.value
     return
   }

@@ -7,7 +7,7 @@ import Preview from './components/Preview.vue'
 const props = withDefaults(
   defineProps<{
     sfcTsCode: string
-    // if using ts, sfcJsCode will transform the to js
+    // if using ts, sfcTsCode will transform the to js
     sfcJsCode: string
     sfcTsHtml: string
     sfcJsHtml: string
@@ -45,7 +45,7 @@ const highlightedHtml = computed(() =>
       :metadata="metadata"
     />
 
-    <div class="flex flex-col bg-$vp-c-bg">
+    <div class="flex flex-col border border-t-0 border-$vp-c-gutter border-solid bg-$vp-c-bg">
       <Preview class="min-h-[300px]">
         <slot />
       </Preview>
