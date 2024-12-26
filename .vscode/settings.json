@@ -1,4 +1,6 @@
 {
+  "eslint.enable": true,
+  "prettier.enable": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"

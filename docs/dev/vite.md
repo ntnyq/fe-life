@@ -82,3 +82,40 @@ const handleFormat = () => {
   </main>
 </template>
 ```
+
+## vite 插件
+
+```ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    /**
+     * @copyright KermanX/reactive-vscode
+     */
+    {
+      name: 'api-link',
+      enforce: 'pre',
+      transform(code, id) {
+        if (!id.endsWith('.md')) {
+          return
+        }
+        return code.replace(/`(\w+)::([^(`]+)(\(\S+?\))?`/g, (_, scope, name, link) => {
+          return `<ApiLink scope="${scope}" name="${name}" ${link ? `link="${link.slice(1, -1)}"` : ''}/>`
+        })
+      },
+    },
+
+    // Write bundle info to index.html
+    {
+      name: 'bundle-info',
+      apply: 'build',
+      enforce: 'post',
+      transformIndexHtml(html) {
+        const content = ['\t<!--', `\tBundleAt: ${new Date()}`, '\t-->']
+        return html.replace(/<!-- bundle-info -->/g, content.join('\n'))
+      },
+    },
+  ],
+})
+```
