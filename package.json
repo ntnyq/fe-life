@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.15.2",
   "description": "The frontend life record of ntnyq",
   "license": "MIT",
   "author": {
@@ -21,7 +21,7 @@
     "preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.11.1",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.12.0",
     "@vueuse/core": "^12.2.0",
     "floating-vue": "^5.2.2",
     "markdown-it-vitepress-demo": "^0.2.2",
@@ -35,9 +35,9 @@
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.6",
-    "@ntnyq/eslint-config": "^3.10.2",
+    "@ntnyq/eslint-config": "^3.10.4",
     "@ntnyq/prettier-config": "^1.22.0",
-    "@qxy/cspell-dict": "^0.0.3",
+    "@qxy/cspell-dict": "^0.0.4",
     "@vite-pwa/vitepress": "^0.5.3",
     "cspell": "^8.17.1",
     "eslint": "^9.17.0",
@@ -47,8 +47,8 @@
     "npm-run-all2": "^7.0.2",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
-    "unocss": "^0.65.2",
-    "vite": "^6.0.5",
+    "unocss": "^0.65.3",
+    "vite": "^6.0.6",
     "vite-plugin-pwa": "^0.21.1",
     "vitepress": "^1.5.0",
     "workbox-window": "^7.3.0"
