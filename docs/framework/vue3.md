@@ -10,7 +10,7 @@ interface Config {
   name: string
 }
 
-const CONFIG_SYMBOL = symbol('app-config')
+const CONFIG_SYMBOL: InjectionKey<Config> = symbol('app-config')
 
 export const injectConfig = (app: App, config?: Config) => {
   app.provide(CONFIG_SYMBOL, config)
@@ -50,3 +50,20 @@ Vue3 示例:
 参考资料:
 
 - [VNode Lifecycle Events](https://v3-migration.vuejs.org/breaking-changes/vnode-lifecycle-events.html)
+
+## 函数组件
+
+```ts
+import { defineComponent, h } from 'vue'
+
+export const FooBar = defineComponent(
+  () => () =>
+    h(
+      'div',
+      {
+        class: 'foo-bar',
+      },
+      'FooBar',
+    ),
+)
+```

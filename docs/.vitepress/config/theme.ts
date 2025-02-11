@@ -1,13 +1,5 @@
 import type { DefaultTheme } from 'vitepress'
 
-const projects = [
-  'vuepress-plugin-social-share',
-  'vuepress-plugin-svg-icons',
-  'element-plus-admin',
-  'omz-plugin-pnpm',
-  'gulp-plugins',
-]
-
 export const themeConfig: DefaultTheme.Config = {
   logo: '/favicon-32x32.png',
 
@@ -83,13 +75,6 @@ export const themeConfig: DefaultTheme.Config = {
       ],
     },
     { text: '工具篇', activeMatch: '^/tools/', link: '/tools/git' },
-    {
-      text: '我的项目',
-      items: projects.map(project => ({
-        text: `${project}`,
-        link: `https://github.com/ntnyq/${project}`,
-      })),
-    },
   ],
 
   sidebar: {

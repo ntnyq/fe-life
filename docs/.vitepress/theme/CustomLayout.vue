@@ -1,9 +1,4 @@
 <script lang="ts" setup>
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
-import {
-  NolebaseEnhancedReadabilitiesMenu,
-  NolebaseEnhancedReadabilitiesScreenMenu,
-} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import { useData } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { nextTick, provide } from 'vue'
@@ -12,10 +7,12 @@ import RegisterSW from './components/RegisterSW.vue'
 
 const { isDark } = useData()
 
+const DefaultThemeLayout = DefaultTheme.Layout
+
 function supportViewTransition() {
   return (
-    !!document.startViewTransition &&
-    window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+    !!document.startViewTransition
+    && window.matchMedia('(prefers-reduced-motion: no-preference)').matches
   )
 }
 
@@ -47,18 +44,10 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
     },
   )
 })
-
-const DefaultThemeLayout = DefaultTheme.Layout
 </script>
 
 <template>
   <DefaultThemeLayout>
-    <template #nav-bar-content-after>
-      <NolebaseEnhancedReadabilitiesMenu />
-    </template>
-    <template #nav-screen-content-after>
-      <NolebaseEnhancedReadabilitiesScreenMenu />
-    </template>
     <template #home-features-after>
       <HomeIntroduction />
     </template>

@@ -128,13 +128,15 @@ $mobile: 767px;
 
 > 推荐使用 math.div 函数
 
-```js
-// vue.config.js
-module.exports = {
+```ts
+// vue.config.ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
   css: {
     loaderOptions: {
       sass: {
-        additionalData: '@use "sass:math"; @import "~@/assets/styles/core/style";',
+        additionalData: '@use "sass:math"; @use "~@/assets/styles/core/style" as *;',
         sassOptions: {
           // @see https://stackoverflow.com/questions/67812380/disable-dart-sass-warnings-produced-by-external-theme-file
           quietDeps: true, // 关闭控制台警告
@@ -142,7 +144,7 @@ module.exports = {
       },
     },
   },
-}
+})
 ```
 
 ```scss

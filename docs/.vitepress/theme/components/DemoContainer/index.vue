@@ -45,7 +45,9 @@ const highlightedHtml = computed(() =>
       :metadata="metadata"
     />
 
-    <div class="flex flex-col border border-t-0 border-$vp-c-gutter border-solid bg-$vp-c-bg">
+    <div
+      class="flex flex-col border border-t-0 border-$vp-c-gutter border-solid bg-$vp-c-bg"
+    >
       <Preview class="min-h-[300px]">
         <slot />
       </Preview>

@@ -9,7 +9,9 @@ const props = defineProps<{
 }>()
 
 const isUsingTs = defineModel<boolean>('isUsingTs', { default: false })
-const showHighlighted = defineModel<boolean>('showHighlighted', { default: true })
+const showHighlighted = defineModel<boolean>('showHighlighted', {
+  default: true,
+})
 
 const githubBlobURL = 'https://github.com/ntnyq/fe-life/blob/main/'
 
@@ -91,7 +93,11 @@ function onShowHighlightCode() {
         class="cursor-pointer rounded-md bg-zinc-50/20 p-2"
       >
         <div
-          :class="showHighlighted ? 'i-ri:collapse-diagonal-fill' : 'i-ri:expand-diagonal-fill'"
+          :class="
+            showHighlighted
+              ? 'i-ri:collapse-diagonal-fill'
+              : 'i-ri:expand-diagonal-fill'
+          "
         />
       </button>
     </div>
