@@ -35,7 +35,7 @@
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.14",
     "@ntnyq/eslint-config": "^4.0.0-beta.6",
-    "@ntnyq/prettier-config": "^1.22.1",
+    "@ntnyq/prettier-config": "^2.0.0",
     "@qxy/cspell-dict": "^0.0.4",
     "@vite-pwa/vitepress": "^0.5.3",
     "cspell": "^8.17.3",
