@@ -5,17 +5,10 @@
     "jsx": "preserve",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "types": ["vite/client", "vite-plugin-pwa/client"],
+    "types": ["vite-plugin-pwa/client"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true
-  },
-  "include": [
-    "./docs/**/*.ts",
-    "./docs/**/*.vue",
-    "./docs/**/*.md",
-    "./docs/.vitepress/**/*.ts",
-    "./docs/.vitepress/**/*.vue"
-  ]
+  }
 }

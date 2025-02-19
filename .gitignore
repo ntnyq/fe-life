@@ -11,5 +11,5 @@ node_modules
 # Output
 dist
 
-docs/.vitepress/temp
-docs/.vitepress/cache
+**/.vitepress/temp
+**/.vitepress/cache

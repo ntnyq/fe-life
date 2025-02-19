@@ -36,7 +36,8 @@ export const themeConfig: DefaultTheme.Config = {
   },
 
   socialLinks: [
-    { icon: 'twitter', link: 'https://twitter.com/ntnyq' },
+    { icon: 'x', link: 'https://x.com/ntnyq' },
+    { icon: 'bluesky', link: 'https://bsky.app/profile/ntnyq.com' },
     { icon: 'github', link: 'https://github.com/ntnyq/fe-life' },
   ],
 
