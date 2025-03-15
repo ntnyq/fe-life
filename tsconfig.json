@@ -7,6 +7,8 @@
     "moduleResolution": "Bundler",
     "types": ["vite-plugin-pwa/client"],
     "resolveJsonModule": true,
+    "erasableSyntaxOnly": true,
+    "libReplacement": false,
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true
