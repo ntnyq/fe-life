@@ -30,7 +30,7 @@
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.16",
-    "@ntnyq/eslint-config": "^4.0.1",
+    "@ntnyq/eslint-config": "^4.0.2",
     "@ntnyq/prettier-config": "^2.0.0",
     "@types/node": "^22.13.10",
     "@vite-pwa/vitepress": "^0.5.3",
