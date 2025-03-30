@@ -6,11 +6,11 @@ import Preview from './components/Preview.vue'
 
 const props = withDefaults(
   defineProps<{
-    sfcTsCode: string
-    // if using ts, sfcTsCode will transform the to js
-    sfcJsCode: string
-    sfcTsHtml: string
-    sfcJsHtml: string
+    tsCode: string
+    // if using ts, tsCode will transform the to js
+    jsCode: string
+    jsHtml: string
+    tsHtml: string
     title?: string
     expanded?: boolean
     codesandbox?: boolean
@@ -23,32 +23,32 @@ const props = withDefaults(
   },
 )
 
-const isUsingTs = ref(!!props.sfcTsCode)
+const isUsingTs = ref(!!props.tsCode)
 const showHighlighted = ref(props.expanded)
 
-const sfcTsCode = computed(() => decodeURIComponent(props.sfcTsCode))
-const sfcJsCode = computed(() => decodeURIComponent(props.sfcJsCode))
+const tsCode = computed(() => decodeURIComponent(props.tsCode))
+const jsCode = computed(() => decodeURIComponent(props.jsCode))
 
 const highlightedHtml = computed(() =>
-  decodeURIComponent(isUsingTs.value ? props.sfcTsHtml : props.sfcJsHtml),
+  decodeURIComponent(isUsingTs.value ? props.tsHtml : props.jsHtml),
 )
 </script>
 
 <template>
-  <div class="demo-container mt-[24px] of-hidden rounded-lg bg-[#2e3138]">
+  <div class="demo-container mt-24px of-hidden rounded-lg bg-#2e3138">
     <Header
       v-model:is-using-ts="isUsingTs"
       v-model:show-highlighted="showHighlighted"
       :codesandbox="codesandbox"
-      :sfc-ts-code="sfcTsCode"
-      :sfc-js-code="sfcJsCode"
+      :ts-code="tsCode"
+      :js-code="jsCode"
       :metadata="metadata"
     />
 
     <div
       class="flex flex-col border border-t-0 border-$vp-c-gutter border-solid bg-$vp-c-bg"
     >
-      <Preview class="min-h-[300px]">
+      <Preview class="min-h-300px">
         <slot />
       </Preview>
     </div>

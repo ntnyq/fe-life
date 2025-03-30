@@ -1,9 +1,9 @@
 import { withPwa } from '@vite-pwa/vitepress'
 import { defineConfig } from 'vitepress'
+import { demoMdPlugin } from 'vitepress-plugin-demo'
 import { head } from './config/head'
 import { pwa } from './config/pwa'
 import { themeConfig } from './config/theme'
-import { mdPlugins } from './plugins/md'
 
 const config = defineConfig({
   title: 'ntnyq的前端人生',
@@ -19,10 +19,9 @@ const config = defineConfig({
       open: true,
     },
   },
-
   markdown: {
     config(md) {
-      md.use(mdPlugins)
+      md.use(demoMdPlugin)
     },
   },
 })

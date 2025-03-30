@@ -9,7 +9,9 @@ export default defineConfig({
   },
 
   plugins: [
-    UnoCSS(),
+    UnoCSS({
+      inspector: false,
+    }),
     VueComponents({
       dts: 'types/components.d.ts',
     }),

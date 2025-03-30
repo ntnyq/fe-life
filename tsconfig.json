@@ -9,6 +9,7 @@
     "resolveJsonModule": true,
     "erasableSyntaxOnly": true,
     "libReplacement": false,
+    "verbatimModuleSyntax": true,
     "esModuleInterop": true,
     "strict": true,
     "skipLibCheck": true

@@ -2,8 +2,8 @@
 import { useClipboard } from '@vueuse/core'
 
 const props = defineProps<{
-  sfcTsCode: string
-  sfcJsCode: string
+  tsCode: string
+  jsCode: string
   codesandbox?: boolean
   metadata: Record<string, any>
 }>()
@@ -24,7 +24,7 @@ function onOpenInGitHub() {
 function onOpenInCodeSandbox() {}
 
 function onCopyCode() {
-  copy(isUsingTs.value ? props.sfcTsCode : props.sfcJsCode)
+  copy(isUsingTs.value ? props.tsCode : props.jsCode)
 }
 
 function onShowHighlightCode() {
@@ -37,7 +37,7 @@ function onShowHighlightCode() {
     <div class="flex items-center gap-2">
       <div
         @click="isUsingTs = true"
-        v-if="sfcTsCode.length"
+        v-if="tsCode.length"
         :class="{
           'outline outline-white': isUsingTs,
         }"
@@ -45,7 +45,7 @@ function onShowHighlightCode() {
       />
       <div
         @click="isUsingTs = false"
-        v-if="sfcJsCode.length"
+        v-if="jsCode.length"
         :class="{
           'outline outline-white': !isUsingTs,
         }"
