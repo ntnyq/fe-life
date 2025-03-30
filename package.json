@@ -33,7 +33,7 @@
     "@ntnyq/eslint-config": "^4.0.2",
     "@ntnyq/prettier-config": "^2.0.0",
     "@types/node": "^22.13.11",
-    "@vite-pwa/vitepress": "^0.5.3",
+    "@vite-pwa/vitepress": "^1.0.0",
     "eslint": "^9.23.0",
     "husky": "^9.1.7",
     "markdown-it": "^14.1.0",
