@@ -2,8 +2,8 @@
 import { useClipboard } from '@vueuse/core'
 
 const props = defineProps<{
-  tsCode: string
-  jsCode: string
+  typescript: string
+  javascript: string
   codesandbox?: boolean
   metadata: Record<string, any>
 }>()
@@ -15,7 +15,7 @@ const showHighlighted = defineModel<boolean>('showHighlighted', {
 
 const githubBlobURL = 'https://github.com/ntnyq/fe-life/blob/main/'
 
-const { copy } = useClipboard({ legacy: true })
+const { copy, copied } = useClipboard({ legacy: true })
 
 function onOpenInGitHub() {
   window.open(githubBlobURL + props.metadata.relativePath, '_blank')
@@ -24,7 +24,7 @@ function onOpenInGitHub() {
 function onOpenInCodeSandbox() {}
 
 function onCopyCode() {
-  copy(isUsingTs.value ? props.tsCode : props.jsCode)
+  copy(isUsingTs.value ? props.typescript : props.javascript)
 }
 
 function onShowHighlightCode() {
@@ -37,7 +37,7 @@ function onShowHighlightCode() {
     <div class="flex items-center gap-2">
       <div
         @click="isUsingTs = true"
-        v-if="tsCode.length"
+        v-if="typescript.length"
         :class="{
           'outline outline-white': isUsingTs,
         }"
@@ -45,7 +45,7 @@ function onShowHighlightCode() {
       />
       <div
         @click="isUsingTs = false"
-        v-if="jsCode.length"
+        v-if="javascript.length"
         :class="{
           'outline outline-white': !isUsingTs,
         }"
@@ -80,7 +80,7 @@ function onShowHighlightCode() {
         role="button"
         class="cursor-pointer rounded-md bg-zinc-50/20 p-2"
       >
-        <div class="i-radix-icons:clipboard-copy" />
+        <div :class="copied ? 'i-lucide:copy-check' : 'i-lucide:copy'" />
       </button>
       <button
         @click="onShowHighlightCode"

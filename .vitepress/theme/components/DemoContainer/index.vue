@@ -6,11 +6,11 @@ import Preview from './components/Preview.vue'
 
 const props = withDefaults(
   defineProps<{
-    tsCode: string
-    // if using ts, tsCode will transform the to js
-    jsCode: string
-    jsHtml: string
-    tsHtml: string
+    typescript: string
+    // if using ts, typescript will transform the to js
+    javascript: string
+    javascriptHtml: string
+    typescriptHtml: string
     title?: string
     expanded?: boolean
     codesandbox?: boolean
@@ -23,14 +23,16 @@ const props = withDefaults(
   },
 )
 
-const isUsingTs = ref(!!props.tsCode)
+const isUsingTs = ref(!!props.typescript)
 const showHighlighted = ref(props.expanded)
 
-const tsCode = computed(() => decodeURIComponent(props.tsCode))
-const jsCode = computed(() => decodeURIComponent(props.jsCode))
+const typescript = computed(() => decodeURIComponent(props.typescript))
+const javascript = computed(() => decodeURIComponent(props.javascript))
 
 const highlightedHtml = computed(() =>
-  decodeURIComponent(isUsingTs.value ? props.tsHtml : props.jsHtml),
+  decodeURIComponent(
+    isUsingTs.value ? props.typescriptHtml : props.javascriptHtml,
+  ),
 )
 </script>
 
@@ -40,8 +42,8 @@ const highlightedHtml = computed(() =>
       v-model:is-using-ts="isUsingTs"
       v-model:show-highlighted="showHighlighted"
       :codesandbox="codesandbox"
-      :ts-code="tsCode"
-      :js-code="jsCode"
+      :typescript="typescript"
+      :javascript="javascript"
       :metadata="metadata"
     />
 
