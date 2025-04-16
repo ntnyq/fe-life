@@ -24,15 +24,17 @@ IOS、QQ 和微信浏览器，在 video 标签上加如上 3 个属性。
 <a
   href="https://www.google.com"
   target="_blank"
-  >Google</a
 >
+  Google
+</a>
 
 <!-- 所有target为 blank 的链接都会在同一个新窗口中打开 -->
 <a
   href="https://www.google.com"
   target="blank"
-  >Google</a
 >
+  Google
+</a>
 ```
 
 ::: tip

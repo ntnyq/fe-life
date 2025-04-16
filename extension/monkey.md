@@ -7,7 +7,6 @@
 // @grant        GM_unregisterMenuCommand
 
 function useOption(key, title, defaultValue) {
-  // eslint-disable-next-line camelcase
   if (typeof GM_getValue === 'undefined') {
     return {
       value: defaultValue,
@@ -35,7 +34,11 @@ function useOption(key, title, defaultValue) {
   return ref
 }
 
-const hideBlueBadge = useOption('twitter_hide_blue_badge', 'Hide Blue Badges', true)
+const hideBlueBadge = useOption(
+  'twitter_hide_blue_badge',
+  'Hide Blue Badges',
+  true,
+)
 
 if (hideBlueBadge.value) {
   // do something

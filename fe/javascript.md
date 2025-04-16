@@ -178,9 +178,26 @@ console.log(`0${num.toString(8)}`)
 ## ESM 使用 require 方法
 
 ```js
- 
 import { createRequire } from 'node:module'
 
 const require = createRequire(import.meta.url)
 const foobar = require('foo-bar')
 ```
+
+## `:not` 嵌套后代选择器兼容性
+
+```ts
+document.querySelectorAll(
+  'map:not(svg map):not(math map),canvas:not(svg canvas):not(math canvas),del:not(svg del):not(math del),ins:not(svg ins):not(math ins),a:not(svg a):not(math a)',
+)
+```
+
+以上代码在 Chrome v85 左右版本会报错，导致 Tinymce 编辑器无法正常初始化。
+
+测试工具 [BrowserStack](https://www.browserstack.com/)
+
+### 解决方案
+
+- 建议客户升级浏览器（当前浏览器版本实在过低）
+- patch 三方插件（插件基准兼容性较高，仍然可能遇到其他问题）
+- 切换为兼容性更好的插件
