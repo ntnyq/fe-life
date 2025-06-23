@@ -32,7 +32,7 @@
     "@iconify-json/ri": "^1.2.5",
     "@iconify-json/vscode-icons": "^1.2.23",
     "@ntnyq/eslint-config": "^5.0.0-beta.6",
-    "@ntnyq/prettier-config": "^2.2.0",
+    "@ntnyq/prettier-config": "^3.0.1",
     "@types/node": "^22.15.32",
     "@vite-pwa/vitepress": "^1.0.0",
     "eslint": "^9.29.0",
