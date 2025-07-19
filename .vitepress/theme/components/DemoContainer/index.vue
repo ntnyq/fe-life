@@ -41,10 +41,10 @@ const highlightedHtml = computed(() =>
     <Header
       v-model:is-using-ts="isUsingTs"
       v-model:show-highlighted="showHighlighted"
-      :codesandbox="codesandbox"
-      :typescript="typescript"
-      :javascript="javascript"
-      :metadata="metadata"
+      :codesandbox
+      :typescript
+      :javascript
+      :metadata
     />
 
     <div
@@ -56,8 +56,8 @@ const highlightedHtml = computed(() =>
     </div>
 
     <Editor
-      :highlighted-html="highlightedHtml"
-      :show-highlighted="showHighlighted"
+      :highlighted-html
+      :show-highlighted
     />
   </div>
 </template>

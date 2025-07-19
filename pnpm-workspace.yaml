@@ -1,13 +1,8 @@
-packages:
-  - .
-
 overrides:
-  esbuild: ^0.25.4
-
+  esbuild: ^0.25.9
 onlyBuiltDependencies:
   - esbuild
   - unrs-resolver
-
 peerDependencyRules:
   ignoreMissing:
     - '@algolia/client-search'
