@@ -135,7 +135,7 @@ export default {
 
 <template>
   <div class="element-demo">
-    <ElTable :data="data">
+    <ElTable :data>
       <ElTableColumn
         type="index"
         label="序号"
