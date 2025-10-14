@@ -200,6 +200,17 @@ git reset --hard commit_id
 git reset --hard HEAD^
 ```
 
+## 快速 Rebase
+
+以下脚本需要在 VIM 命令模式下运行
+
+```shell
+:2,$s/^pick/f/
+```
+
+- `:2,$` 表示范围地址，从第二行开始到文件最后一行。
+- `/s/old/new/` 表示替换命令，把行首的 `pick` 替换为 `f`。
+
 ## FAQ
 
 常见问题。
