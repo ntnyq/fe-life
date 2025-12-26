@@ -17,7 +17,7 @@
 
 #### 事件绑定
 
-> `v-on`指令或`@`
+> `v-on` 指令或 `@`
 
 - left 鼠标左键
 - middle 鼠标滚轮
@@ -36,7 +36,9 @@
 ```js
 // src/utils/filter.js
 export function toThousand(num) {
-  return (+num || 0).toString().replace(/^-?\d+/g, m => m.replace(/(?=\B(\d{3})+$)/g, ','))
+  return (+num || 0)
+    .toString()
+    .replace(/^-?\d+/g, m => m.replace(/(?=\B(\d{3})+$)/g, ','))
 }
 ```
 
@@ -140,9 +142,11 @@ export default {
   },
 }
 </script>
+```
 
-// Parent.vue
+```vue
 <script>
+// Parent.vue
 export default {
   name: 'Parent',
 
@@ -161,20 +165,13 @@ export default {
 
 ## 生命周期
 
-面试题里经常问到的一个问题：
-
-Vue 框架中进行数据请求，应该在哪个生命周期函数内发起请求，created 还是 mounted ?
-
-其实，两者皆有优点和缺点。
-
-`mounted` 生命周期内发起请求，不会出现错误，但是因为 `mounted` 直到所有子组件渲染完毕后才触发，所以请求发起的时间会略滞后。
-
-而 `created` 生命周期发起请求，如果请求的某些参数要基于 DOM 的，那么这时请求有可能会出现报错或数据不符合预期，当然绝大多数情况是不存在问题的。
-
-总的说来，需要增加自己对代码的掌控力，合理选择数据请求的生命周期。
-
-## 响应式数据
-
+面试题里经常问到的一个问题： Vue
+框架中进行数据请求，应该在哪个生命周期函数内发起请求，created 还是 mounted ?
+其实，两者皆有优点和缺点。 `mounted` 生命周期内发起请求，不会出现错误，但是因为
+`mounted` 直到所有子组件渲染完毕后才触发，所以请求发起的时间会略滞后。 而
+`created` 生命周期发起请求，如果请求的某些参数要基于 DOM
+的，那么这时请求有可能会出现报错或数据不符合预期，当然绝大多数情况是不存在问题的。
+总的说来，需要增加自己对代码的掌控力，合理选择数据请求的生命周期。 ## 响应式数据
 小规模替代 vuex 方案。
 
 ```js
@@ -198,8 +195,8 @@ export const mutations = {
 ```
 
 ```vue
-// App.vue
 <script>
+// App.vue
 import { mutations, state } from '@/store'
 
 export default {
