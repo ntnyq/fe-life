@@ -108,6 +108,7 @@ export const themeConfig: DefaultTheme.Config = {
           { text: 'typescript', link: '/dev/typescript' },
           { text: 'vite', link: '/dev/vite' },
           { text: 'browser', link: '/dev/browser' },
+          { text: 'tauri', link: '/dev/tauri' },
         ],
       },
     ],

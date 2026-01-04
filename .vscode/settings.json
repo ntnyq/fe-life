@@ -68,6 +68,7 @@
     "pbcopy",
     "pinia",
     "rtmp",
+    "Tauri",
     "tsup",
     "ueditor",
     "unjs",
